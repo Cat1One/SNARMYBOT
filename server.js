@@ -115,20 +115,19 @@ client.on("ready", () => {
     }
 
     if(message.content === "Que es esto?"){
-      message.channel.send(`${message.author} **Es un discord 
-      **`);
+      message.channel.send(`${message.author} **Es un servidor de discord dedicado a nuestra maravillosa Gemdelle streamer princesa <3 **`);
+    }
+
+    if(message.content === "Que es esto"){
+      message.channel.send(`${message.author} **Es un servidor de discord dedicado a nuestra maravillosa Gemdelle streamer princesa <3 **`);
     }
 
     if(message.content === "que es esto?"){
-      message.channel.send(`${message.author} ****Es un servidor de discord para gente que quiere encontrar su duo perfecto, quiere divertirse y jugar en equipo, podes escuchar musica, fijarte builds y pedir consejos a gente que conozca del tema!**`);
+      message.channel.send(`${message.author} **Es un servidor de discord dedicado a nuestra maravillosa Gemdelle streamer princesa <3 **`);
     }
 
     if(message.content === "que es esto"){
-      message.channel.send(`${message.author} ****Es un servidor de discord para gente que quiere encontrar su duo perfecto, quiere divertirse y jugar en equipo, podes escuchar musica, fijarte builds y pedir consejos a gente que conozca del tema!**`);
-    }
-
-    if(message.content === "que es esto"){
-      message.channel.send(`${message.author} ****Es un servidor de discord para gente que quiere encontrar su duo perfecto, quiere divertirse y jugar en equipo, podes escuchar musica, fijarte builds y pedir consejos a gente que conozca del tema!**`);
+      message.channel.send(`${message.author} **Es un servidor de discord dedicado a nuestra maravillosa Gemdelle streamer princesa <3 **`);
     }
 
     
