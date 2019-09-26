@@ -115,7 +115,7 @@ client.on("ready", () => {
     }
 
     if(message.content === "Que es esto?"){
-      message.channel.send(`${message.author} **Es un servidor de discord para gente que quiere encontrar su duo perfecto, quiere divertirse y jugar en equipo, podes escuchar musica, fijarte builds y pedir consejos a gente que conozca del tema!
+      message.channel.send(`${message.author} **Es un discord 
       **`);
     }
 
@@ -339,7 +339,7 @@ client.user.setPresence({
        game: {
            name: "twitch.tv/Gemdelle | -Ayuda",
            type: "STREAMING",
-           url: "https://www.twitch.tv/tucanalxdjajasalu3"
+           url: "https://www.twitch.tv/Gemdelle"
   
        }
    });
