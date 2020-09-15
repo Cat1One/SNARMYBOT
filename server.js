@@ -66,19 +66,14 @@ client.on("ready", () => {
 client.on("message", async message => {
     if(message.content == "prueba"){
       const embed = new Discord.RichEmbed()
-        .setTimestamp()
-        .addField("**•Team1**", "Mencionar a un usuario, Da acceso a las salas de Team")
-        .addField("**•Team2**", "Mencionar a un usuario, Da acceso a las salas de Team")
-        .addField("**•Team3**", "Mencionar a un usuario, Da acceso a las salas de Team")
-        .addBlankField(true)
-        .addField("Twitch", "twtich.tv/Gemdelle", true)
-        message.channel.send({embed});
+      .setAuthor(client.user.username, client.user.displayAvatarURL({format: "png", dynamic: true}))
+      .setDescription("Acaba de entrar al discord")
+      .setThumbnail(message.author.displayAvatarURL({format: "png", dynamic: true}))
+      .setColor("RANDOM")
+      message.channel.send({embed});
      
 
-      //.setAuthor(client.user.username, client.user.displayAvatarURL({format: "png", dynamic: true}))
-      //.setDescription("Acaba de entrar al discord")
-      //.setThumbnail(message.author.displayAvatarURL({format: "png", dynamic: true}))
-      //.setColor("RANDOM")
+      
       //message.channel.send(exampleEmbed);
 }})
     
