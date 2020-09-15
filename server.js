@@ -63,6 +63,15 @@ client.on("ready", () => {
   // }
 
 //Comandos
+client.on("message", async message => {
+    if(message.content == "prueba"){
+      const embed = new Discord.MessageEmbed()
+      .setAuthor(client.user.username, client.user.displayAvatarURL({format: "png", dynamic: true}))
+      .setDescription("Acaba de entrar al discord")
+      .setThumbnail(message.author.displayAvatarURL({format: "png", dynamic: true}))
+      .setColor("RANDOM")
+      message.channel.send(embed);
+}})
     
     if(message.content.startsWith(prefix + "Reglas")) { 
      
