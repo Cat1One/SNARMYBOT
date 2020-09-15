@@ -66,7 +66,7 @@ client.on("ready", () => {
 client.on("message", async message => {
     if(message.content == "prueba"){
       const embed = new Discord.RichEmbed()
-      //.setAuthor(client.user.username, client.user.displayAvatarURL({format: "png", dynamic: true}))
+      .setAuthor(client.user.username, client.user.displayAvatarURL({format: "png", dynamic: true}))
       .setDescription("Acaba de entrar al discord")        
       //.setImage("https://imgur.com/a/PYFr9k1")
       .setColor("RANDOM")
