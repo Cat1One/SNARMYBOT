@@ -73,9 +73,17 @@ client.on("message", async message => {
       message.channel.send({embed});
 }})
 client.on("guildMemberAdd", member=> {
-  const canal = member.guild.channels.cache.find(c => c.name === "『✈』𝑨𝒆𝒓𝒐𝒑𝒖𝒆𝒓𝒕𝒐");
+  const canal = member.guild.channels.find(c => c.name === "『✈』𝑨𝒆𝒓𝒐𝒑𝒖𝒆𝒓𝒕𝒐");
   if(!canal) return;
-  canal.send("<@${member.id}> Bienvendio a ${member.guild.name}")
+  const embed = new Discord.RichEmbed()
+      .setAuthor(member.user, member.user.displayAvatarURL({format: "png", dynamic: true }))
+      .setdecription("<@${member.id}> Bienvendio a SN Army")
+      .setImage(member.user.displayAvatarURL)
+      .setDescription("Acaba de entrar al discord")        
+      //.setImage("https://imgur.com/a/PYFr9k1")
+      .setColor("RANDOM")
+      .setfooter(member.guild.name)
+  canal.send({embed})
 })
     
     if(message.content.startsWith(prefix + "Reglas")) { 
