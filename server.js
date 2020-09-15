@@ -79,13 +79,7 @@ client.on("ready", () => {
         .addBlankField(true)
         .addField("Twitch", "twtich.tv/Gemdelle", true)
         message.channel.send({embed});
-    }
-    
-    if(message.content.startsWith(prefix + "Avatar")) { 
-     
-      const embed = new Discord.RichEmbed() 
-        .setAuthor(client
-    
+    }  
     if(message.content.startsWith(prefix + "Ayuda")) { 
      
       const embed = new Discord.RichEmbed() 
