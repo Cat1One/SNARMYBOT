@@ -58,42 +58,9 @@ client.on("ready", () => {
   
 //Emojis
 
-    if(message.content.startsWith("hola")) {
-      message.react("😍");
-    }
-    
-    if(message.content.startsWith("Hola")) {
-      message.react("😍");
-    }
-    
-     if(message.content.startsWith(":(")) {
-      message.react("💔");
-    }
-
-    if(message.content.startsWith("-react")) {
-      message.react("💔");
-    }
-
-    if(message.content.startsWith("-react")) {
-      message.react("💔");
-    }
-
-    if(message.content.startsWith("Gem")) {
-      message.react("❤");
-    }
-
-    if(message.content.startsWith("**Gem**")) {
-      message.react("❤");
-    }
-
-
-    if(message.content.startsWith("kitty")) {
-      message.react("🐱");
-    }
-
-    if(message.content.startsWith("Kitty")) {
-      message.react("🐱");
-    }
+  //  if(message.content.startsWith("Kitty")) {
+  //   message.react("🐱");
+  // }
 
 //Respuestas
 
@@ -172,13 +139,13 @@ if(message.content === "!points"){
 
   
     
-    if(message.content.startsWith(prefix + "Staff")) { 
+    if(message.content.startsWith(prefix + "Reglas")) { 
      
       const embed = new Discord.RichEmbed() 
-        .setTitle("Ayuda para los moderadores o admins")
+        .setTitle("Ayuda para los usuarios")
         .setAuthor(message.author.username, message.author.avatarURL)
         .setColor(0xc556d8)
-        .setDescription("Hola! soy Gemi bot y te mostrare los comandos de ayuda :revolving_hearts: ")
+        .setDescription("Hola! Soy el robot de ayuda de SN Army ")
         .setFooter("", client.user.avatarURL)
         .setTimestamp()
         .addField("**-Team1**", "Mencionar a un usuario, Da acceso a las salas de Team")
@@ -336,9 +303,9 @@ message.channel.send({ embed });
 client.user.setPresence({
        status: "dnd",
        game: {
-           name: "twitch.tv/Gemdelle | -Ayuda",
+           name: "SN Army | -Ayuda",
            type: "STREAMING",
-           url: "https://www.twitch.tv/Gemdelle"
+           url: ""
   
        }
    });
