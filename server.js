@@ -49,7 +49,7 @@ let prefix = config.prefix;
 //Mensaje de inicio
 client.on("ready", () => {
     console.log("Encendido");
-    client.channels.find(x=> x.name === "sotano-de-kitty").send(":crown: Iniciando sistema :crown:");
+    client.channels.find(x=> x.name === "datos").send(":crown: Iniciando sistema :crown:");
   });     
 
   client.on("message", (message) => {
@@ -348,4 +348,4 @@ client.user.setPresence({
 
     });
 
- client.login("NTUzMjM5MDA4MDU5MzI2NDY0.XYwSIQ.IY_agW1FP6L4HilmUJNR5I9WpUo");
+ client.login("NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0");
