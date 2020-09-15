@@ -66,12 +66,17 @@ client.on("ready", () => {
 client.on("message", async message => {
     if(message.content == "prueba"){
       const embed = new Discord.RichEmbed()
-      .setThumbnail(message.author.displayAvatarURL({format}))
+      .setImage(message.author.displayAvatarURL)
       .setDescription("Acaba de entrar al discord")        
       //.setImage("https://imgur.com/a/PYFr9k1")
       .setColor("RANDOM")
       message.channel.send({embed});
 }})
+client.on("guildMemberAdd", member=> {
+  const canal = member.guild.channels.cache.find(c => c.name === "『✈』𝑨𝒆𝒓𝒐𝒑𝒖𝒆𝒓𝒕𝒐");
+  if(!canal) return;
+  canal.send("<@${member.id}> Bienvendio a ${member.guild.name}")
+})
     
     if(message.content.startsWith(prefix + "Reglas")) { 
      
