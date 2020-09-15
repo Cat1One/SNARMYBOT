@@ -76,10 +76,9 @@ client.on("guildMemberAdd", member=> {
   const canal = member.guild.channels.find(c => c.name === "『✈』𝑨𝒆𝒓𝒐𝒑𝒖𝒆𝒓𝒕𝒐");
   if(!canal) return;
   const embed = new Discord.RichEmbed()
-      .setAuthor(member.user, member.user.displayAvatarURL({format: "png", dynamic: true }))
-      .setdecription("<@${member.id}> Bienvendio a SN Army")
-      .setImage(member.user.displayAvatarURL)
-      .setDescription("Acaba de entrar al discord")        
+     // .setAuthor(member.user, member.user.displayAvatarURL({format: "png", dynamic: true }))
+      .setdescription("<@${member}> Bienvendio a SN Army")
+      .setImage(member.user.displayAvatarURL)      
       //.setImage("https://imgur.com/a/PYFr9k1")
       .setColor("RANDOM")
       .setfooter(member.guild.name)
