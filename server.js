@@ -62,82 +62,7 @@ client.on("ready", () => {
   //   message.react("🐱");
   // }
 
-//Respuestas
-
-    if(message.content.startsWith("hola")) {
-      message.reply("Hola! ¿Como estas?");
-    }
-
-//Gemdelle
-    
-    if(message.content === "-Reglas"){
-      message.channel.send(`${message.author} 
-                 **Reglas**
--Todas las reglas seran cumplidas sin falta
--Respetar mutuamente a las personas 
--Totalmente prohibido publicar o difundir informacion personal y privada de cualquier persona
--Prohibido el uso de mayusculas excesivas en el chat
--Prohibido pasar links de comunidades no aliadas o sin autorizacion 
-`);
-    }
-
-    if(message.content === "Que es esto?"){
-      message.channel.send(`${message.author} **Es un servidor de discord dedicado a nuestra maravillosa Gemdelle streamer princesa <3 **`);
-    }
-
-    if(message.content === "Que es esto"){
-      message.channel.send(`${message.author} **Es un servidor de discord dedicado a nuestra maravillosa Gemdelle streamer princesa <3 **`);
-    }
-
-    if(message.content === "que es esto?"){
-      message.channel.send(`${message.author} **Es un servidor de discord dedicado a nuestra maravillosa Gemdelle streamer princesa <3 **`);
-    }
-
-    if(message.content === "que es esto"){
-      message.channel.send(`${message.author} **Es un servidor de discord dedicado a nuestra maravillosa Gemdelle streamer princesa <3 **`);
-    }
-
-    
-//Prefijo
-
-    if(message.content === "Cual es el prefijo?"){
-      message.channel.send(`${message.author} **El prefijo del bot es: -**`);
-    }
-
-    if(message.content === "Cual es el prefijo"){
-      message.channel.send(`${message.author} **El prefijo del bot es: -**`);
-    }
-
-    if(message.content === "cual es el prefijo"){
-      message.channel.send(`${message.author} **El prefijo del bot es: -**`);
-    }
-
-    if(message.content === "cual es el prefijo?"){
-      message.channel.send(`${message.author} **El prefijo del bot es: -**`);
-    }
-
-//Cual es el twitch
-
-    if(message.content === "Cual es el twitch?"){
-      message.channel.send(`${message.author} **El twitch de Gemdelle es: https://twitch.tv/Gemdelle**`);
-    }
-
-    if(message.content === "cual es el twitch?"){
-      message.channel.send(`${message.author} **El twitch de Gemdelle es: https://twitch.tv/Gemdelle**`);
-    }
-//Leaderboar
-
-if(message.content === "!Points"){
-  message.channel.send(`${message.author} **Aca esta la tabla de puntos: https://streamelements.com/gemdelle/leaderboard**`);
-}
-
-if(message.content === "!points"){
-  message.channel.send(`${message.author} **Aca esta la tabla de puntos: https://streamelements.com/gemdelle/leaderboard**`);
-}
-
 //Comandos
-
-  
     
     if(message.content.startsWith(prefix + "Reglas")) { 
      
@@ -145,22 +70,21 @@ if(message.content === "!points"){
         .setTitle("Ayuda para los usuarios")
         .setAuthor(message.author.username, message.author.avatarURL)
         .setColor(0xc556d8)
-        .setDescription("Hola! Soy el robot de ayuda de SN Army ")
+        .setDescription("Hola! Soy el robot de ayuda de SN Army")
         .setFooter("", client.user.avatarURL)
         .setTimestamp()
-        .addField("**-Team1**", "Mencionar a un usuario, Da acceso a las salas de Team")
-        .addField("**-Team2**", "Mencionar a un usuario, Da acceso a las salas de Team")
-        .addField("**-Team3**", "Mencionar a un usuario, Da acceso a las salas de Team")
-        .addField("**-Team4**", "Mencionar a un usuario, Da acceso a las salas de Team")
-        .addField("**-Royallies**", "Mencionar a un usuario, Otorga el rol 💎Royallies💎")
-        .addField("**-Vip**", "Mencionar a un usuario, Otorga el rol 💎Mister & Miss💎")
-        .addField("**-Donador**", "Mencionar a un usuario, Otorga el rol 💎Donador💎")
-        .addField("**-sub**", "Mencionar a un usuario, Otorga el rol 💎Lords & Ladies💎")
-        .addField("**-Mod**", "Mencionar a un usuario, Otorga el rol de 💎Guardians💎")
+        .addField("**•Team1**", "Mencionar a un usuario, Da acceso a las salas de Team")
+        .addField("**•Team2**", "Mencionar a un usuario, Da acceso a las salas de Team")
+        .addField("**•Team3**", "Mencionar a un usuario, Da acceso a las salas de Team")
         .addBlankField(true)
         .addField("Twitch", "twtich.tv/Gemdelle", true)
         message.channel.send({embed});
     }
+    
+    if(message.content.startsWith(prefix + "Avatar")) { 
+     
+      const embed = new Discord.RichEmbed() 
+        .setAuthor(client
     
     if(message.content.startsWith(prefix + "Ayuda")) { 
      
