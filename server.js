@@ -67,11 +67,9 @@ client.on("guildMemberAdd", member=> {
   const canal = member.guild.channels.find(c => c.name === "『✈』𝑨𝒆𝒓𝒐𝒑𝒖𝒆𝒓𝒕𝒐");
   if(!canal) return;
   const embed = new Discord.RichEmbed()
-     // .setAuthor(member.user, member.user.displayAvatarURL({format: "png", dynamic: true }))
       .setAuthor(message.author.username, message.author.avatarURL)
-      .setDescription(message.author.id)
+      .setDescription(`>@Twitch.tv/Cat_One#6872<`)
       .setThumbnail(member.user.displayAvatarURL)      
-      //.setImage("https://imgur.com/a/PYFr9k1")
       .setColor("RANDOM")
       .setFooter(member.guild.name)
   canal.send({embed})
