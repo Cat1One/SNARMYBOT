@@ -203,12 +203,8 @@ client.on("message", (message) => {
     if (!perms) return message.channel.send(`Que intentas hacer? eso no esta bien **${message.author.username}**😟!`);
 
     if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
-
     miembro.addRole(role)
-
     message.channel.send(`El rol fue agregado correctamente a **${miembro.user.username}**.`);
-
-
   }
 
   //msg consola
