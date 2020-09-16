@@ -69,7 +69,7 @@ client.on("guildMemberAdd", member=> {
   const embed = new Discord.RichEmbed()
      // .setAuthor(member.user, member.user.displayAvatarURL({format: "png", dynamic: true }))
       .setAuthor(message.author.username, message.author.avatarURL)
-      .setDescription("<${miembro.user.username}>")
+      .setDescription(message.author.id)
       .setThumbnail(member.user.displayAvatarURL)      
       //.setImage("https://imgur.com/a/PYFr9k1")
       .setColor("RANDOM")
