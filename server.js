@@ -160,6 +160,13 @@ client.on("message", (message) => {
   }
   if (message.content.startsWith(prefix + "Amongus")) {
 
+    
+    let prefix = botsettings.prefix;
+    let messageArray = message.content.split("");
+    let cmd =  messageArray[0];
+    let args = message.content.substring(message.content.indexOf("")+1);
+    
+    
     const embed = new Discord.RichEmbed()
       .setTitle("<:amongus:754139464342962266> | AmongUs")
       .setColor(0xc556d8)
@@ -168,8 +175,11 @@ client.on("message", (message) => {
       .setTimestamp()
     message.channel.send({ embed });
   }
-
-  
+  if(cmd === "$(prefix)reactions"){
+      let embed =new Discord.RichEmbed()
+      .setTitle("Reaction roles")
+      .setDescription("reacciona para tener roles")
+  }
   //Server
   var server = message.guild;
   if (message.content.startsWith(prefix + "Server")) {
