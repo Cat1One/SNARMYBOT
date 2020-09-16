@@ -60,20 +60,30 @@ client.on("message", (message) => {
     const embed = new Discord.RichEmbed()
       .setTitle("📜 | Reglas del servidor")
       .setColor(0xc556d8)
-      .setDescription ("No insultar 
-No spamear 
-No molestar por privado
-No ser toxico
-No pasar contenido porno, hentai o gore
-No acosar a ninguna persona
-No difundir informacion tanto publica como privada de las personas de dentro como externas a la comunidad")
-   //   .setDescription("No insultar")
-   //   .setDescription ("No spamear")
-   //   .setDescription ("No molestar por privado")
-   //   .setDescription("No ser toxico")
-   //   .setDescription ("No pasar contenido porno, hentai o gore")
-   //   .setDescription ("No acosar a ninguna persona")
-   //   .setDescription("No difundir informacion tanto publica como privada de las personas de dentro como externas a la comunidad.")
+      .addField("•", "No insultar")
+      .addField("•","No spamear")
+      .addField("͔•","No molestar por privado")
+      .addField("•","No ser toxico")
+      .addField("•","No pasar contenido porno, hentai o gore por general")
+      .addField("•","No acosar a ninguna persona")
+      .addField("•","No difundir informacion tanto publica como privada de las personas de dentro como externas a la comunidad")
+      .setFooter("SN Army", client.user.avatarURL)
+      .setTimestamp()
+    message.channel.send({ embed });
+  }
+  
+  if (message.content.startsWith(prefix + "reglas")) {
+
+    const embed = new Discord.RichEmbed()
+      .setTitle("📜 | Reglas del servidor")
+      .setColor(0xc556d8)
+      .addField("•", "No insultar")
+      .addField("•","No spamear")
+      .addField("͔•","No molestar por privado")
+      .addField("•","No ser toxico")
+      .addField("•","No pasar contenido porno, hentai o gore por general")
+      .addField("•","No acosar a ninguna persona")
+      .addField("•","No difundir informacion tanto publica como privada de las personas de dentro como externas a la comunidad")
       .setFooter("SN Army", client.user.avatarURL)
       .setTimestamp()
     message.channel.send({ embed });
@@ -212,7 +222,7 @@ No difundir informacion tanto publica como privada de las personas de dentro com
     game: {
       name: "SN Army | -Ayuda",
       type: "STREAMING",
-      url: "https://discord.gg/3HTdCDw"
+      url: "https://www.twitch.tv/Cat_One"
 
     }
   });
