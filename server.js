@@ -28,19 +28,14 @@ const client = new Discord.Client();
 const config = require("./config.json");
 let prefix = config.prefix;
 
-
-
-//Mensaje de inicio
+//Mensaje de inici
   client.on("ready", () => {
   console.log("Encendido");
   client.channels.find(x => x.name === "datos").send(":crown: Iniciando sistema :crown:");
 });
+
 client.on("message", (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
-
-  
-  
-  
 //Bienvenida del servidor
   client.on("guildMemberAdd", member => {
     const canal = member.guild.channels.find(c => c.name === "『✈』𝑨𝒆𝒓𝒐𝒑𝒖𝒆𝒓𝒕𝒐");
