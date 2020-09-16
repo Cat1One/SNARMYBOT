@@ -76,17 +76,35 @@ client.on("message", (message) => {
 
     const embed = new Discord.RichEmbed()
       .setTitle("🧾| Elegi tu rango")
-      .setAuthor(message.author.username, message.author.avatarURL)
       .setColor(0xc556d8)
-      .setDescription("Hola! Soy el robot de ayuda de SN Army")
-      .setFooter("", client.user.avatarURL)
+      .setDescription("• Tenes que reaccionar en el emoji que se indica para cada uno")
+      .setFooter("SN Army", client.user.avatarURL)
       .setTimestamp()
-      .addField("🧾| Elegi tu rango","• Tenes que reaccionar en el emoji que se indica para cada uno")
-      .addBlankField(true)
-      .addField("Comunidad", "SN Army", true)
     message.channel.send({ embed });
   }
 
+  
+   if (message.content.startsWith(prefix + "Generos")) {
+
+    const embed = new Discord.RichEmbed()
+      .setTitle("🧖| Elegi tu genero")
+      .setColor(0xc556d8)
+      .setDescription("• Reacciona con :woman: para recibir el rol de mujer o con :man: para recibir el rol de hombre")
+      .setFooter("SN Army", client.user.avatarURL)
+      .setTimestamp()
+    message.channel.send({ embed });
+  }
+
+  if (message.content.startsWith(prefix + "Paises")) {
+
+    const embed = new Discord.RichEmbed()
+      .setTitle(":earth_americas:| ELEGI TU PAIS")
+      .setColor(0xc556d8)
+      .setDescription("• Reacciona con :woman: para recibir el rol de mujer o con :man: para recibir el rol de hombre")
+      .setFooter("SN Army", client.user.avatarURL)
+      .setTimestamp()
+    message.channel.send({ embed });
+  }
   //Server
   var server = message.guild;
   if (message.content.startsWith(prefix + "Server")) {
