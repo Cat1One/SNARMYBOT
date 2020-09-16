@@ -75,7 +75,7 @@ client.on("message", (message) => {
   if (message.content.startsWith(prefix + "Roles")) {
 
     const embed = new Discord.RichEmbed()
-      .setTitle("🧾| Elegi tu rango")
+      .setTitle("🧾| ELEGI TU RANGO")
       .setColor(0xc556d8)
       .setDescription("• Tenes que reaccionar en el emoji que se indica para cada uno")
       .setFooter("SN Army", client.user.avatarURL)
@@ -87,7 +87,7 @@ client.on("message", (message) => {
    if (message.content.startsWith(prefix + "Generos")) {
 
     const embed = new Discord.RichEmbed()
-      .setTitle("🧖| Elegi tu genero")
+      .setTitle("🧖| ELEGI TU GENERO")
       .setColor(0xc556d8)
       .setDescription("• Reacciona con :woman: para recibir el rol de mujer o con :man: para recibir el rol de hombre")
       .setFooter("SN Army", client.user.avatarURL)
@@ -98,13 +98,36 @@ client.on("message", (message) => {
   if (message.content.startsWith(prefix + "Paises")) {
 
     const embed = new Discord.RichEmbed()
-      .setTitle(":TwitchLogo:| TWITCH")
+      .setTitle(":earth_americas:| ELEGI TU PAIS")
       .setColor(0xc556d8)
-      .setDescription("• Reacciona con el emoji :TwitchLogo: para recibir notificaciones cuando los streamers del servidor prendan.")
+      .setDescription("• Reacciona con la bandera de tu pais para recibir el rol.")
       .setFooter("SN Army", client.user.avatarURL)
       .setTimestamp()
     message.channel.send({ embed });
   }
+  
+  if (message.content.startsWith(prefix + "twitch")) {
+
+    const embed = new Discord.RichEmbed()
+      .setTitle("<:TwitchLogo:755632620368298085> | TWITCH")
+      .setColor(0xc556d8)
+      .setDescription("• Reacciona con el emoji <:TwitchLogo:755632620368298085> para recibir notificaciones cuando los streamers del servidor prendan.")
+      .setFooter("SN Army", client.user.avatarURL)
+      .setTimestamp()
+    message.channel.send({ embed });
+  }
+  
+  if (message.content.startsWith(prefix + "economia")) {
+
+    const embed = new Discord.RichEmbed()
+      .setTitle(":dollar: | CASINO")
+      .setColor(0xc556d8)
+      .setDescription("• Reacciona con el emoji :dollar: para ver las salas del casino**.")
+      .setFooter("SN Army", client.user.avatarURL)
+      .setTimestamp()
+    message.channel.send({ embed });
+  }
+
   //Server
   var server = message.guild;
   if (message.content.startsWith(prefix + "Server")) {
