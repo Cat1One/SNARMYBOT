@@ -63,25 +63,16 @@ client.on("ready", () => {
   // }
 
 //Comandos
-client.on("message", async message => {
-    if(message.content == "prueba"){
-      const embed = new Discord.RichEmbed()
-      .setImage(message.author.displayAvatarURL)
-      .setDescription("Acaba de entrar al discord")        
-      //.setImage("https://imgur.com/a/PYFr9k1")
-      .setColor("RANDOM")
-      message.channel.send({embed});
-}})
 client.on("guildMemberAdd", member=> {
   const canal = member.guild.channels.find(c => c.name === "『✈』𝑨𝒆𝒓𝒐𝒑𝒖𝒆𝒓𝒕𝒐");
   if(!canal) return;
   const embed = new Discord.RichEmbed()
      // .setAuthor(member.user, member.user.displayAvatarURL({format: "png", dynamic: true }))
-      .setdescription("<@${member}> Bienvendio a SN Army")
+      .setDescription("<@${member}> Bienvendio a SN Army")
       .setImage(member.user.displayAvatarURL)      
       //.setImage("https://imgur.com/a/PYFr9k1")
       .setColor("RANDOM")
-      .setfooter(member.guild.name)
+      .setFooter(member.guild.name)
   canal.send({embed})
 })
     
@@ -213,9 +204,9 @@ message.channel.send({ embed });
     if(message.content.startsWith(prefix + "Mod")) {
 
       let miembro = message.mentions.members.first(); 
-      let nombrerol = args.slice(1).join("Mod");
-      let role = message.guild.roles.find(g => g.name === 'Mod"');
-      let perms = message.member.hasPermission("MANAGE_NICKNAMES");
+      let nombrerol = args.slice(1).join("【💚】𝗔𝗬𝗨𝗗𝗔𝗡𝗧𝗘𝗦");
+      let role = message.guild.roles.find(g => g.name === '【💚】𝗔𝗬𝗨𝗗𝗔𝗡𝗧𝗘𝗦"');
+      let perms = message.member.hasPermission("ADMINISTRATOR");
       
       if(!perms) return message.channel.send(`Que intentas hacer? eso no esta bien **${message.author.username}**😟!`); 
            
@@ -240,11 +231,11 @@ message.channel.send({ embed });
   //Estado de twitch
   
 client.user.setPresence({
-       status: "dnd",
+       status: "Streaming",
        game: {
            name: "SN Army | -Ayuda",
            type: "STREAMING",
-           url: ""
+           url: "https://discord.gg/3HTdCDw"
   
        }
    });
