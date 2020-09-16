@@ -166,6 +166,7 @@ client.on("message", (message) => {
     let cmd =  messageArray[0];
     let args = message.content.substring(message.content.indexOf("")+1);
     
+    if(!message.content.startsWitch(prefix)) return:
     
     const embed = new Discord.RichEmbed()
       .setTitle("<:amongus:754139464342962266> | AmongUs")
