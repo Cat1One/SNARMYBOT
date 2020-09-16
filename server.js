@@ -210,6 +210,8 @@ client.on("message", (message) => {
 
 
   }
+  
+
 
   //msg consola
   client.on('ready', () => { });
