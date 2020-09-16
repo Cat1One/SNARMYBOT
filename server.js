@@ -27,16 +27,6 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
 
-//const fs = require('fs');
-//const Music = require("discord.js-musicbot-addon");
-
-//const ytdl = require('ytdl-core');
-//const nodeopus = require('node-opus');
-
-//const { YTSearcher } = require('ytsearcher');
-//const searcher = new YTSearcher('AIzaSyCLznr24tTbmK-L9Ht54lm3lOJaxi9n0kc');
-
-
 let prefix = config.prefix;
 
 //Mensaje de inicio
@@ -47,13 +37,6 @@ client.on("ready", () => {
 
 client.on("message", (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
-
-
-  //Emojis
-
-  //   if(message.content.startsWith("Kitty")) {
-  //    message.react("🐱");
-  //  }
 
   //Comandos
   client.on("guildMemberAdd", member => {
@@ -125,41 +108,13 @@ client.on("message", (message) => {
 
   }
 
-
-  client.on("messageReactionAdd", async (reaction, user) => {
-    // If a message gains a reaction and it is uncached, fetch and cache the message.
-    // You should account for any errors while fetching, it could return API errors if the resource is missing.
-    if (reaction.message.partial) await reaction.message.fetch(); // Partial messages do not contain any content so skip them.
-    if (reaction.partial) await reaction.fetch();
-
-    if (user.bot) return; // If the user was a bot, return.
-    if (!reaction.message.guild) return; // If the user was reacting something but not in the guild/server, ignore them.
-    if (reaction.message.guild.id !== "520423098906968065") return; // Use this if your bot was only for one server/private server.
-
-    if (reaction.message.channel.id === "738257904137797664") { // This is a #self-roles channel.
-      if (reaction.emoji.name === "1️⃣") {
-        await reaction.message.guild.members.cache.get(user.id).roles.add("754035883795021967") // Minecraft role.
-        return user.send("Minecraft role was given!").catch(() => console.log("Failed to send DM."));
-      }
-
-      if (reaction.emoji.name === "2️⃣") {
-        await reaction.message.guild.members.cache.get(user.id).roles.add("708554654409293894"); // Roblox role.
-        return user.send("Roblox role was given!").catch(() => console.log("Failed to send DM."));
-      }
-    } else {
-      return; // If the channel was not a #self-roles, ignore them.
-    }
-  })
-
   //msg consola
-
   client.on('ready', () => { });
   console.log("Actualizado");
 
-
-  //Estado de twitch
+//Estado de twitch
   client.user.setPresence({
-    status: "Streaming",
+    status: "STREAMING",
     game: {
       name: "SN Army | -Ayuda",
       type: "STREAMING",
