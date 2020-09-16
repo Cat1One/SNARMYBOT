@@ -206,7 +206,26 @@ client.on("message", (message) => {
     miembro.addRole(role)
     message.channel.send(`El rol fue agregado correctamente a **${miembro.user.username}**.`);
   }
-
+  
+    if (message.startsWith(prefix + "kick")) {
+    if (!message.member.hasPermission("KICK_MEMBERS") || !message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You don't have a permissions to do this.");
+    let user = message.mentions.users.first();
+    
+    let member = message.guild.member(user);
+    let reason = args.slice(1).join(" ");
+    
+    if (!user) return message.channel.send("Please mention the user.");
+    if (user.id === message.author.id) return message.channel.send("You can't kick yourself.");
+    if (user.id === client.user.id) return message.channel.send("You can't kick me.");
+    
+    if (!reason) reason = "No reason provided";
+    
+    member.kick(reason).then(() => {
+      message.channel.send(`Successfully kicked **${user.tag}**`);
+    }).catch(err => {
+      message.reply("I was unable to kick the member.");
+    })
+  }
   //msg consola
   client.on('ready', () => { });
   console.log("Actualizado");
