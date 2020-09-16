@@ -68,7 +68,7 @@ client.on("guildMemberAdd", member=> {
   if(!canal) return;
   const embed = new Discord.RichEmbed()
      // .setAuthor(member.user, member.user.displayAvatarURL({format: "png", dynamic: true }))
-      .setDescription("<@${member}> Bienvendio a SN Army")
+      .setDescription("message.author Bienvendio a SN Army")
       .setImage(member.user.displayAvatarURL)      
       //.setImage("https://imgur.com/a/PYFr9k1")
       .setColor("RANDOM")
@@ -85,9 +85,12 @@ client.on("guildMemberAdd", member=> {
         .setDescription("Hola! Soy el robot de ayuda de SN Army")
         .setFooter("", client.user.avatarURL)
         .setTimestamp()
-        .addField("**•Team1**", "Mencionar a un usuario, Da acceso a las salas de Team")
-        .addField("**•Team2**", "Mencionar a un usuario, Da acceso a las salas de Team")
-        .addField("**•Team3**", "Mencionar a un usuario, Da acceso a las salas de Team")
+        .addField("**•Reglas**", "No insultarNo difundir informacion tanto publica como privada de las personas de dentro como externas a la comunidad")
+        .addField("", "No spamear")
+        .addField("", "No molestar por privado")
+        .addField("", "No ser toxico")
+        .addField("", "No pasar contenido porno, hentai o gore")
+        .addField("", "No acosar a ninguna persona")
         .addBlankField(true)
         .addField("Twitch", "twtich.tv/Gemdelle", true)
         message.channel.send({embed});
@@ -161,7 +164,6 @@ client.on("guildMemberAdd", member=> {
     }
 
     if(message.content.startsWith(prefix + "Horarios")) { 
-     
       const embed = new Discord.RichEmbed() 
         .setTitle("Bienvenidos al canal de horarios")
         .setAuthor(message.author.username, message.author.avatarURL)
@@ -177,9 +179,8 @@ client.on("guildMemberAdd", member=> {
         .addField("Twitch", "twtich.tv/Gemdelle", true)
         message.channel.send({embed});
     }
-
-    //Server
     
+    //Server
     var server = message.guild;
     if(message.content.startsWith(prefix + "Server")) {
     const embed = new Discord.RichEmbed()
@@ -192,12 +193,8 @@ client.on("guildMemberAdd", member=> {
     .addField('Miembros', server.memberCount, true)
     .addField('Roles', server.roles.size, true)
     .setColor(0x66b3ff)
-    
-message.channel.send({ embed });
-    
+    message.channel.send({ embed });
     }    
-    
-
     
 //Roles 
 
@@ -219,18 +216,14 @@ message.channel.send({ embed });
       
       }
   
-
-    
-//Votes
-  
 //msg consola
 
   client.on('ready', () => {});
   console.log("Actualizado");
 
-  //Estado de twitch
-  
-client.user.setPresence({
+
+ //Estado de twitch
+  client.user.setPresence({
        status: "Streaming",
        game: {
            name: "SN Army | -Ayuda",
