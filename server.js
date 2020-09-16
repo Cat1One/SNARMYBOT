@@ -48,7 +48,7 @@ client.on("message", (message) => {
       .setFooter(member.guild.name)
     canal.send({ embed })
   })
-
+  
 //Comandos
   if (message.content.startsWith(prefix + "Reglas")) {
 
