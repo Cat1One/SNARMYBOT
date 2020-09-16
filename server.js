@@ -26,19 +26,22 @@ setInterval(() => {
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
-
 let prefix = config.prefix;
 
+
+
 //Mensaje de inicio
-client.on("ready", () => {
+  client.on("ready", () => {
   console.log("Encendido");
   client.channels.find(x => x.name === "datos").send(":crown: Iniciando sistema :crown:");
 });
-
 client.on("message", (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
 
-  //Comandos
+  
+  
+  
+//Bienvenida del servidor
   client.on("guildMemberAdd", member => {
     const canal = member.guild.channels.find(c => c.name === "『✈』𝑨𝒆𝒓𝒐𝒑𝒖𝒆𝒓𝒕𝒐");
     if (!canal) return;
@@ -51,24 +54,29 @@ client.on("message", (message) => {
     canal.send({ embed })
   })
 
+//Comandos
   if (message.content.startsWith(prefix + "Reglas")) {
 
     const embed = new Discord.RichEmbed()
-      .setTitle("Ayuda para los usuarios")
-      .setAuthor(message.author.username, message.author.avatarURL)
+      .setTitle("📜 | Reglas del servidor")
       .setColor(0xc556d8)
-      .setDescription("Hola! Soy el robot de ayuda de SN Army")
-      .setFooter("", client.user.avatarURL)
+      .setDescription("• No insultar")
+      .setDescription ("No spamear")
+      .setDescription ("No molestar por privado")
+      .setDescription("No ser toxico")
+      .setDescription ("No pasar contenido porno, hentai o gore")
+      .setDescription ("No acosar a ninguna persona")
+      .setDescription(No difundir informacion tanto publica como privada de las personas de dentro como externas a la comunidad."))
+      .setDescription ("No spamear")
+      .setDescription ("No spamear")
+    
+
+
+
+
+
+      .setFooter("SN Army", client.user.avatarURL)
       .setTimestamp()
-      .addField("**•Reglas**")
-      .addField("No spamear", "*.*")
-      .addField(".", "No molestar por privado")
-      .addField(".", "No ser toxico")
-      .addField(".", "No pasar contenido porno, hentai o gore")
-      .addField(".", "No acosar a ninguna persona")
-      .addField(".", "No difundir informacion tanto publica como privada de las personas de dentro como externas a la comunidad")
-      .addBlankField(true)
-      .addField("Comunidad", "SN Army", true)
     message.channel.send({ embed });
   }
   
@@ -158,34 +166,6 @@ client.on("message", (message) => {
       .setTimestamp()
     message.channel.send({ embed });
   }
-  ////   .setTitle("<:amongus:754139464342962266> | AmongUs")
-     // .setColor(0xc556d8)
-     // .setDescription("• Reacciona con el emoji <:amongus:754139464342962266> para ver las salas del ***AmongUs***.")
-    //  .setFooter("SN Army", client.user.avatarURL)
-    //  .setTimestamp()
-   // message.channel.send({ embed });
-  //}
-
-bot.on ("message", async message =>{
-  if(message.author.bot || message.channel.type === "dm") return;
-  
-  let prefix = botsettings.prefix;
-  let messageArray = message.content.split(" ");
-  let cmd = messageArray [0];
-  let args =message.content.substring(message.content.indexoF(" ")+1);
-  
-  if(!message.content.startWith(prefix)) return;
-  let commandfile =bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
-  if(commandfile) commandfile.run(bot, message, args)
-  
-  if(cmd === "${prefix}reactions"){
-    let embed =new Discord.RichEmbed()
-    .setTitle("reactions")
-    .setdescription("hola")
-  }
-})
-
- 
   //Server
   var server = message.guild;
   if (message.content.startsWith(prefix + "Server")) {
