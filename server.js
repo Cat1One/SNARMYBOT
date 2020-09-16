@@ -158,29 +158,34 @@ client.on("message", (message) => {
       .setTimestamp()
     message.channel.send({ embed });
   }
-  if (message.content.startsWith(prefix + "Amongus")) {
+  ////   .setTitle("<:amongus:754139464342962266> | AmongUs")
+     // .setColor(0xc556d8)
+     // .setDescription("• Reacciona con el emoji <:amongus:754139464342962266> para ver las salas del ***AmongUs***.")
+    //  .setFooter("SN Army", client.user.avatarURL)
+    //  .setTimestamp()
+   // message.channel.send({ embed });
+  //}
 
-    
-    let prefix = botsettings.prefix;
-    let messageArray = message.content.split("");
-    let cmd =  messageArray[0];
-    let args = message.content.substring(message.content.indexOf("")+1);
-    
-    if(!message.content.startsWitch(prefix)) return:
-    
-    const embed = new Discord.RichEmbed()
-      .setTitle("<:amongus:754139464342962266> | AmongUs")
-      .setColor(0xc556d8)
-      .setDescription("• Reacciona con el emoji <:amongus:754139464342962266> para ver las salas del ***AmongUs***.")
-      .setFooter("SN Army", client.user.avatarURL)
-      .setTimestamp()
-    message.channel.send({ embed });
+bot.on ("message", async message =>{
+  if(message.author.bot || message.channel.type === "dm") return;
+  
+  let prefix = botsettings.prefix;
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray [0];
+  let args =message.content.substring(message.content.indexoF(" ")+1);
+  
+  if(!message.content.startWith(prefix)) return;
+  let commandfile =bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
+  if(commandfile) commandfile.run(bot, message, args)
+  
+  if(cmd === "${prefix}reactions"){
+    let embed =new Discord.RichEmbed()
+    .setTitle("reactions")
+    .setdescription("hola")
   }
-  if(cmd === "$(prefix)reactions"){
-      let embed =new Discord.RichEmbed()
-      .setTitle("Reaction roles")
-      .setDescription("reacciona para tener roles")
-  }
+})
+
+ 
   //Server
   var server = message.guild;
   if (message.content.startsWith(prefix + "Server")) {
