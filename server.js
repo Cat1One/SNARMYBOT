@@ -168,26 +168,6 @@ client.on("message", (message) => {
       .setTimestamp()
     message.channel.send({ embed });
   }
-  if (message.content.startsWith(prefix + "CsGo")) {
-
-    const embed = new Discord.RichEmbed()
-      .setTitle("<:Cs:754138621669277746> | CsGo")
-      .setColor(0xc556d8)
-      .setDescription("• Reacciona con el emoji <:Cs:754138621669277746> para ver las salas del ***Cs:Go***.")
-      .setFooter("SN Army", client.user.avatarURL)
-      .setTimestamp()
-    message.channel.send({ embed });
-  }
-  if (message.content.startsWith(prefix + "CsGo")) {
-
-    const embed = new Discord.RichEmbed()
-      .setTitle("<:Cs:754138621669277746> | CsGo")
-      .setColor(0xc556d8)
-      .setDescription("• Reacciona con el emoji <:Cs:754138621669277746> para ver las salas del ***Cs:Go***.")
-      .setFooter("SN Army", client.user.avatarURL)
-      .setTimestamp()
-    message.channel.send({ embed });
-  }
 
   
   //Server
