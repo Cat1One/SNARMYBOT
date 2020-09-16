@@ -68,7 +68,7 @@ client.on("guildMemberAdd", member=> {
   if(!canal) return;
   const embed = new Discord.RichEmbed()
       .setAuthor(message.author.username, message.author.avatarURL)
-      .setDescription(`>@Twitch.tv/Cat_One#6872<`)
+      .setDescription(`<@${member.id}> Bienvenido a SN Army`)
       .setThumbnail(member.user.displayAvatarURL)      
       .setColor("RANDOM")
       .setFooter(member.guild.name)
@@ -94,92 +94,8 @@ client.on("guildMemberAdd", member=> {
         .addBlankField(true)
         .addField("Comunidad", "SN Army", true)
         message.channel.send({embed});
-    }  
-    if(message.content.startsWith(prefix + "Ayuda")) { 
-     
-      const embed = new Discord.RichEmbed() 
-        .setTitle("Ayuda")
-        .setAuthor(message.author.username, message.author.avatarURL)
-        .setColor(0xc556d8)
-        .setDescription("Hola! soy Gemi bot y te mostrare los comandos de ayuda :revolving_hearts: ")
-        .setFooter("", client.user.avatarURL)
-        .setTimestamp()
-        .addField("**-Ayuda**", "Lista de comandos")
-        .addField("**-Reglas**", "Muestran todas las reglas del discord")
-        .addField("**-Gp**", "Da la explicacion de que son Los Gp y como ganarlos")
-        .addField("**-Suscripcion**", "Brinda la info de los beneficios a la suscripcion")
-        .addField("**-Horarios**", "Muestra los dias que estoy On")
-        .addField("**-Eventos**", "Muestra cuando se realizan los eventos")
-        .addField("Instagram", "l.Gemdelle.l",  true)
-        .addBlankField(true)
-        .addField("Twitch", "twtich.tv/Gemdelle", true)
-        message.channel.send({embed});
-    }
-    
-    if(message.content.startsWith(prefix + "Gp")) { 
-     
-      const embed = new Discord.RichEmbed() 
-        .setTitle("Gp")
-        .setAuthor(message.author.username, message.author.avatarURL)
-        .setColor(0xc556d8)
-        .setDescription("Hola amigo soy Nashor Bot, ayudo a la gente con lo que necesite")
-        .setFooter("", client.user.avatarURL)
-        .setTimestamp()
-        .addField("**¿Que son los gemipoints?**", "¡Los Gp son la moneda de nuestro canal!")
-        .addField("**¿Para que sirven?**", "Con 25 Gp podes pedir la cancion que quieras que suene en el canal, con 100 Gp podes JUGAR AL LOL EN STREAM (100 Gp por partida)")
-        .addField("**Como se ganan?**", "Mirar el stream durante 10minutos: 1GP-Host: 25Gp") 
-        .addField(":gem:", "-Host: 25Gp")
-        .addField(":gem:", "-Seguir el canal: 15 Gp")
-        .addField(":gem:", "-Tips: 200 Gp por dolar")
-        .addField(":gem:", "-Enviar loots: 10Gp (enviar con nombre")
-        .addField(":gem:", "-Cheers: 200 Gp por 100 Cheers")
-        .addField(":gem:", "-Suscriptores ¡500 Gp Por suscripcion!")
-        .addField(":gem:", "-Eventos o apuestas: Cantidad de Gp varia segun el evento usas el comando -evento")
-        .addField(":gem:", "-Juegos Ruleta, Slot y Rifa")
-        .addField("Instagram", "l.Gemdelle.l",  true)
-        .addBlankField(true)
-        .addField("Twitch", "twtich.tv/Gemdelle", true)
-        message.channel.send({embed});
-    }
-    
-    if(message.content.startsWith(prefix + "Suscripcion")) { 
-     
-      const embed = new Discord.RichEmbed() 
-        .setTitle("Beneficios")
-        .setAuthor(message.author.username, message.author.avatarURL)
-        .setColor(0xc556d8)
-        .setDescription(":crown: Bienvenidos al canal de ayuda de Suscripciones")
-        .setFooter("", client.user.avatarURL)
-        .setTimestamp()
-        .addField(":gem:", "-Emblema personalizado en el canal")
-        .addField(":gem:", "-Emotes personalizados en el chat (GemdelMiss)")
-        .addField(":gem:", "-Prioridad en el todo tipo de juegos y eventos") 
-        .addField(":gem:", "-Poner musica GRATIS")
-        .addField(":gem:", "-Gp x5 Ganados por ver el stream")
-        .addField(":gem:", "-Un lugar en mi oscuro CoraHeart:black_heart:")
-        .addField("Instagram", "l.Gemdelle.l",  true)
-        .addBlankField(true)
-        .addField("Twitch", "twtich.tv/Gemdelle", true)
-        message.channel.send({embed});
-    }
+    } 
 
-    if(message.content.startsWith(prefix + "Horarios")) { 
-      const embed = new Discord.RichEmbed() 
-        .setTitle("Bienvenidos al canal de horarios")
-        .setAuthor(message.author.username, message.author.avatarURL)
-        .setColor(0xc556d8)
-        .setDescription("**Mi primer stream fue el dia  15 de febrero a las 22:00 hs**")
-        .setFooter("", client.user.avatarURL)
-        .setTimestamp()
-        .addField(":alarm_clock:", "Todos los stream seran los dias")
-        .addField(":alarm_clock:", "Viernes  a las 22:00 hs PM")
-        .addField(":alarm_clock:", "Sabados a las  22:00 hs PM")
-        .addField("Instagram", "l.Gemdelle.l",  true)
-        .addBlankField(true)
-        .addField("Twitch", "twtich.tv/Gemdelle", true)
-        message.channel.send({embed});
-    }
-    
     //Server
     var server = message.guild;
     if(message.content.startsWith(prefix + "Server")) {
