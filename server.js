@@ -203,29 +203,14 @@ client.on("message", (message) => {
     if (!perms) return message.channel.send(`Que intentas hacer? eso no esta bien **${message.author.username}**😟!`);
 
     if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
+
     miembro.addRole(role)
+
     message.channel.send(`El rol fue agregado correctamente a **${miembro.user.username}**.`);
+
+
   }
-  
-    if (message.startsWith(prefix + "kick")) {
-    if (!message.member.hasPermission("KICK_MEMBERS") || !message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You don't have a permissions to do this.");
-    let user = message.mentions.users.first();
-    
-    let member = message.guild.member(user);
-    let reason = args.slice(1).join(" ");
-    
-    if (!user) return message.channel.send("Please mention the user.");
-    if (user.id === message.author.id) return message.channel.send("You can't kick yourself.");
-    if (user.id === client.user.id) return message.channel.send("You can't kick me.");
-    
-    if (!reason) reason = "No reason provided";
-    
-    member.kick(reason).then(() => {
-      message.channel.send(`Successfully kicked **${user.tag}**`);
-    }).catch(err => {
-      message.reply("I was unable to kick the member.");
-    })
-  }
+
   //msg consola
   client.on('ready', () => { });
   console.log("Actualizado");
@@ -237,7 +222,7 @@ client.on("message", (message) => {
     game: {
       name: "SN Army | -Ayuda",
       type: "STREAMING",
-      url: "https://www.twitch.tv/Cat_One"
+      url: "https://discord.gg/3HTdCDw"
 
     }
   });
