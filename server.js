@@ -138,7 +138,58 @@ client.on("message", (message) => {
       .setTimestamp()
     message.channel.send({ embed });
   }
+  if (message.content.startsWith(prefix + "Fortnite")) {
 
+    const embed = new Discord.RichEmbed()
+      .setTitle("<:Fortnite:755640673482440745> | Fortnite")
+      .setColor(0xc556d8)
+      .setDescription("• Reacciona con el emoji <:Fortnite:755640673482440745> para ver las salas del ***Fortnite***.")
+      .setFooter("SN Army", client.user.avatarURL)
+      .setTimestamp()
+    message.channel.send({ embed });
+  }
+  if (message.content.startsWith(prefix + "Lol")) {
+
+    const embed = new Discord.RichEmbed()
+      .setTitle("<:LoL:754137357015318538> | League Of Legeds")
+      .setColor(0xc556d8)
+      .setDescription("• Reacciona con el emoji <:LoL:754137357015318538> para ver las salas del ***LoL***.")
+      .setFooter("SN Army", client.user.avatarURL)
+      .setTimestamp()
+    message.channel.send({ embed });
+  }
+  if (message.content.startsWith(prefix + "Amongus")) {
+
+    const embed = new Discord.RichEmbed()
+      .setTitle("<:amongus:754139464342962266> | AmongUs")
+      .setColor(0xc556d8)
+      .setDescription("• Reacciona con el emoji <:amongus:754139464342962266> para ver las salas del ***AmongUs***.")
+      .setFooter("SN Army", client.user.avatarURL)
+      .setTimestamp()
+    message.channel.send({ embed });
+  }
+  if (message.content.startsWith(prefix + "CsGo")) {
+
+    const embed = new Discord.RichEmbed()
+      .setTitle("<:Cs:754138621669277746> | CsGo")
+      .setColor(0xc556d8)
+      .setDescription("• Reacciona con el emoji <:Cs:754138621669277746> para ver las salas del ***Cs:Go***.")
+      .setFooter("SN Army", client.user.avatarURL)
+      .setTimestamp()
+    message.channel.send({ embed });
+  }
+  if (message.content.startsWith(prefix + "CsGo")) {
+
+    const embed = new Discord.RichEmbed()
+      .setTitle("<:Cs:754138621669277746> | CsGo")
+      .setColor(0xc556d8)
+      .setDescription("• Reacciona con el emoji <:Cs:754138621669277746> para ver las salas del ***Cs:Go***.")
+      .setFooter("SN Army", client.user.avatarURL)
+      .setTimestamp()
+    message.channel.send({ embed });
+  }
+
+  
   //Server
   var server = message.guild;
   if (message.content.startsWith(prefix + "Server")) {
