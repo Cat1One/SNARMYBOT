@@ -61,7 +61,7 @@ client.on("message", (message) => {
       .setFooter("", client.user.avatarURL)
       .setTimestamp()
       .addField("**•Reglas**")
-      .addField(".", "No spamear")
+      .addField("No spamear", "*.*")
       .addField(".", "No molestar por privado")
       .addField(".", "No ser toxico")
       .addField(".", "No pasar contenido porno, hentai o gore")
