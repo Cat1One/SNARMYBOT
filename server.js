@@ -98,9 +98,9 @@ client.on("message", (message) => {
   if (message.content.startsWith(prefix + "Paises")) {
 
     const embed = new Discord.RichEmbed()
-      .setTitle(":earth_americas:| ELEGI TU PAIS")
+      .setTitle(":TwitchLogo:| TWITCH")
       .setColor(0xc556d8)
-      .setDescription("• Reacciona con :woman: para recibir el rol de mujer o con :man: para recibir el rol de hombre")
+      .setDescription("• Reacciona con el emoji :TwitchLogo: para recibir notificaciones cuando los streamers del servidor prendan.")
       .setFooter("SN Army", client.user.avatarURL)
       .setTimestamp()
     message.channel.send({ embed });
