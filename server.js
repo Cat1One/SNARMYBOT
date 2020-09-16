@@ -71,6 +71,21 @@ client.on("message", (message) => {
       .addField("Comunidad", "SN Army", true)
     message.channel.send({ embed });
   }
+  
+  if (message.content.startsWith(prefix + "Roles")) {
+
+    const embed = new Discord.RichEmbed()
+      .setTitle("🧾| Elegi tu rango")
+      .setAuthor(message.author.username, message.author.avatarURL)
+      .setColor(0xc556d8)
+      .setDescription("Hola! Soy el robot de ayuda de SN Army")
+      .setFooter("", client.user.avatarURL)
+      .setTimestamp()
+      .addField("🧾| Elegi tu rango","• Tenes que reaccionar en el emoji que se indica para cada uno")
+      .addBlankField(true)
+      .addField("Comunidad", "SN Army", true)
+    message.channel.send({ embed });
+  }
 
   //Server
   var server = message.guild;
