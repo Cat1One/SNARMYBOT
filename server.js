@@ -206,6 +206,22 @@ if (message.content.startsWith(prefix + "kick")){
     message.channel.send({ embed });
   }
 
+  //Server
+  let member = message.mentions.members.first();
+  if (message.content.startsWith(prefix + "avatar")) {
+    const embed = new Discord.RichEmbed() 
+      .setImage(member.user.displayAvatarURL)
+      .setAuthor(server.name, server.iconURL)
+      .addField('ID', server.id, true)
+      .addField('Region', server.region, true)
+      .addField('Creado el', server.joinedAt.toDateString(), true)
+      .addField('Dueño del Servidor', server.owner.user.tag + '(' + server.owner.user.id + ')', true)
+      .addField('Miembros', server.memberCount, true)
+      .addField('Roles', server.roles.size, true)
+      .setColor(0x66b3ff)
+    message.channel.send({ embed });
+  }
+  
   //Roles 
 
   if (message.content.startsWith(prefix + "Mod")) {
