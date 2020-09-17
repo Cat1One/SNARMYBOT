@@ -49,26 +49,6 @@ client.on("message", (message) => {
       .setFooter(member.guild.name)
        canal.send({ embed })
   })
-//STAFF
-
-if (message.content.startsWith(prefix + "kick")){
-    if (message.mentions.members.first()) {
-        message.mentions.members.first.kick().then((member) => {
-            message.channel.send(":wave: " + member.displayName + " has been successfully kicked :point_right: ");
-        }).catch(() => {
-            message.channel.send("I do not have permissions to do this");
-        });
-    }
-}else if (message.content.startsWith("$ban ")) {
-    if (message.mentions.members.first()) {
-        message.mentions.members.first.ban().then((member) => {
-            message.channel.send(":wave: " + member.displayName + " has been successfully banned :point_right: ");
-        }).catch(() => {
-            message.channel.send("I do not have permissions to do this");
-        });
-    }
-}
-
 //Comandos
   if (message.content.startsWith(prefix + "Reglas")) {
 
