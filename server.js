@@ -220,6 +220,12 @@ client.on("message", (message) => {
       type: "STREAMING",
       url: "https://discord.gg/3HTdCDw"
     }
+  client.on('messageReactionAdd', (messageReaction, user) => { if(user.bot) return; const { message, emoji } = messageReaction; if(emoji.name === "✅") { if(message.id === "755642229594259529") { 
+  var role = message.guild.roles.find(role => role.name === "Nem hitelesített 2")
+  user.addRole(role)
+  var role = message.guild.roles.find(role => role.name === "Nem hitelesített 1")
+  user.removeRole(role)
+}}},)
   });
 });
 client.login("NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0");

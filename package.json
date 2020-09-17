@@ -8,9 +8,10 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.16.4",
     "discord.js": "^11.5.1",
-    "http": "^0.0.0"
+    "express": "^4.16.4",
+    "http": "^0.0.0",
+    "reaction-role": "^2.1.6"
   },
   "engines": {
     "node": "8.x"
