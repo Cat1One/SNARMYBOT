@@ -37,30 +37,13 @@ let prefix = config.prefix;
 client.on("message", (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   
-  
 //Bienvenida del servidor
   client.on("guildMemberAdd", member => {
     const canal = member.guild.channels.find(c => c.name === "『✈』𝑨𝒆𝒓𝒐𝒑𝒖𝒆𝒓𝒕𝒐");
     if (!canal) return;
-    
     const embed = new Discord.RichEmbed()
-    
       .setAuthor(message.author.username, message.author.avatarURL)
       .setDescription(`<@${member.id}> Bienvenido a SN Army`)
-      .setThumbnail(member.user.displayAvatarURL)
-      .setColor("RANDOM")
-      .setFooter(member.guild.name)
-       canal.send({ embed })
-  })
-  
-  client.on("guildMemberRemove", member => {
-    const canal = member.guild.channels.find(c => c.name === "『✈』𝑨𝒆𝒓𝒐𝒑𝒖𝒆𝒓𝒕𝒐");
-    if (!canal) return;
-    
-    const embed = new Discord.RichEmbed()
-    
-      .setAuthor(message.author.username, message.author.avatarURL)
-      .setDescription(`<@${member.id}> Se ha ido de SN Army`)
       .setThumbnail(member.user.displayAvatarURL)
       .setColor("RANDOM")
       .setFooter(member.guild.name)
