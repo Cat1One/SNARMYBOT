@@ -217,34 +217,20 @@ if (message.content.startsWith(prefix + "kick")){
       .setColor(0x66b3ff)
     message.channel.send({ embed });
   }
-  
   //Roles 
-
   if (message.content.startsWith(prefix + "Mod")) {
-
     let miembro = message.mentions.members.first();
     let nombrerol = args.slice(1).join("【💚】𝗔𝗬𝗨𝗗𝗔𝗡𝗧𝗘𝗦");
     let role = message.guild.roles.find(g => g.name === '【💚】𝗔𝗬𝗨𝗗𝗔𝗡𝗧𝗘𝗦"');
     let perms = message.member.hasPermission("ADMINISTRATOR");
-
     if (!perms) return message.channel.send(`Que intentas hacer? eso no esta bien **${message.author.username}**😟!`);
-
     if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
-
     miembro.addRole(role)
-
     message.channel.send(`El rol fue agregado correctamente a **${miembro.user.username}**.`);
-
-
   }
-  
-
-
   //msg consola
   client.on('ready', () => { });
   console.log("Actualizado");
-
-
 //Estado de twitch
   client.user.setPresence({
     status: "STREAMING",
@@ -252,13 +238,7 @@ if (message.content.startsWith(prefix + "kick")){
       name: "SN Army | -Ayuda",
       type: "STREAMING",
       url: "https://discord.gg/3HTdCDw"
-
     }
   });
-
-
-
-
 });
-
 client.login("NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0");
