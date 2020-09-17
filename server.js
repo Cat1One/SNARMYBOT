@@ -31,11 +31,9 @@ let prefix = config.prefix;
 //Mensaje de inici
   client.on("ready", () => {
   console.log("Encendido");
-  client.channels.find(x => x.name === "datos").send(":crown: Iniciando sistema :crown:");
+  client.channels.find(x => x.name === "𝘾𝙊𝙉𝙁𝙄𝙂𝙐𝙍𝘼𝘾𝙄𝙊𝙉").send(":crown: Iniciando sistema :crown:");
 });
-
-client.on("message", (message) => {
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  
 //Bienvenida del servidor
   client.on("guildMemberAdd", member => {
     const canal = member.guild.channels.find(c => c.name === "『✈』𝑨𝒆𝒓𝒐𝒑𝒖𝒆𝒓𝒕𝒐");
@@ -223,10 +221,4 @@ client.on("message", (message) => {
 
     }
   });
-
-
-
-
-});
-
 client.login("NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0");
