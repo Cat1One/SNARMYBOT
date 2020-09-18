@@ -52,7 +52,7 @@ client.on("message", (message) => {
       .setAuthor(message.author.username, message.author.avatarURL)
       .setDescription(`<@${member.id}> Bienvenido a SN Army`)
       .setThumbnail(member.user.displayAvatarURL)
-      .setColor("RANDOM")
+      .setColor("RANDOM")2
       .setFooter(member.guild.name)
        canal.send({ embed })
   })
