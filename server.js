@@ -216,6 +216,7 @@ client.on("message", (message) => {
     miembro.addRole(role)
     message.channel.send(`El rol fue agregado correctamente a **${miembro.user.username}**.`);
   }
+  
   //msg consola
   client.on('ready', () => { });
   console.log("Actualizado");
