@@ -4,6 +4,7 @@ const http = require('http');
 const express = require('express');
 const app = express();
 
+//
 app.use(express.static('public'));
 
 app.get("/", function (request, response) {
@@ -19,7 +20,6 @@ app.listen(process.env.PORT);
 setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`); 
 }, 280000);
-
 
 //DESDE AQUI EMPIEZA A ESCRIBIR EL CODIGO PARA SU BOT
 
