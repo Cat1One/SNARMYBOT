@@ -46,7 +46,7 @@ client.on("message", (message) => {
   
 //Bienvenida del servidor
   client.on("guildMemberAdd", member => {
-    const canal = member.guild.channels.find(c => c.name === "『✈』𝑨𝒆𝒓𝒐𝒑𝒖𝒆𝒓𝒕𝒐");
+    const canal = member.guild.channels.find(c => c.id === "756210199622058014");
     if (!canal) return;
     const embed = new Discord.RichEmbed()
       .setAuthor(message.author.username, message.author.avatarURL)
