@@ -226,73 +226,24 @@ client.on("message", message => {
       .setColor(0x66b3ff);
     message.channel.send({ embed });
   }
-
-  client.on("message", message => {
-    const args = message.content.trim().split(/ +/g);
-    if (message.content.startsWith("/clear")) {
-      if (!message.guild.me.hasPermission("MANAGE_MESSAGES"))
-        return message.channel.send("No tengo permisos suficientes.");
-      if (!args[1])
-        return message.channel.send(
-          "Necesitas colocar el numero de mensajes que quieres eliminar, debe ser menor a 100."
-        );
-      let number = args[1];
-      if (isNaN(number))
-        return message.channel.send(
-          "Necesitas colocar un numero, no letras ni simbolos."
-        );
-      number = parseInt(number);
-      if (number >= 101 || number <= 0)
-        return message.channel.send("El valor es invalido");
-      message.channel
-        .bulkDelete(number + 1)
-        .then(() => {
-          message.channel.send("Se elimino ${number} mensajes.");
-        })
-        .catch(error => {
-          message.channel.send("Ocurrio un error: ${error.message}");
-        });
-    }
-  });
-
-  if (message.content.startsWith(prefix + "clear")) {
-    if (!message.guild.me.hasPermission("MANAGE_MESSAGES"))
-      return message.channel.send("No tengo permisos suficientes.");
-    if (!args[1])
-      return message.channel.send(
-        "Necesitas colocar el numero de mensajes que quieres eliminar, debe ser menor a 100."
-      );
-    let number = args[1];
-    if (isNaN(number))
-      return message.channel.send(
-        "Necesitas colocar un numero, no letras ni simbolos."
-      );
-    number = parseInt(number);
-    if (number >= 101 || number <= 0)
-      return message.channel.send("El valor es invalido");
-    message.channel
-      .bulkDelete(number + 1)
-      .then(() => {
-        message.channel.send("Se elimino ${number} mensajes.");
-      })
-      .catch(error => {
-        message.channel.send("Ocurrio un error: ${error.message}");
-      });
-  }
-});
 //msg consola
 client.on("ready", () => {});
 console.log("Actualizado");
 
 //Estado de twitch
-//  client.user.setPresence(){
-//    status: "online",
-//    game: {
-//      name: "SN Army | -Ayuda",
-//      type: "game",
-//     url: "https://discord.gg/3HTdCDw"
-//  }
+  client.user.setPresence({
+    status: "Streaming",
+    game: {
+      name: "SN Army | -Ayuda",
+      type: "STREAMING",
+      url: "https://discord.gg/3HTdCDw"
 
-client.user.setPresence('test', { type: 'PLAYING' });
+    }
+  });
+
+
+
+
+});
 
 client.login("NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0");
