@@ -53,8 +53,8 @@ client.on("message", (message) => {
       .setDescription(`<@${member.id}> Bienvenido a SN Army`)
       .setThumbnail(member.user.displayAvatarURL)
       .setColor("RANDOM")
-      .setFooter(member.guild.name)
-       canal.send({ embed })
+      .setFooter(message.guild.name)
+      canal.send(embed)
   })
 //Comandos
   if (message.content.startsWith(prefix + "Reglas")) {
