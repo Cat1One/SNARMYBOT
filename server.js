@@ -46,13 +46,16 @@ client.on("message", (message) => {
   
 //Bienvenida del servidor
   client.on("guildMemberAdd", member => {
+    
     const canal = member.guild.channels.find(c => c.name === "『✈』𝑨𝒆𝒓𝒐𝒑𝒖𝒆𝒓𝒕𝒐");
     if (!canal) return;
+    
     const embed = new Discord.RichEmbed()
+    
       .setAuthor(message.author.username, message.author.avatarURL)
       .setDescription(`<@${member.id}> Bienvenido a SN Army`)
       .setThumbnail(member.user.displayAvatarURL)
-      .setColor("RANDOM")2
+      .setColor("RANDOM")
       .setFooter(member.guild.name)
        canal.send({ embed })
   })
