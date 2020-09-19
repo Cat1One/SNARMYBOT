@@ -175,7 +175,8 @@ client.on("message", (message) => {
   let member = message.mentions.members.first();
   if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
   const embed = new Discord.RichEmbed() 
-      .addField(`<@${member.id}>`, "ah besado a", `<@${member.user.id}>`)
+  var messages = [
+      `https://cdn.discordapp.com/attachments/399448944889036801/664504993352515594/5738ac03-e8c8-481e-a5f9-3fa14761635f.gif
       .setImage("https://cdn.discordapp.com/attachments/399448944889036801/664504993352515594/5738ac03-e8c8-481e-a5f9-3fa14761635f.gif")
       .setColor(0x66b3ff)
     message.channel.send({ embed });
