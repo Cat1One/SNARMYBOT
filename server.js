@@ -90,7 +90,7 @@ client.on("message", (message) => {
   const embed = new Discord.RichEmbed() 
       .setImage("https://cdn.discordapp.com/attachments/399448944889036801/664504993352515594/5738ac03-e8c8-481e-a5f9-3fa14761635f.gif")
       .setAuthor(server.name, server.iconURL)  
-      .setTitle(`<@${member.id}>`, "ah besado a", `<@${member.id}>`)
+      .addField(`${message.author}`, "ah besado a", `<@${member.id}>`)
       .setColor(0x66b3ff)
     message.channel.send({ embed });};
 //////////////////////AVATAR//////////////////////
@@ -109,7 +109,6 @@ if(command === '8ball'){
     var rpts = ["Sí", "No", "¿Por qué?", "Por favor", "Tal vez", "No sé", "Definitivamente?", " ¡Claro! "," Sí "," No "," Por supuesto! "," Por supuesto que no "];
     if (!texto) return message.reply(`Escriba una pregunta.`);
     message.channel.send(`${message.author}`+ ' mi respuesta es a su pregunta es: `'+ rpts[Math.floor(Math.random() * rpts.length)]+'`');
-  
 //////////////////////MSG_CONSOLA//////////////////////
   client.on('ready', () => { });
   console.log("Actualizado");
