@@ -73,23 +73,6 @@ client.on("message", (message) => {
       .setTimestamp()
     message.channel.send({ embed });
   }
-
-  if (message.content.startsWith(prefix + "Reglas")) {
-
-    const embed = new Discord.RichEmbed()
-      .setTitle("📜 | Reglas del servidor")
-      .setColor(0xc556d8)
-      .addField("•", "No insultar")
-      .addField("•","No spamear")
-      .addField("͔•","No molestar por privado")
-      .addField("•","No ser toxico")
-      .addField("•","No pasar contenido porno, hentai o gore por general")
-      .addField("•","No acosar a ninguna persona")
-      .addField("•","No difundir informacion tanto publica como privada de las personas de dentro como externas a la comunidad")
-      .setFooter("SN Army", client.user.avatarURL)
-      .setTimestamp()
-    message.channel.send({ embed });
-  }
   
   if (message.content.startsWith(prefix + "reglas")) {
 
