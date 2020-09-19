@@ -1,0 +1,72 @@
+if (message.content.startsWith(prefix + "Roles")) {
+    const embed = new Discord.RichEmbed()
+      .setTitle("🧾| ELEGI TU RANGO")
+      .setColor(0xc556d8)
+      .setDescription("• Tenes que reaccionar en el emoji que se indica para cada uno")
+      .setFooter("SN Army", client.user.avatarURL)
+      .setTimestamp()
+    message.channel.send({ embed });
+  }
+   if (message.content.startsWith(prefix + "Generos")) {
+    const embed = new Discord.RichEmbed()
+      .setTitle("🧖| ELEGI TU GENERO")
+      .setColor(0xc556d8)
+      .setDescription("• Reacciona con :woman: para recibir el rol de mujer o con :man: para recibir el rol de hombre")
+      .setFooter("SN Army", client.user.avatarURL)
+      .setTimestamp()
+    message.channel.send({ embed });
+  }
+  if (message.content.startsWith(prefix + "Paises")) {
+
+    const embed = new Discord.RichEmbed()
+      .setTitle(":earth_americas:| ELEGI TU PAIS")
+      .setColor(0xc556d8)
+      .setDescription("• Reacciona con la bandera de tu pais para recibir el rol.")
+      .setFooter("SN Army", client.user.avatarURL)
+      .setTimestamp()
+    message.channel.send({ embed });
+  }
+  if (message.content.startsWith(prefix + "twitch")) {
+    const embed = new Discord.RichEmbed()
+      .setTitle("<:TwitchLogo:755632620368298085> | TWITCH")
+      .setColor(0xc556d8)
+      .setDescription("• Reacciona con el emoji <:TwitchLogo:755632620368298085> para recibir notificaciones cuando los streamers del servidor prendan.")
+      .setFooter("SN Army", client.user.avatarURL)
+      .setTimestamp()
+    message.channel.send({ embed });
+  }
+  if (message.content.startsWith(prefix + "economia")) {
+    const embed = new Discord.RichEmbed()
+      .setTitle(":dollar: | CASINO")
+      .setColor(0xc556d8)
+      .setDescription("• Reacciona con el emoji :dollar: para ver las salas del ***Casino***.")
+      .setFooter("SN Army", client.user.avatarURL)
+      .setTimestamp()
+    message.channel.send({ embed });
+  }
+  if (message.content.startsWith(prefix + "CsGo")) {
+    const embed = new Discord.RichEmbed()
+      .setTitle("<:Cs:754138621669277746> | CsGo")
+      .setColor(0xc556d8)
+      .setDescription("• Reacciona con el emoji <:Cs:754138621669277746> para ver las salas del ***Cs:Go***.")
+      .setFooter("SN Army", client.user.avatarURL)
+      .setTimestamp()
+    message.channel.send({ embed });
+  }
+  if (message.content.startsWith(prefix + "Fortnite")) {
+    const embed = new Discord.RichEmbed()
+      .setTitle("<:Fortnite:755640673482440745> | Fortnite")
+      .setColor(0xc556d8)
+      .setDescription("• Reacciona con el emoji <:Fortnite:755640673482440745> para ver las salas del ***Fortnite***.")
+      .setFooter("SN Army", client.user.avatarURL)
+      .setTimestamp()
+    message.channel.send({ embed });}
+
+  if (message.content.startsWith(prefix + "Lol")) {
+    const embed = new Discord.RichEmbed()
+      .setTitle("<:LoL:754137357015318538> | League Of Legeds")
+      .setColor(0xc556d8)
+      .setDescription("• Reacciona con el emoji <:LoL:754137357015318538> para ver las salas del ***LoL***.")
+      .setFooter("SN Army", client.user.avatarURL)
+      .setTimestamp()
+    message.channel.send({ embed });}
