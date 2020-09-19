@@ -194,9 +194,6 @@ if(command === '8ball'){
     var rpts = ["Sí", "No", "¿Por qué?", "Por favor", "Tal vez", "No sé", "Definitivamente?", " ¡Claro! "," Sí "," No "," Por supuesto! "," Por supuesto que no "];
     if (!texto) return message.reply(`Escriba una pregunta.`);
     message.channel.send(`${message.author}`+ ' mi respuesta es a su pregunta es: `'+ rpts[Math.floor(Math.random() * rpts.length)]+'`');
-
-
-
   
 //msg consola
   client.on('ready', () => { });
