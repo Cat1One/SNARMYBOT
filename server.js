@@ -170,7 +170,12 @@ client.on("message", (message) => {
       .addField('Roles', server.roles.size, true)
       .setColor(0x66b3ff)
     message.channel.send({ embed });
-  }
+  } 
+    let member = message.mentions.members.first();
+  if (message.content.startsWith(prefix + "avatar")) {
+  if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
+  };
+  
   //Server
   let member = message.mentions.members.first();
   if (message.content.startsWith(prefix + "avatar")) {
