@@ -170,12 +170,7 @@ client.on("message", (message) => {
   if (message.content.startsWith(prefix + "kiss")) {
   if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
   const embed = new Discord.RichEmbed() 
-  const rando_imgs = [
-'https://cdn.discordapp.com/attachments/399448944889036801/664504993352515594/5738ac03-e8c8-481e-a5f9-3fa14761635f.gif',
-'https://cdn.discordapp.com/attachments/399448944889036801/664505309624008733/e1a353af966ef00c06c39693d2e32906.gif',
-'https://cdn.discordapp.com/attachments/399448944889036801/719156428409012284/568a5017-8d0f-40ab-8576-1462a5abe68c.gif',
-  ]
-      .setImage(`rando_imgs`)
+      .setImage(https://cdn.discordapp.com/attachments/399448944889036801/664504993352515594/5738ac03-e8c8-481e-a5f9-3fa14761635f.gif)
       .setAuthor(server.name, server.iconURL)
       .addField(`${message.author} gave ${member} a hug!`)
       .setColor(0x66b3ff)
