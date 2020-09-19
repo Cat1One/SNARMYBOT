@@ -87,12 +87,12 @@ client.on("message", (message) => {
   let member = message.mentions.members.first();
   if (message.content.startsWith(prefix + "kiss")) {
   if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
-  const embed = new Discord.RichEmbed() 
+  //const embed = new Discord.RichEmbed() 
       .setImage("https://cdn.discordapp.com/attachments/399448944889036801/664504993352515594/5738ac03-e8c8-481e-a5f9-3fa14761635f.gif")
       .setAuthor(server.name, server.iconURL)  
       .addField(`${message.author}`, "ah besado a", `<@${member.id}>`)
       .setColor(0x66b3ff)
-    message.channel.send({ embed });};
+    message.channel.send};
 //////////////////////AVATAR//////////////////////
   if (message.content.startsWith(prefix + "avatar")) {
   if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
