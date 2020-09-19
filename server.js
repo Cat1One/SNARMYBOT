@@ -195,8 +195,9 @@ if(command === '8ball'){
     if (!texto) return message.reply(`Escriba una pregunta.`);
     message.channel.send(`${message.author}`+ ' mi respuesta es a su pregunta es: `'+ rpts[Math.floor(Math.random() * rpts.length)]+'`');
 
-  
 
+
+  
 //msg consola
   client.on('ready', () => { });
   console.log("Actualizado");
@@ -207,8 +208,8 @@ if(command === '8ball'){
       name: "SN Army | -Ayuda",
       type: "STREAMING",
       url: "https://discord.gg/3HTdCDw"
-    }
-  });
-}
+      }
+    });
+  }
 });
 client.login("NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0");
