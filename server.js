@@ -27,20 +27,11 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
 let prefix = config.prefix;
-
-  
-require('dotenv-flow').config();
-module.exports = {
-    owner: process.env.OWNER,
-    prefix: process.env.PREFIX
-};
-
 //Mensaje de inici
   client.on("ready", () => {
   console.log("Encendido");
   client.channels.find(x => x.name === "𝘾𝙊𝙉𝙁𝙄𝙂𝙐𝙍𝘼𝘾𝙄𝙊𝙉").send(":crown: Iniciando sistema :crown:");
 });
-
 client.on("message", (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   client.on("guildMemberAdd", member => {
@@ -71,7 +62,6 @@ client.on("message", (message) => {
       .setTimestamp()
     message.channel.send({ embed });
   }
-  
   if (message.content.startsWith(prefix + "reglas")) {
 
     const embed = new Discord.RichEmbed()
@@ -88,7 +78,6 @@ client.on("message", (message) => {
       .setTimestamp()
     message.channel.send({ embed });
   }
-  
   if (message.content.startsWith(prefix + "Roles")) {
 
     const embed = new Discord.RichEmbed()
@@ -99,8 +88,6 @@ client.on("message", (message) => {
       .setTimestamp()
     message.channel.send({ embed });
   }
-
-  
    if (message.content.startsWith(prefix + "Generos")) {
 
     const embed = new Discord.RichEmbed()
@@ -111,7 +98,6 @@ client.on("message", (message) => {
       .setTimestamp()
     message.channel.send({ embed });
   }
-
   if (message.content.startsWith(prefix + "Paises")) {
 
     const embed = new Discord.RichEmbed()
@@ -122,7 +108,6 @@ client.on("message", (message) => {
       .setTimestamp()
     message.channel.send({ embed });
   }
-  
   if (message.content.startsWith(prefix + "twitch")) {
 
     const embed = new Discord.RichEmbed()
@@ -133,7 +118,6 @@ client.on("message", (message) => {
       .setTimestamp()
     message.channel.send({ embed });
   }
-  
   if (message.content.startsWith(prefix + "economia")) {
 
     const embed = new Discord.RichEmbed()
@@ -144,7 +128,6 @@ client.on("message", (message) => {
       .setTimestamp()
     message.channel.send({ embed });
   }
-  
   if (message.content.startsWith(prefix + "CsGo")) {
 
     const embed = new Discord.RichEmbed()
@@ -156,7 +139,6 @@ client.on("message", (message) => {
     message.channel.send({ embed });
   }
   if (message.content.startsWith(prefix + "Fortnite")) {
-
     const embed = new Discord.RichEmbed()
       .setTitle("<:Fortnite:755640673482440745> | Fortnite")
       .setColor(0xc556d8)
@@ -166,7 +148,6 @@ client.on("message", (message) => {
     message.channel.send({ embed });
   }
   if (message.content.startsWith(prefix + "Lol")) {
-
     const embed = new Discord.RichEmbed()
       .setTitle("<:LoL:754137357015318538> | League Of Legeds")
       .setColor(0xc556d8)
@@ -190,7 +171,6 @@ client.on("message", (message) => {
       .setColor(0x66b3ff)
     message.channel.send({ embed });
   }
-
   //Server
   let member = message.mentions.members.first();
   if (message.content.startsWith(prefix + "avatar")) {
@@ -202,20 +182,7 @@ client.on("message", (message) => {
       .setColor(0x66b3ff)
     message.channel.send({ embed });
   }
-  //Roles 
-  
-  if (message.content.startsWith(prefix + "Mod")) {
-    let miembro = message.mentions.members.first();
-    let nombrerol = args.slice(1).join("【💚】𝗔𝗬𝗨𝗗𝗔𝗡𝗧𝗘𝗦");
-    let role = message.guild.roles.find(g => g.name === '【💚】𝗔𝗬𝗨𝗗𝗔𝗡𝗧𝗘𝗦"');
-    let perms = message.member.hasPermission("ADMINISTRATOR");
-    if (!perms) return message.channel.send(`Que intentas hacer? eso no esta bien **${message.author.username}**😟!`);
-    if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
-    miembro.addRole(role)
-    message.channel.send(`El rol fue agregado correctamente a **${miembro.user.username}**.`);
-  }
-  
-  //msg consola
+//msg consola
   client.on('ready', () => { });
   console.log("Actualizado");
 //Estado de twitch
