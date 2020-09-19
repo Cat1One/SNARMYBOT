@@ -170,9 +170,9 @@ client.on("message", (message) => {
   if (message.content.startsWith(prefix + "kiss")) {
   if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
   const embed = new Discord.RichEmbed() 
-      .setImage(https://cdn.discordapp.com/attachments/399448944889036801/664504993352515594/5738ac03-e8c8-481e-a5f9-3fa14761635f.gif)
-      .setAuthor(server.name, server.iconURL)
-      .addField(`${message.author} gave ${member} a hug!`)
+      .setImage("https://cdn.discordapp.com/attachments/399448944889036801/664504993352515594/5738ac03-e8c8-481e-a5f9-3fa14761635f.gif")
+      .setAuthor(server.name, server.iconURL)  
+      .setTitle(`<@${member.id}>`, "ah besado a", `<@${member.id}>`)
       .setColor(0x66b3ff)
     message.channel.send({ embed });
   };
@@ -186,6 +186,21 @@ client.on("message", (message) => {
       .setColor(0x66b3ff)
     message.channel.send({ embed });
   }
+  
+const command = args.shift().toLowerCase();
+if(command === 'kick' ){
+    
+    let user = message.mentions.users.first();
+    let razon = args.slice(1).join(' ');
+    
+    if (message.mentions.users.size < 1) return message.reply('Debe mencionar a alguien.').catch(console.error);
+    if (!razon) return message.channel.send('Escriba una razón, `-kick @username [razón]`');
+    if (!message.guild.member(user).kickable) return message.reply('No puedo patear al usuario mencionado.');
+     
+    message.guild.member(user).kick(razon);
+    message.channel.send(`**${user.username}**, fue pateado del servidor, razón: ${razon}.`);
+
+}
 //msg consola
   client.on('ready', () => { });
   console.log("Actualizado");
