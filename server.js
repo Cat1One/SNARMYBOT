@@ -43,8 +43,6 @@ module.exports = {
 
 client.on("message", (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  
-//Bienvenida del servidor
   client.on("guildMemberAdd", member => {
     const canal = member.guild.channels.find(c => c.id === "756210199622058014");
     if (!canal) return;
