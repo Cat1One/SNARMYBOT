@@ -188,30 +188,11 @@ client.on("message", (message) => {
   }
   
 const command = args.shift().toLowerCase();
-if(command === 'kick' ){
-    
-    let user = message.mentions.users.first();
-    let razon = args.slice(1).join(' ');
-    
-    if (message.mentions.users.size < 1) return message.reply('Debe mencionar a alguien.').catch(console.error);
-    if (!razon) return message.channel.send('Escriba una razón, `-kick @username [razón]`');
-    if (!message.guild.member(user).kickable) return message.reply('No puedo patear al usuario mencionado.');
-     
-    message.guild.member(user).kick(razon);
-    message.channel.send(`**${user.username}**, fue pateado del servidor, razón: ${razon}.`);
-};
-if(command === 'ban' ){
-
-    let user = message.mentions.users.first();
-    let razon = args.slice(1).join(' ');
-    
-    if (message.mentions.users.size < 1) return message.reply('Debe mencionar a alguien.').catch(console.error);
-    if (!razon) return message.channel.send('Escriba una razón, `-ban @username [razón]`');
-    if (!message.guild.member(user).baneable) return message.reply('No puedo banear al usuario mencionado.');
-     
-    message.guild.member(user).ban(razon);
-    message.channel.send(`**${user.username}**, fue baneado del servidor, razón: ${razon}.`);
-
+let texto = args.join(" ");
+if(command === '8ball'){
+    var rpts = ["Sí", "No", "¿Por qué?", "Por favor", "Tal vez", "No sé", "Definitivamente?", " ¡Claro! "," Sí "," No "," Por supuesto! "," Por supuesto que no "];
+    if (!texto) return message.reply(`Escriba una pregunta.`);
+    message.channel.send(`${message.author}`+ ' mi respuesta es a su pregunta es: ' '`+ rpts[Math.floor(Math.random() * rpts.length)]+`');
 }
 //msg consola
   client.on('ready', () => { });
