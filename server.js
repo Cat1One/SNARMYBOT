@@ -27,13 +27,15 @@ const config = require("./config.json");
 let prefix = config.prefix;
 const token = "NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0";
 const star = require('star-labs');
+////////////////
+client.on("ready", {} => {
+  let myGuild = client.guilds.get ("757320665576636457")
+})
 ////////////////////////////// MENSAJE DE INICIO //////////////////////////////
   client.on("ready", () => {
   console.log("Encendido");
   client.channels.find(c => c.id === "753303568676552775").send(":crown: Iniciando sistema :crown:");
 });
-
-
 ////////////////////////////// BIENVENIDA //////////////////////////////
 client.on("message", (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
