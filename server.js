@@ -25,6 +25,8 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
 let prefix = config.prefix;
+const token = "NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0";
+const PREFIX = "$";
 ////////////////////////////// MENSAJE DE INICIO //////////////////////////////
   client.on("ready", () => {
   console.log("Encendido");
@@ -92,15 +94,15 @@ client.on("message", (message) => {
   } 
 ////////////////////////////// KISS //////////////////////////////
   let member = message.mentions.members.first();
-  if (message.content.startsWith(prefix + "kiss")) {
-  if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
-  const embed = new Discord.RichEmbed() 
-      .setImage("https://cdn.discordapp.com/attachments/399448944889036801/664504993352515594/5738ac03-e8c8-481e-a5f9-3fa14761635f.gif")
-      .setAuthor(server.name, server.iconURL)  
-      .setTitle(`<@${member.id}>`, "ah besado a", `<@${member.id}>`)
-      .setColor(0x66b3ff)
-    message.channel.send({ embed });
-  };
+//  if (message.content.startsWith(prefix + "kiss")) {
+//  if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
+//  const embed = new Discord.RichEmbed() 
+//      .setImage("https://cdn.discordapp.com/attachments/399448944889036801/664504993352515594/5738ac03-e8c8-481e-a5f9-3fa14761635f.gif")
+//      .setAuthor(server.name, server.iconURL)  
+//      .setTitle(`<@${member.id}>`, "ah besado a", `<@${member.id}>`)
+//      .setColor(0x66b3ff)
+//    message.channel.send({ embed });
+//  };
 ////////////////////////////// AVATAR //////////////////////////////
   if (message.content.startsWith(prefix + "avatar")) {
   if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
@@ -112,15 +114,8 @@ client.on("message", (message) => {
     .setTimestamp()
     message.channel.send({ embed });
   }
-////////////////////////////// 8BALL //////////////////////////////
-const command = args.shift().toLowerCase();
-let texto = args.join(" ");
-if(command === '8ball'){
-    var rpts = ["Sí", "No", "¿Por qué?", "Por favor", "Tal vez", "No sé", "Definitivamente?", " ¡Claro! "," Sí "," No "," Por supuesto! "," Por supuesto que no "];
-    if (!texto) return message.reply(`Escriba una pregunta.`);
-    message.channel.send(`${message.author}`+ ' mi respuesta es a su pregunta es: `'+ rpts[Math.floor(Math.random() * rpts.length)]+'`');
-
-  function doKissAction() {
+  
+function doKissAction() {
     var rand = [
         'https://media2.giphy.com/media/G3va31oEEnIkM/giphy.gif',
         'https://media1.tenor.com/images/f5167c56b1cca2814f9eca99c4f4fab8/tenor.gif?itemid=6155657',
@@ -153,8 +148,13 @@ bot.on('message', message => {
  
    }
 })
- 
-  
+////////////////////////////// 8BALL //////////////////////////////
+const command = args.shift().toLowerCase();
+let texto = args.join(" ");
+if(command === '8ball'){
+    var rpts = ["Sí", "No", "¿Por qué?", "Por favor", "Tal vez", "No sé", "Definitivamente?", " ¡Claro! "," Sí "," No "," Por supuesto! "," Por supuesto que no "];
+    if (!texto) return message.reply(`Escriba una pregunta.`);
+    message.channel.send(`${message.author}`+ ' mi respuesta es a su pregunta es: `'+ rpts[Math.floor(Math.random() * rpts.length)]+'`');
 ////////////////////////////// Mensaje de conosla Actualizado //////////////////////////////
   client.on('ready', () => { });
   console.log("Actualizado");
@@ -171,4 +171,4 @@ bot.on('message', message => {
   }
 });
 
-client.login("NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0");
+client.login(token);
