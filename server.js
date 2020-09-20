@@ -46,6 +46,21 @@ client.on("message", (message) => {
       .setFooter(message.guild.name)
       canal.send(embed)
   })
+  
+  
+
+client.on('message', function(message) {
+    if (message.content == "-clear") {
+        if (message.member.hasPermission("MANAGE_MESSAGES")) {
+            message.channel.fetchMessages()
+               .then(function(list){
+                    message.channel.bulkDelete(list);
+                }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")})                        
+        }
+    }
+
+});
+  
 ////////////////////////////// REACION ROLE //////////////////////////////
 client.on("messageReactionAdd", async (reaction, user) => {
 
@@ -150,7 +165,7 @@ if (message.content.startsWith(prefix + "abrazo")) {//Abrimos un nuevo comando
     .setFooter(`🤗`)
     .setTimestamp();
 	message.channel.send(aC);
-	}//cerr
+	}
 ////////////////////////////// NO INVITES //////////////////////////////
     const links = ["discord.gg", "discord.me", "discord.io/", "discordapp.com/invite", "https://", "https://google.com/", "https:", "https:/", "https://discord.gg/"] // Acá colocamos los posibles links de invitación
     if (links.some(word => message.content.toLowerCase().includes(word))) { 
