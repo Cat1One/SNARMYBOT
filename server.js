@@ -94,7 +94,11 @@ if (message.content.startsWith(prefix + "fuck")) {
     .setTimestamp()
 message.channel.send(embed)}
 ////////////////////////////// SLAP //////////////////////////////
-let gifsqd = ['https://media1.tenor.com/images/114c90ecd5ed4b3dbff76938f4143c4b/tenor.gif?itemid=17355724', "https://lh3.googleusercontent.com/proxy/kSt-Gh7kSoQP409rAFFvBpPqpR7MFGK7T6OKwtlVoc6iNM9HNGB16gcLIwaLHN65n0g8hxSY9OaNz1B7Zmv34GnxAgmdnUXSikbJC5Usv4Is-DSSIYg7hl8ottk", "https://i.pinimg.com/originals/0a/aa/27/0aaa27c725ae162ded47b851e88d153b.jpg", "https://i.imgflip.com/wcluo.jpg", "https://i.imgflip.com/4/2tbtew.jpg"]
+let gifsqd = ['https://media1.tenor.com/images/114c90ecd5ed4b3dbff76938f4143c4b/tenor.gif?itemid=17355724',
+ "https://lh3.googleusercontent.com/proxy/kSt-Gh7kSoQP409rAFFvBpPqpR7MFGK7T6OKwtlVoc6iNM9HNGB16gcLIwaLHN65n0g8hxSY9OaNz1B7Zmv34GnxAgmdnUXSikbJC5Usv4Is-DSSIYg7hl8ottk",
+ "https://i.pinimg.com/originals/0a/aa/27/0aaa27c725ae162ded47b851e88d153b.jpg",
+ "https://i.imgflip.com/wcluo.jpg",
+ "https://i.imgflip.com/4/2tbtew.jpg"]
 let randomIMGEd = gifsqd[Math.floor(Math.random() * gifsqd.length)]
 
 if (message.content.startsWith(prefix + "slap")) {
@@ -118,7 +122,10 @@ let gifs = ['https://media1.tenor.com/images/ef9687b36e36605b375b4e9b0cde51db/te
  "https://cdn.discordapp.com/attachments/399448944889036801/637064446354784256/1573fc819378104b601575239683.gif",
  "https://media.discordapp.net/attachments/399448944889036801/620708483398107186/tumblr_mvrlikAfPx1rkdga9o1_500.gif",
  "https://cdn.discordapp.com/attachments/399448944889036801/719691497511059456/9f81817f-255d-47a2-9fe4-194f67d6e6ec.gif",
- "https://cdn.discordapp.com/attachments/399448944889036801/664504696547049505/a20df960-756d-49f5-96e4-6383dcb75c35.gif"]
+ "https://cdn.discordapp.com/attachments/399448944889036801/664504696547049505/a20df960-756d-49f5-96e4-6383dcb75c35.gif", 
+ "https://media1.tenor.com/images/7fd98defeb5fd901afe6ace0dffce96e/tenor.gif?itemid=9670722",
+ "https://media1.tenor.com/images/ba1841e4aeb5328e41530d3289616f46/tenor.gif?itemid=14240425",
+ "https://media1.tenor.com/images/9fac3eab2f619789b88fdf9aa5ca7b8f/tenor.gif?itemid=12925177"]
 let randomIMAGE = gifs[Math.floor(Math.random() * gifs.length)]
 
 if (message.content.startsWith(prefix + "kiss")) {
