@@ -107,9 +107,20 @@ if (message.content.startsWith(prefix + "slap")) {
     .setFooter(`👊`)
     .setTimestamp()
 message.channel.send(embed)}
+////////////////////////////// Restart //////////////////////////////
+if (message.content.startsWith(prefix + "restart")) {
+    if(message.author.bot) return; //Esto harÃ¡ que ningun bot pueda ejecutar el comando, incluyendo el nuestro.
+  
+var ids = ["355866404714577920"] //Aqui puedes poner las ids de los usuarios que quieres que puedan usar el comando, incluyendo la tuya.
 
-//
-
+if(!ids.some(ids => message.author.id == ids)) return message.channel.send(":x: Â¡No tienes permisos para usar ese comando!") //esta parte del codigo harÃ¡ que solo las ids que pusiste en el array "ids" sean las que puedan ejecutar el comando.
+    console.log(`asd`) //Se harÃ¡ un mensaje en la consola "asd", esto es opcional pero te harÃ¡ saber si se ejecuto el comando.
+    message.channel.send("`> Recargado correctamente`").then(() => {
+        client.destroy().then(() => {
+            process.exit(); //estas 3 ultimas lineas son las que hacen que se reinicie el bot.
+        });
+    }); 
+}//cerramos partes del codigo
 ////////////////////////////// Reglas //////////////////////////////
   if (message.content.startsWith(prefix + "Reglas")) {
     const embed = new Discord.RichEmbed()
