@@ -4,6 +4,7 @@ dependencies:
   express: 4.16.4
   giphy-random: 2.0.8
   http: 0.0.0
+  node-fetch: 2.6.1
   star-labs: 1.1.2
   weez: 1.6.2
 packages:
@@ -544,5 +545,6 @@ specifiers:
   express: ^4.16.4
   giphy-random: ^2.0.8
   http: ^0.0.0
+  node-fetch: ^2.6.1
   star-labs: ^1.1.2
   weez: ^1.6.2
