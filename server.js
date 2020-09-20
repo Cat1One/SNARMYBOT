@@ -80,7 +80,7 @@ if(message.content.startsWith(prefix + 'ayuda')){
                             ''+prefix+'reglas    :: Muestra las reglas del servidor.\n'+
                             ''+prefix+'server    :: Muestra la informacion del servidor.\n'+
                             ''+prefix+'avatar    :: Muestra el avatar de un usuario.\n'+
-                            ''+prefix+'8ball     :: te responde que si, no, probablem.\\n```\n\n'+
+                            ''+prefix+'8ball     :: te responde que si, no, probablemente.\n```\n'+
                             '**Bot privado de SN Army**');
         
       }
@@ -108,6 +108,20 @@ if (message.content.startsWith(prefix + "slap")) {
     const embed = new Discord.RichEmbed() 
     .setDescription(`${message.author} le dio una cachetada a **${user}**`)
     .setImage(randomIMGEd)
+    .setColor("RANDOM")
+    .setFooter(`👊`)
+    .setTimestamp()
+message.channel.send(embed)}
+////////////////////////////// SLAP //////////////////////////////
+let gifs = ['https://media1.tenor.com/images/ef9687b36e36605b375b4e9b0cde51db/tenor.gif?itemid=12498627', "https://lh3.googleusercontent.com/proxy/kSt-Gh7kSoQP409rAFFvBpPqpR7MFGK7T6OKwtlVoc6iNM9HNGB16gcLIwaLHN65n0g8hxSY9OaNz1B7Zmv34GnxAgmdnUXSikbJC5Usv4Is-DSSIYg7hl8ottk", "https://i.pinimg.com/originals/0a/aa/27/0aaa27c725ae162ded47b851e88d153b.jpg", "https://i.imgflip.com/wcluo.jpg", "https://i.imgflip.com/4/2tbtew.jpg"]
+let randomIMAGE = gifs[Math.floor(Math.random() * gifs.length)]
+
+if (message.content.startsWith(prefix + "kiss")) {
+  var user = message.mentions.members.first()
+  if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
+    const embed = new Discord.RichEmbed() 
+    .setDescription(`${message.author} le dio una cachetada a **${user}**`)
+    .setImage(randomIMAGE)
     .setColor("RANDOM")
     .setFooter(`👊`)
     .setTimestamp()
