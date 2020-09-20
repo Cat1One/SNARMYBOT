@@ -28,12 +28,15 @@ let prefix = config.prefix;
 const token = "NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0";
 const star = require('star-labs');
 ////////////////
-client.on("ready", {} => {
+client.on("ready", () => {
   let myGuild = client.guilds.get ("738198243552526366");
   let memberCount = myGuild.memberCount;
   console.log(memberCount);
-  let memberCountChannel = myGuild.channels.get("")
-})
+  let memberCountChannel = myGuild.channels.get("757320665576636457");
+  memberCountChannel.setName("Members:" +memberCount)
+  .then(result => console.log(result))
+  .catch(error => console.log (error));
+});
 ////////////////////////////// MENSAJE DE INICIO //////////////////////////////
   client.on("ready", () => {
   console.log("Encendido");
