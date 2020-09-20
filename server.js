@@ -79,6 +79,7 @@ if (message.content.startsWith(prefix + "kiss")) {
     .setDescription(`${message.author} ah besado a **${user}**`)
     .setImage(randomIMG)
     .setColor("RANDOM")
+    .setFooter("💋")
     .setTimestamp()
 message.channel.send(embed)}
 ////////////////////////////// Reglas //////////////////////////////
