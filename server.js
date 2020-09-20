@@ -45,7 +45,27 @@ client.on("message", (message) => {
       .setFooter(message.guild.name)
       canal.send(embed)
   })
+  
+client.on("messageReactionAdd", async (reaction, user) => {
 
+const emoji = "â";
+
+const channel = client.channels.cache.get("755642173801758750") // Aca pondremos la ID del canal en donde estara el mensaje a reaccionar
+const m = await channel.messages.fetch("755642214264209408"); // Y este sera el mensaje a donde se reaccionara para verificarse.
+
+// Procedemos a verificar
+
+if (reaction.emoji.name == emoji && reaction.message.id == m.id) {
+
+// Si se cumple procederemos a dar el rol
+
+const member = await reaction.message.guild.members.fetch(user.id)
+member.roles.add("757183302791725112");
+
+}
+
+});
+////////////////////////////// kiss //////////////////////////////
 let gifs = ['https://cdn.discordapp.com/attachments/399448944889036801/664505452792381460/c0aa038091b778c5f22f82e6245c8e43.gif', 'https://cdn.discordapp.com/attachments/399448944889036801/734823235018817536/tenor-2.gif', 'https://cdn.discordapp.com/attachments/399448944889036801/664505452792381460/c0aa038091b778c5f22f82e6245c8e43.gif'] /* Creamos un array con los GIFS que pueden salir */
 let randomIMG = gifs[Math.floor(Math.random() * gifs.length)] /* Esto harÃÂ¡ que obtengamos un elemento aleatorio del array "GIFS" */
 
