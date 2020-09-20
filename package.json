@@ -13,7 +13,8 @@
     "express": "^4.16.4",
     "giphy-random": "^2.0.8",
     "http": "^0.0.0",
-    "star-labs": "^1.1.2"
+    "star-labs": "^1.1.2",
+    "weez": "^1.6.2"
   },
   "engines": {
     "node": "8.x"

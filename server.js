@@ -132,7 +132,10 @@ if (message.content.startsWith(prefix + "abrazo")) {//Abrimos un nuevo comando
     .setTimestamp();
 	message.channel.send(aC);
 	}//cerr
-  
+
+
+
+
 ////////////////////////////// Restart //////////////////////////////
 if (message.content.startsWith(prefix + "restart")) {
     if(message.author.bot) return; //Esto harÃ¡ que ningun bot pueda ejecutar el comando, incluyendo el nuestro.
