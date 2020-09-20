@@ -4,6 +4,7 @@ dependencies:
   express: 4.16.4
   giphy-random: 2.0.8
   http: 0.0.0
+  math-expression-evaluator: 1.2.22
   node-fetch: 2.6.1
   star-labs: 1.1.2
   weez: 1.6.2
@@ -301,6 +302,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5bY4JNZEwbUiMhV+MA==
+  /math-expression-evaluator/1.2.22:
+    dev: false
+    resolution:
+      integrity: sha512-L0j0tFVZBQQLeEjmWOvDLoRciIY8gQGWahvkztXUal8jH8R5Rlqo9GCvgqvXcy9LQhEWdQCVvzqAbxgYNt4blQ==
   /media-typer/0.3.0:
     dev: false
     engines:
@@ -545,6 +550,7 @@ specifiers:
   express: ^4.16.4
   giphy-random: ^2.0.8
   http: ^0.0.0
+  math-expression-evaluator: ^1.2.22
   node-fetch: ^2.6.1
   star-labs: ^1.1.2
   weez: ^1.6.2

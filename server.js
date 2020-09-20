@@ -66,20 +66,31 @@ member.roles.add("757183302791725112");
 }
 
 });
-////////////////////////////// kiss //////////////////////////////
-let gifs = ['https://cdn.discordapp.com/attachments/399448944889036801/664505452792381460/c0aa038091b778c5f22f82e6245c8e43.gif', 'https://cdn.discordapp.com/attachments/399448944889036801/734823235018817536/tenor-2.gif', 'https://cdn.discordapp.com/attachments/399448944889036801/664504993352515594/5738ac03-e8c8-481e-a5f9-3fa14761635f.gif'] /* Creamos un array con los GIFS que pueden salir */
-let randomIMG = gifs[Math.floor(Math.random() * gifs.length)] /* Esto harÃÂ¡ que obtengamos un elemento aleatorio del array "GIFS" */
 
-if (message.content.startsWith(prefix + "kiss")) {
-  var user = message.mentions.members.first()
-  if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
-    const embed = new Discord.RichEmbed() 
-    .setDescription(`${message.author} ah besado a **${user}**`)
-    .setImage(randomIMG)
-    .setColor("RANDOM")
-    .setFooter("💋")
-    .setTimestamp()
-message.channel.send(embed)}
+
+	
+if(message.content.startsWith(prefix + 'ayuda')){
+
+        message.channel.send('**'+message.author.username+'**, Revisa tus mensajes privados.');
+        message.author.send('**Comandos de Ukiyo Server**\n```\n'+
+                            ''+prefix+'fuck              :: Comprueba la latencia del bot y de tus mensajes.\n'+
+                            ''+prefix+'slap              :: Comprueba la latencia del bot y de tus mensajes.\n'+
+                            ''+prefix+'abrazo            :: Comprueba la latencia del bot y de tus mensajes.\n'+
+                            ''+prefix+'reglas            :: Comprueba la latencia del bot y de tus mensajes.\n'+
+                            ''+prefix+'avatar <@usuario> :: Muestra el avatar de un usuario.\n'+
+                            ''+prefix+'usuario <@usuario>:: Muestra información sobre un usuario.\n'+
+                            ''+prefix+'infoserver        :: Muestra información de un servidor.\n'+
+                            ''+prefix+'amor              :: te da el % de el amor que los 2 se tienen.\n'+
+                            ''+prefix+'8ball             :: te responde que si, no, probablemenre, (solo pregunta si o no).\n'+
+                            ''+prefix+'yodire            :: el bot dira lo que tu quieras.\n'+
+                            ''+prefix+'oficial           :: el bot de dira algo.\n'+  
+                            ''+prefix+'------------------:: ------------------------------.\n'+  
+                            ''+prefix+'------------------:: ------------------------------.\n```\n\n'+
+ 
+
+                            '**da una descripción abajo de el help **\n **esto es lo mismo');
+        
+      }
 ////////////////////////////// Fuck //////////////////////////////
 let gifsq = ['https://i.imgur.com/FZJOBUW.jpg', 'https://i.imgur.com/AXS3l0D.png', 'https://i.imgur.com/MSXa2yP.jpg', "https://bootyoftheday.co/wp-content/uploads/2012/07/sfw-xxx-1.gif"] /* Creamos un array con los GIFS que pueden salir */
 let randomIMGE = gifsq[Math.floor(Math.random() * gifsq.length)] /* Esto harÃÂ¡ que obtengamos un elemento aleatorio del array "GIFS" */
@@ -132,10 +143,6 @@ if (message.content.startsWith(prefix + "abrazo")) {//Abrimos un nuevo comando
     .setTimestamp();
 	message.channel.send(aC);
 	}//cerr
-
-
-
-
 ////////////////////////////// Restart //////////////////////////////
 if (message.content.startsWith(prefix + "restart")) {
     if(message.author.bot) return; //Esto harÃ¡ que ningun bot pueda ejecutar el comando, incluyendo el nuestro.
