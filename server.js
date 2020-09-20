@@ -47,20 +47,26 @@ client.on("message", (message) => {
       canal.send(embed)
   })
   
-  
+////////////////////////////// CLEAR //////////////////////////////
+client.on("message", message => {
+  const args = message.content.trim().split(/ +/g);
+  if(message.content.startsWith("-clear")){
+    if(!message.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send("No tenes permisos suficientes.")
+    if(!args[1]) return message.channel.send("Necesitas colocar un numero entre 1 y 99.")
+    let number = args[1]
+    if(isNaN(number)) return message.channel.send("Necesitas colocar un numero")
+    number = parseInt(number)
+    if(number >= 101 || number <= 0) return message.channel.send("El valor es invalido")
+    if(message.content.startsWith("-clear"))
+    message.channel.bulkDelete(number + 1 ).then( () => {
+    message.channel.send(`Se han borrado ${number} mensajes`)
+    }).catch(error => {
+    message.channel.send(`Ocurrio un error: ${error.message}`)
+    })
 
-client.on('message', function(message) {
-    if (message.content == "-clear") {
-        if (message.member.hasPermission("MANAGE_MESSAGES")) {
-            message.channel.fetchMessages()
-               .then(function(list){
-                    message.channel.bulkDelete(list);
-                }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")})                        
-        }
-    }
-
+  }
 });
-  
+
 ////////////////////////////// REACION ROLE //////////////////////////////
 client.on("messageReactionAdd", async (reaction, user) => {
 
