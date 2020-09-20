@@ -46,16 +46,21 @@ client.on("message", (message) => {
       canal.send(embed)
   })
 
-let gifs = ['URL1', 'URL2', 'URL3'] /* Creamos un array con los GIFS que pueden salir */
+let gifs = ['https://cdn.discordapp.com/attachments/399448944889036801/664505452792381460/c0aa038091b778c5f22f82e6245c8e43.gif', 'https://cdn.discordapp.com/attachments/399448944889036801/734823235018817536/tenor-2.gif', 'https://cdn.discordapp.com/attachments/399448944889036801/664505452792381460/c0aa038091b778c5f22f82e6245c8e43.gif'] /* Creamos un array con los GIFS que pueden salir */
 let randomIMG = gifs[Math.floor(Math.random() * gifs.length)] /* Esto harÃÂ¡ que obtengamos un elemento aleatorio del array "GIFS" */
 
 
 /* Ahora Mandaremos el link en un embed 
 VERSION 11 */
-const embed = new Discord.RichEmbed()
+if (message.content.startsWith(prefix + "kiss")) {
+  var user = message.mentions.members.first()
+  if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
+    const embed = new Discord.RichEmbed() 
+    .setDescription(`${message.author} ah besado a **${user}**`)
     .setImage(randomIMG)
     .setColor("RANDOM")
-message.channel.send(embed)
+    .setTimestamp()
+message.channel.send(embed)}
 ////////////////////////////// Reglas //////////////////////////////
   if (message.content.startsWith(prefix + "Reglas")) {
     const embed = new Discord.RichEmbed()
