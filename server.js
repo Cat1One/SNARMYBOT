@@ -113,7 +113,7 @@ if (message.content.startsWith(prefix + "slap")) {
     .setTimestamp()
 message.channel.send(embed)}
 ////////////////////////////// SLAP //////////////////////////////
-let gifs = ['https://media1.tenor.com/images/ef9687b36e36605b375b4e9b0cde51db/tenor.gif?itemid=12498627', "https://lh3.googleusercontent.com/proxy/kSt-Gh7kSoQP409rAFFvBpPqpR7MFGK7T6OKwtlVoc6iNM9HNGB16gcLIwaLHN65n0g8hxSY9OaNz1B7Zmv34GnxAgmdnUXSikbJC5Usv4Is-DSSIYg7hl8ottk", "https://i.pinimg.com/originals/0a/aa/27/0aaa27c725ae162ded47b851e88d153b.jpg", "https://i.imgflip.com/wcluo.jpg", "https://i.imgflip.com/4/2tbtew.jpg"]
+let gifs = ['https://media1.tenor.com/images/ef9687b36e36605b375b4e9b0cde51db/tenor.gif?itemid=12498627', "https://media1.tenor.com/images/e7036cbfd163f0925f0dc54d2b61dc61/tenor.gif?itemid=13795595", "https://media1.tenor.com/images/032e9030c99df76b4e191f1fce42a04d/tenor.gif?itemid=10053867", ]
 let randomIMAGE = gifs[Math.floor(Math.random() * gifs.length)]
 
 if (message.content.startsWith(prefix + "kiss")) {
@@ -225,9 +225,9 @@ if(!ids.some(ids => message.author.id == ids)) return message.channel.send(":x: 
 const command = args.shift().toLowerCase();
 let texto = args.join(" ");
 if(command === '8ball'){
-    var rpts = ["Sí", "No", "¿Por qué?", "Por favor", "Tal vez", "No sé", "Definitivamente?", " ¡Claro! "," Sí "," No "," Por supuesto! "," Por supuesto que no "];
+    var rpts = ["Sí", "No", "¿Por qué?", "Por favor", "Tal vez", "No sé", "Definitivamente", " ¡Claro! "," Sí "," No "," Por supuesto! "," Por supuesto que no "];
     if (!texto) return message.reply(`Escriba una pregunta.`);
-    message.channel.send(`${message.author}`+ ' mi respuesta es a su pregunta es: `'+ rpts[Math.floor(Math.random() * rpts.length)]+'`');
+    message.channel.send(`${message.author}`+ ' mi respuesta a su pregunta es: `'+ rpts[Math.floor(Math.random() * rpts.length)]+'`');
 ////////////////////////////// Mensaje de conosla Actualizado //////////////////////////////
   client.on('ready', () => { });
   console.log("Actualizado");
