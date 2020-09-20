@@ -27,7 +27,6 @@ const config = require("./config.json");
 let prefix = config.prefix;
 const token = "NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0";
 const star = require('star-labs');
-client.on("message", (message) => {
 ////////////////
 client.on("ready", () => {
   let myGuild = client.guilds.get ("738198243552526366");
@@ -44,7 +43,8 @@ client.on("ready", () => {
   client.channels.find(c => c.id === "753303568676552775").send(":crown: Iniciando sistema :crown:");
 });
 ////////////////////////////// BIENVENIDA //////////////////////////////
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+client.on("message", (message) => {
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);  
    client.on("guildMemberAdd", member => {
     const canal = member.guild.channels.find(c => c.id === "756210199622058014");
     if (!canal) return;
