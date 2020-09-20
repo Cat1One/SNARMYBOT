@@ -262,11 +262,11 @@ if(command === '8ball'){
 ////////////////////////////// Mensaje de conosla Actualizado //////////////////////////////
   client.on('ready', () => { });
   console.log("Actualizado");
-if(message.content.startsWith("f")){
-       // message.channel.send('**'+message.author.username+'**, Revisa tus mensajes privados.');
-        message.channel.send('F, amigo sos alto pete');
-        
-      }
+/////////////
+
+  if(message.content === "f") {
+    message.channel.send("f, amigo");
+  }
 ////////////////////////////// Estado //////////////////////////////
   client.user.setPresence({
     status: "STREAMING",
@@ -279,4 +279,6 @@ if(message.content.startsWith("f")){
     });
   }
 });
+
+
 client.login(token);
