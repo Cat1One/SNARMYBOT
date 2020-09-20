@@ -71,24 +71,17 @@ member.roles.add("757183302791725112");
 	
 if(message.content.startsWith(prefix + 'ayuda')){
 
-        message.channel.send('**'+message.author.username+'**, Revisa tus mensajes privados.');
-        message.author.send('**Comandos de Ukiyo Server**\n```\n'+
-                            ''+prefix+'fuck              :: Comprueba la latencia del bot y de tus mensajes.\n'+
-                            ''+prefix+'slap              :: Comprueba la latencia del bot y de tus mensajes.\n'+
-                            ''+prefix+'abrazo            :: Comprueba la latencia del bot y de tus mensajes.\n'+
-                            ''+prefix+'reglas            :: Comprueba la latencia del bot y de tus mensajes.\n'+
-                            ''+prefix+'avatar <@usuario> :: Muestra el avatar de un usuario.\n'+
-                            ''+prefix+'usuario <@usuario>:: Muestra información sobre un usuario.\n'+
-                            ''+prefix+'infoserver        :: Muestra información de un servidor.\n'+
-                            ''+prefix+'amor              :: te da el % de el amor que los 2 se tienen.\n'+
-                            ''+prefix+'8ball             :: te responde que si, no, probablemenre, (solo pregunta si o no).\n'+
-                            ''+prefix+'yodire            :: el bot dira lo que tu quieras.\n'+
-                            ''+prefix+'oficial           :: el bot de dira algo.\n'+  
-                            ''+prefix+'------------------:: ------------------------------.\n'+  
-                            ''+prefix+'------------------:: ------------------------------.\n```\n\n'+
- 
-
-                            '**da una descripción abajo de el help **\n **esto es lo mismo');
+       // message.channel.send('**'+message.author.username+'**, Revisa tus mensajes privados.');
+        message.channel.send('**Comandos de SN Army**\n```\n'+
+                            ''+prefix+'fuck      :: Te cojes al usuario arrobado.\n'+
+                            ''+prefix+'slap      :: Cacheteas al usuario arrobado.\n'+
+                            ''+prefix+'kiss      :: Besas al usuario arrobado.\n'+
+                            ''+prefix+'abrazo    :: Abrazas al usuario arrobado.\n'+
+                            ''+prefix+'reglas    :: Muestra las reglas del servidor.\n'+
+                            ''+prefix+'server    :: Muestra la informacion del servidor.\n'+
+                            ''+prefix+'avatar    :: Muestra el avatar de un usuario.\n'+
+                            ''+prefix+'8ball     :: te responde que si, no, probablem.\\n```\n\n'+
+                            '**Bot privado de SN Army**');
         
       }
 ////////////////////////////// Fuck //////////////////////////////
@@ -128,7 +121,6 @@ message.channel.send(embed)}
           message.reply("No links.").then((response) => {
       response.delete(6000);
       }); 
-
     }
   
 if (message.content.startsWith(prefix + "abrazo")) {//Abrimos un nuevo comando
@@ -203,18 +195,8 @@ if(!ids.some(ids => message.author.id == ids)) return message.channel.send(":x: 
       .setColor(0x66b3ff)
     message.channel.send({ embed });
   } 
-////////////////////////////// KISS //////////////////////////////
+////////////////////////////// Avatar //////////////////////////////
   let member = message.mentions.members.first();
-//  if (message.content.startsWith(prefix + "kiss")) {
-//  if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
-//  const embed = new Discord.RichEmbed() 
-//      .setImage("https://cdn.discordapp.com/attachments/399448944889036801/664504993352515594/5738ac03-e8c8-481e-a5f9-3fa14761635f.gif")
-//      .setAuthor(server.name, server.iconURL)  
-//      .setTitle(`<@${member.id}>`, "ah besado a", `<@${member.id}>`)
-//      .setColor(0x66b3ff)
-//    message.channel.send({ embed });
-//  };
-////////////////////////////// AVATAR //////////////////////////////
   if (message.content.startsWith(prefix + "avatar")) {
   if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
     const embed = new Discord.RichEmbed() 
