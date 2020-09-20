@@ -88,40 +88,42 @@ client.on("message", (message) => {
   if (message.content.startsWith(prefix + "kiss")) {
   if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
   const embed = new Discord.RichEmbed() 
-      .setImage("https://cdn.discordapp.com/attachments/399448944889036801/664504993352515594/5738ac03-e8c8-481e-a5f9-3fa14761635f.gif")
-      .setAuthor(server.name, server.iconURL)  
-      .addField(`${message.author}`, "ah besado a", `<@${member.id}>`)
-      .setColor(0x66b3ff)
-    message.channel.send({ embed });};
+    .setImage("https://cdn.discordapp.com/attachments/399448944889036801/664504993352515594/5738ac03-e8c8-481e-a5f9-3fa14761635f.gif")
+    .setAuthor(server.name, server.iconURL)  
+    .addField(`<@${member.id}>`, "ah besado a")
+    .setColor(0x66b3ff)
+    .setTimestamp()
+    message.channel.send({ embed });}
 //////////////////////AVATAR//////////////////////
   if (message.content.startsWith(prefix + "avatar")) {
-  if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
-      const embed = new Discord.RichEmbed() 
+   if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
+    const embed = new Discord.RichEmbed() 
       .setImage(member.user.displayAvatarURL)
       .setAuthor(server.name, server.iconURL)
       .addField("Aca tenes el avatar", `<@${member.id}>`)
       .setColor(0x66b3ff)
-    message.channel.send({ embed });}
+      .setTimestamp()
+      message.channel.send({ embed });}
 //////////////////////8Ball//////////////////////
 const command = args.shift().toLowerCase();
 let texto = args.join(" ");
 if(command === '8ball'){
-    var rpts = ["Sí", "No", "¿Por qué?", "Por favor", "Tal vez", "No sé", "Definitivamente?", " ¡Claro! "," Sí "," No "," Por supuesto! "," Por supuesto que no "];
+    var rpts = ["Sí", "No", "¿Por qué?", "Por favor", "Tal vez", "No sé", "Definitivamente", " ¡Claro! "," Sí "," No "," Por supuesto! "," Por supuesto que no "];
     if (!texto) return message.reply(`Escriba una pregunta.`);
     message.channel.send(`${message.author}`+ ' mi respuesta es a su pregunta es: `'+ rpts[Math.floor(Math.random() * rpts.length)]+'`');
 //////////////////////MSG_CONSOLA//////////////////////
+  
   client.on('ready', () => { });
   console.log("Actualizado");
 //Estado de twitch
   client.user.setPresence({
-    status: "Streaming",
+    status: "STREAMING",
     game: {
       name: "SN Army | -Ayuda",
       type: "STREAMING",
       url: "https://discord.gg/3HTdCDw"
-
     }
-  });
+    });
   }
 });
 client.login("NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0");
