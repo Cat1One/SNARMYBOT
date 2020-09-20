@@ -43,6 +43,7 @@ client.on("ready", () => {
   client.channels.find(c => c.id === "753303568676552775").send(":crown: Iniciando sistema :crown:");
 });
 ////////////////////////////// BIENVENIDA //////////////////////////////
+
 client.on("message", (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   client.on("guildMemberAdd", member => {
@@ -55,7 +56,7 @@ client.on("message", (message) => {
       .setColor("RANDOM")
       .setFooter(message.guild.name)
       canal.send(embed)
-  })  
+  });
 ////////////////////////////// CLEAR //////////////////////////////
 client.on("message", message => {
   const args = message.content.trim().split(/ +/g);
