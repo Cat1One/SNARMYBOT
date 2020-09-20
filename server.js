@@ -93,20 +93,23 @@ if (message.content.startsWith(prefix + "fuck")) {
     .setFooter("🍆")
     .setTimestamp()
 message.channel.send(embed)}
-////////////////////////////// Fuck //////////////////////////////
-let gifsqd = ['https://i.imgur.com/FZJOBUW.jpg', 'https://i.imgur.com/AXS3l0D.png', 'https://i.imgur.com/MSXa2yP.jpg', "https://bootyoftheday.co/wp-content/uploads/2012/07/sfw-xxx-1.gif"]
+////////////////////////////// SLAP //////////////////////////////
+let gifsqd = ['https://media1.tenor.com/images/114c90ecd5ed4b3dbff76938f4143c4b/tenor.gif?itemid=17355724', "https://lh3.googleusercontent.com/proxy/kSt-Gh7kSoQP409rAFFvBpPqpR7MFGK7T6OKwtlVoc6iNM9HNGB16gcLIwaLHN65n0g8hxSY9OaNz1B7Zmv34GnxAgmdnUXSikbJC5Usv4Is-DSSIYg7hl8ottk", "https://i.pinimg.com/originals/0a/aa/27/0aaa27c725ae162ded47b851e88d153b.jpg", "https://i.imgflip.com/wcluo.jpg", "https://i.imgflip.com/4/2tbtew.jpg"]
 let randomIMGEd = gifsqd[Math.floor(Math.random() * gifsqd.length)]
 
 if (message.content.startsWith(prefix + "slap")) {
   var user = message.mentions.members.first()
   if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
     const embed = new Discord.RichEmbed() 
-    .setDescription(`${message.author} le rompio la cola a **${user}**`)
+    .setDescription(`${message.author} le dio una cachetada a **${user}**`)
     .setImage(randomIMGEd)
     .setColor("RANDOM")
-    .setFooter(`<:Cs:754138621669277746>`)
+    .setFooter(`👊`)
     .setTimestamp()
 message.channel.send(embed)}
+
+//
+
 ////////////////////////////// Reglas //////////////////////////////
   if (message.content.startsWith(prefix + "Reglas")) {
     const embed = new Discord.RichEmbed()
