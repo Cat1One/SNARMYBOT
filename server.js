@@ -32,6 +32,7 @@ const star = require('star-labs');
   console.log("Encendido");
   client.channels.find(c => c.id === "753303568676552775").send(":crown: Iniciando sistema :crown:");
 });
+
 ////////////////////////////// BIENVENIDA //////////////////////////////
 client.on("message", (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
