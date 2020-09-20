@@ -112,15 +112,15 @@ if(command === '8ball'){
     if (!texto) return message.reply(`Escriba una pregunta.`);
     message.channel.send(`${message.author}`+ ' mi respuesta es a su pregunta es: `'+ rpts[Math.floor(Math.random() * rpts.length)]+'`');
 // When bot ready
-bot.on("ready", async () => {
-  console.log(`${bot.user.username} is ready for action!`);
-  if (config.activity.streaming == true) {
-    bot.user.setActivity(config.activity.game, {url: 'https://twitch.tv/Cat_One'});
-  } else {
-    bot.user.setActivity(config.activity.game, {type: 'WATCHING'});//PLAYING, LISTENING, WATCHING
-    bot.user.setStatus('online'); // dnd, idle, online, invisible
-  }
-});
-  }
+function presence(){
+   client.user.setPresence({
+      status: "online",
+      game: {
+         name: "ser un bot.",
+         type: "PLAYING"
+      }
+   });
+}
+}
 });
 client.login("NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0");
