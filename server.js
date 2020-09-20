@@ -26,6 +26,7 @@ const client = new Discord.Client();
 const config = require("./config.json");
 let prefix = config.prefix;
 const token = "NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0";
+const star = require('star-labs');
 ////////////////////////////// MENSAJE DE INICIO //////////////////////////////
   client.on("ready", () => {
   console.log("Encendido");
@@ -118,6 +119,19 @@ message.channel.send(embed)}
       }); 
 
     }
+  
+if (message.content.startsWith(prefix + "abrazo")) {//Abrimos un nuevo comando
+	message.delete()
+	let aA = message.author
+	let aB = message.mentions.users.first()//utilizamos las menciones
+	if(!aB) return message.channel.send('Debe mencionar a un miembro.');//Si no se menciona a alguien, el bot enviará esto.
+	const aC = new Discord.RichEmbed()//Podeis cambiar el embed a nuestro gusto
+    .setDescription(aA.tag+' abrazó a '+aB.tag)
+    .setImage(star.hug())
+    .setFooter(`🤗`)
+    .setTimestamp();
+	message.channel.send(aC);
+	}//cerr
   
 ////////////////////////////// Restart //////////////////////////////
 if (message.content.startsWith(prefix + "restart")) {
