@@ -46,7 +46,7 @@ client.on("message", (message) => {
       .setFooter(message.guild.name)
       canal.send(embed)
   })
-  
+////////////////////////////// REACION ROLE //////////////////////////////
 client.on("messageReactionAdd", async (reaction, user) => {
 
 const emoji = "😋";
@@ -62,15 +62,10 @@ if (reaction.emoji.name == emoji && reaction.message.id == m.id) {
 
 const member = await reaction.message.guild.members.fetch(user.id)
 member.roles.add("757183302791725112");
-
 }
-
 });
-
-
-	
+////////////////////////////// AYDA //////////////////////////////
 if(message.content.startsWith(prefix + 'ayuda')){
-
        // message.channel.send('**'+message.author.username+'**, Revisa tus mensajes privados.');
         message.channel.send('**Comandos de SN Army**\n```\n'+
                             ''+prefix+'fuck      :: Te cojes al usuario arrobado.\n'+
@@ -84,7 +79,7 @@ if(message.content.startsWith(prefix + 'ayuda')){
                             '**Bot privado de SN Army**');
         
       }
-////////////////////////////// Fuck //////////////////////////////
+////////////////////////////// FUCK //////////////////////////////
 let gifsq = ['https://i.imgur.com/FZJOBUW.jpg', 'https://i.imgur.com/AXS3l0D.png', 'https://i.imgur.com/MSXa2yP.jpg', "https://bootyoftheday.co/wp-content/uploads/2012/07/sfw-xxx-1.gif"] /* Creamos un array con los GIFS que pueden salir */
 let randomIMGE = gifsq[Math.floor(Math.random() * gifsq.length)] /* Esto harÃÂ¡ que obtengamos un elemento aleatorio del array "GIFS" */
 
@@ -112,8 +107,18 @@ if (message.content.startsWith(prefix + "slap")) {
     .setFooter(`👊`)
     .setTimestamp()
 message.channel.send(embed)}
-////////////////////////////// SLAP //////////////////////////////
-let gifs = ['https://media1.tenor.com/images/ef9687b36e36605b375b4e9b0cde51db/tenor.gif?itemid=12498627', "https://media1.tenor.com/images/e7036cbfd163f0925f0dc54d2b61dc61/tenor.gif?itemid=13795595", "https://media1.tenor.com/images/032e9030c99df76b4e191f1fce42a04d/tenor.gif?itemid=10053867", ]
+////////////////////////////// KISS //////////////////////////////
+let gifs = ['https://media1.tenor.com/images/ef9687b36e36605b375b4e9b0cde51db/tenor.gif?itemid=12498627',
+ "https://media1.tenor.com/images/e7036cbfd163f0925f0dc54d2b61dc61/tenor.gif?itemid=13795595",
+ "https://media1.tenor.com/images/032e9030c99df76b4e191f1fce42a04d/tenor.gif?itemid=10053867",
+ "https://cdn.discordapp.com/attachments/399448944889036801/591807897726353420/e3b67a7fd7a47e62f1b2cd98d3253887.gif",
+ "https://cdn.discordapp.com/attachments/399448944889036801/597193605379129369/823f938940fad33774f557c8a45a68ac.gif",
+ "https://cdn.discordapp.com/attachments/399448944889036801/712016513154023474/dasbj5r-910436e0-aacd-430b-a58c-954240190ab2.gif",
+ "https://cdn.discordapp.com/attachments/399448944889036801/636967743312101376/e4c4a9b0752235cc4f0f85df8e4007e8.gif",
+ "https://cdn.discordapp.com/attachments/399448944889036801/637064446354784256/1573fc819378104b601575239683.gif",
+ "https://media.discordapp.net/attachments/399448944889036801/620708483398107186/tumblr_mvrlikAfPx1rkdga9o1_500.gif",
+ "https://cdn.discordapp.com/attachments/399448944889036801/719691497511059456/9f81817f-255d-47a2-9fe4-194f67d6e6ec.gif",
+ "https://cdn.discordapp.com/attachments/399448944889036801/664504696547049505/a20df960-756d-49f5-96e4-6383dcb75c35.gif"]
 let randomIMAGE = gifs[Math.floor(Math.random() * gifs.length)]
 
 if (message.content.startsWith(prefix + "kiss")) {
@@ -126,17 +131,7 @@ if (message.content.startsWith(prefix + "kiss")) {
     .setFooter(`👊`)
     .setTimestamp()
 message.channel.send(embed)}
-
-////////////////////////////// AFK //////////////////////////////
-    const links = ["discord.gg", "discord.me", "discord.io/", "discordapp.com/invite", "https://", "https://google.com/", "https:", "https:/", "https://discord.gg/"] // Acá colocamos los posibles links de invitación
-    if (links.some(word => message.content.toLowerCase().includes(word))) { 
-
-      message.delete(100)
-          message.reply("No links.").then((response) => {
-      response.delete(6000);
-      }); 
-    }
-  
+  ////////////////////////////// ABRAZO //////////////////////////////
 if (message.content.startsWith(prefix + "abrazo")) {//Abrimos un nuevo comando
 	message.delete()
 	let aA = message.author
@@ -149,13 +144,22 @@ if (message.content.startsWith(prefix + "abrazo")) {//Abrimos un nuevo comando
     .setTimestamp();
 	message.channel.send(aC);
 	}//cerr
-////////////////////////////// Restart //////////////////////////////
+////////////////////////////// NO INVITES //////////////////////////////
+    const links = ["discord.gg", "discord.me", "discord.io/", "discordapp.com/invite", "https://", "https://google.com/", "https:", "https:/", "https://discord.gg/"] // Acá colocamos los posibles links de invitación
+    if (links.some(word => message.content.toLowerCase().includes(word))) { 
+
+      message.delete(100)
+          message.reply("No links.").then((response) => {
+      response.delete(6000);
+      }); 
+    }
+////////////////////////////// RESTART //////////////////////////////
 if (message.content.startsWith(prefix + "restart")) {
     if(message.author.bot) return; //Esto harÃ¡ que ningun bot pueda ejecutar el comando, incluyendo el nuestro.
   
-var ids = ["355866404714577920"] //Aqui puedes poner las ids de los usuarios que quieres que puedan usar el comando, incluyendo la tuya.
+var ids = ["355866404714577920", "732707239026098196"] //Aqui puedes poner las ids de los usuarios que quieres que puedan usar el comando, incluyendo la tuya.
 
-if(!ids.some(ids => message.author.id == ids)) return message.channel.send(":x: Â¡No tienes permisos para usar ese comando!") //esta parte del codigo harÃ¡ que solo las ids que pusiste en el array "ids" sean las que puedan ejecutar el comando.
+if(!ids.some(ids => message.author.id == ids)) return message.channel.send(":x: ¡No tienes permisos para usar ese comando!") //esta parte del codigo harÃ¡ que solo las ids que pusiste en el array "ids" sean las que puedan ejecutar el comando.
     console.log(`asd`) //Se harÃ¡ un mensaje en la consola "asd", esto es opcional pero te harÃ¡ saber si se ejecuto el comando.
     message.channel.send("`> Recargado correctamente`").then(() => {
         client.destroy().then(() => {
