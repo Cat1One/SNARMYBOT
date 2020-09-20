@@ -28,7 +28,6 @@ let prefix = config.prefix;
   client.on("ready", () => {
   console.log("Encendido");
   client.channels.find(x => x.name === "𝘾𝙊𝙉𝙁𝙄𝙂𝙐𝙍𝘼𝘾𝙄𝙊𝙉").send(":crown: Iniciando sistema :crown:");});
-//////////////////////BIENVENIDA//////////////////////
 client.on("message", (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   client.on("guildMemberAdd", member => {
@@ -55,7 +54,7 @@ client.on("message", (message) => {
       .addField("•","No difundir informacion tanto publica como privada de las personas de dentro como externas a la comunidad")
       .setFooter("SN Army", client.user.avatarURL)
       .setTimestamp()
-      message.channel.send({ embed });}
+    message.channel.send({ embed });}
   if (message.content.startsWith(prefix + "reglas")) {
     const embed = new Discord.RichEmbed()
       .setTitle("📜 | Reglas del servidor")
@@ -69,7 +68,7 @@ client.on("message", (message) => {
       .addField("•","No difundir informacion tanto publica como privada de las personas de dentro como externas a la comunidad")
       .setFooter("SN Army", client.user.avatarURL)
       .setTimestamp()
-      message.channel.send({ embed });}
+    message.channel.send({ embed });}
 //////////////////////SERVER//////////////////////
   var server = message.guild;
   if (message.content.startsWith(prefix + "Server")) {
@@ -83,7 +82,7 @@ client.on("message", (message) => {
       .addField('Miembros', server.memberCount, true)
       .addField('Roles', server.roles.size, true)
       .setColor(0x66b3ff)
-      message.channel.send({ embed });}
+    message.channel.send({ embed });}
 //////////////////////KISS//////////////////////
   let member = message.mentions.members.first();
   if (message.content.startsWith(prefix + "kiss")) {
@@ -95,22 +94,49 @@ client.on("message", (message) => {
       .setColor(0x66b3ff)
     message.channel.send({ embed });}
 //////////////////////AVATAR//////////////////////
-  if (message.content.startsWith(prefix + "avatar")) {
-   if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
-    const embed = new Discord.RichEmbed() 
-      .setImage(member.user.displayAvatarURL)
-      .setAuthor(server.name, server.iconURL)
-      .addField("Aca tenes el avatar", `<@${member.id}>`)
-      .setColor(0x66b3ff)
-      .setTimestamp()
-      message.channel.send({ embed });}
+//  if (message.content.startsWith(prefix + "avatar")) {
+//  if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
+//    const embed = new Discord.RichEmbed() 
+//      .setImage(member.user.displayAvatarURL)
+//      .setAuthor(server.name, server.iconURL)
+//      .addField("Aca tenes el avatar", `<@${member.id}>`)
+//     .setColor(0x66b3ff)
+//    message.channel.send({ embed });}
+//
+module.exports.run = async (client,message,args) => {
 
-if (message.content === 'restart') {
-  if (message.author.id !== '355866404714577920') return;
-  message.channel.send('Restarted.').then(() => {
-  process.exit(1);
-})
-};
+const uwu = message.mentions.members.first();
+
+const Neko = require("neko.js");
+
+let nekoclient = new Neko.Client(); 
+
+  let kiss = await nekoclient.kiss();
+
+	if (!uwu){
+    nekoclient.kiss().then((kiss) => {
+		let kissbd = new Discord.RichEmbed()
+		.setTitle(`awwh ... here ...kissy kissy`)
+		.setImage(kiss.url)
+	    .setColor(`${message.member.displayHexColor}`)
+		message.channel.send({embed: kissbd})
+		}); 
+	}
+	if (uwu){
+		nekoclient.kiss().then((kiss) => {
+		let kissbd = new Discord.RichEmbed()
+		.setTitle(`${message.member.displayName} is kssing ${uwu.displayName}`)
+		.setImage(kiss.url)
+	    .setColor(`${message.member.displayHexColor}`)
+		message.channel.send({embed: kissbd})
+		}); 
+	}
+	
+
+}
+module.exports.help = {
+    name: "kiss"
+}
 //////////////////////8Ball//////////////////////
 const command = args.shift().toLowerCase();
 let texto = args.join(" ");
@@ -127,9 +153,8 @@ if(command === '8ball'){
     game: {
       name: "SN Army | -Ayuda",
       type: "STREAMING",
-      url: "https://discord.gg/3HTdCDw"
-}
-      });
-    }
+      url: "https://discord.gg/3HTdCDw"}
+    });
+  }
 });
 client.login("NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0");
