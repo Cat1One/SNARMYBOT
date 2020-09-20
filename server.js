@@ -24,6 +24,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
 let prefix = config.prefix;
+const bot = new Discord.Client({disableEveryone: true});
 //////////////////////BIENVENIDA//////////////////////
   client.on("ready", () => {
   console.log("Encendido");
@@ -110,16 +111,16 @@ if(command === '8ball'){
     var rpts = ["Sí", "No", "¿Por qué?", "Por favor", "Tal vez", "No sé", "Definitivamente", " ¡Claro! "," Sí "," No "," Por supuesto! "," Por supuesto que no "];
     if (!texto) return message.reply(`Escriba una pregunta.`);
     message.channel.send(`${message.author}`+ ' mi respuesta es a su pregunta es: `'+ rpts[Math.floor(Math.random() * rpts.length)]+'`');
-// Set the bot's presence (activity and status)
-client.on("ready", () => {
-    client.user.setPresence({
-        game: { 
-            name: 'my code',
-            type: 'WATCHING'
-        },
-        status: 'idle'
-    })
-})
+// When bot ready
+bot.on("ready", async () => {
+  console.log(`${bot.user.username} is ready for action!`);
+  if (config.activity.streaming == true) {
+    bot.user.setActivity(config.activity.game, {url: 'https://twitch.tv/username'});
+  } else {
+    bot.user.setActivity(config.activity.game, {type: 'WATCHING'});//PLAYING, LISTENING, WATCHING
+    bot.user.setStatus('dnd'); // dnd, idle, online, invisible
+  }
+});
 
 }
 });
