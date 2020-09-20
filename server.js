@@ -29,7 +29,10 @@ const token = "NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0";
 const star = require('star-labs');
 ////////////////
 client.on("ready", {} => {
-  let myGuild = client.guilds.get ("757320665576636457")
+  let myGuild = client.guilds.get ("738198243552526366");
+  let memberCount = myGuild.memberCount;
+  console.log(memberCount);
+  let memberCountChannel = myGuild.channels.get("")
 })
 ////////////////////////////// MENSAJE DE INICIO //////////////////////////////
   client.on("ready", () => {
