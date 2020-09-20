@@ -82,11 +82,8 @@ if (message.content.startsWith(prefix + "kiss")) {
     .setFooter("💋")
     .setTimestamp()
 message.channel.send(embed)}
-  
-//
-
-////////////////////////////// kiss //////////////////////////////
-let gifsq = ['https://i.imgur.com/FZJOBUW.jpg', 'https://i.imgur.com/AXS3l0D.png', 'https://i.imgur.com/MSXa2yP.jpg', "https://i.imgur.com/M5uEAhI.png"] /* Creamos un array con los GIFS que pueden salir */
+////////////////////////////// Fuck //////////////////////////////
+let gifsq = ['https://i.imgur.com/FZJOBUW.jpg', 'https://i.imgur.com/AXS3l0D.png', 'https://i.imgur.com/MSXa2yP.jpg', "https://i.imgur.com/M5uEAhI.png", "https://imgur.com/gallery/pbl1rp7", "https://imgur.com/gallery/mWzWaC3"] /* Creamos un array con los GIFS que pueden salir */
 let randomIMGE = gifsq[Math.floor(Math.random() * gifsq.length)] /* Esto harÃÂ¡ que obtengamos un elemento aleatorio del array "GIFS" */
 
 
@@ -102,7 +99,7 @@ if (message.content.startsWith(prefix + "fuck")) {
     .setFooter("🍆")
     .setTimestamp()
 message.channel.send(embed)}
-
+//))
 ////////////////////////////// Reglas //////////////////////////////
   if (message.content.startsWith(prefix + "Reglas")) {
     const embed = new Discord.RichEmbed()
