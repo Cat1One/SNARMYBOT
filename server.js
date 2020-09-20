@@ -48,7 +48,7 @@ client.on("message", (message) => {
   
 client.on("messageReactionAdd", async (reaction, user) => {
 
-const emoji = "â";
+const emoji = "😋";
 
 const channel = client.channels.cache.get("755642173801758750") // Aca pondremos la ID del canal en donde estara el mensaje a reaccionar
 const m = await channel.messages.fetch("755642214264209408"); // Y este sera el mensaje a donde se reaccionara para verificarse.
@@ -165,11 +165,10 @@ if(command === '8ball'){
     game: {
       name: "SN Army | -Ayuda",
       type: "STREAMING",
-      url: "https://discord.gg/3HTdCDw"
+      url: "https://www.twitch.tv/Cat_One"
       }
 ////////////////////////////// TOKEN //////////////////////////////
     });
   }
 });
-
 client.login(token);
