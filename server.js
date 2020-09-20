@@ -115,7 +115,7 @@ if(command === '8ball'){
 function presence(){
    client.user.setPresence({
       status: "online",
-      game: {
+      activity: {
          name: "ser un bot.",
          type: "PLAYING"
       }
