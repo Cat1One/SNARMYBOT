@@ -145,6 +145,7 @@ if(command === '8ball'){
     if (!texto) return message.reply(`Escriba una pregunta.`);
     message.channel.send(`${message.author}`+ ' mi respuesta es a su pregunta es: `'+ rpts[Math.floor(Math.random() * rpts.length)]+'`');
 //////////////////////MSG_CONSOLA//////////////////////
+  
   client.on('ready', () => { });
   console.log("Actualizado");
 //Estado de twitch
