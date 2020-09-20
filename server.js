@@ -28,6 +28,7 @@ let prefix = config.prefix;
   client.on("ready", () => {
   console.log("Encendido");
   client.channels.find(x => x.name === "𝘾𝙊𝙉𝙁𝙄𝙂𝙐𝙍𝘼𝘾𝙄𝙊𝙉").send(":crown: Iniciando sistema :crown:");});
+//////////////////////BIENVENIDA//////////////////////
 client.on("message", (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   client.on("guildMemberAdd", member => {
@@ -54,7 +55,7 @@ client.on("message", (message) => {
       .addField("•","No difundir informacion tanto publica como privada de las personas de dentro como externas a la comunidad")
       .setFooter("SN Army", client.user.avatarURL)
       .setTimestamp()
-    message.channel.send({ embed });}
+      message.channel.send({ embed });}
   if (message.content.startsWith(prefix + "reglas")) {
     const embed = new Discord.RichEmbed()
       .setTitle("📜 | Reglas del servidor")
@@ -68,7 +69,7 @@ client.on("message", (message) => {
       .addField("•","No difundir informacion tanto publica como privada de las personas de dentro como externas a la comunidad")
       .setFooter("SN Army", client.user.avatarURL)
       .setTimestamp()
-    message.channel.send({ embed });}
+      message.channel.send({ embed });}
 //////////////////////SERVER//////////////////////
   var server = message.guild;
   if (message.content.startsWith(prefix + "Server")) {
@@ -82,7 +83,7 @@ client.on("message", (message) => {
       .addField('Miembros', server.memberCount, true)
       .addField('Roles', server.roles.size, true)
       .setColor(0x66b3ff)
-    message.channel.send({ embed });}
+      message.channel.send({ embed });}
 //////////////////////KISS//////////////////////
   let member = message.mentions.members.first();
   if (message.content.startsWith(prefix + "kiss")) {
