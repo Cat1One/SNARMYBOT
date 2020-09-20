@@ -45,6 +45,17 @@ client.on("message", (message) => {
       .setFooter(message.guild.name)
       canal.send(embed)
   })
+
+let gifs = ['URL1', 'URL2', 'URL3'] /* Creamos un array con los GIFS que pueden salir */
+let randomIMG = gifs[Math.floor(Math.random() * gifs.length)] /* Esto harÃÂ¡ que obtengamos un elemento aleatorio del array "GIFS" */
+
+
+/* Ahora Mandaremos el link en un embed 
+VERSION 11 */
+const embed = new Discord.RichEmbed()
+    .setImage(randomIMG)
+    .setColor("RANDOM")
+message.channel.send(embed)
 ////////////////////////////// Reglas //////////////////////////////
   if (message.content.startsWith(prefix + "Reglas")) {
     const embed = new Discord.RichEmbed()
