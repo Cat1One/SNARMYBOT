@@ -32,8 +32,8 @@ client.on("ready", () => {
   let myGuild = client.guilds.get ("738198243552526366");
   let memberCount = myGuild.memberCount;
   console.log(memberCount);
-  let memberCountChannel = myGuild.channels.get("757320665576636457");
-  memberCountChannel.setName("Members:" +memberCount)
+  let memberCountChannel = myGuild.channels.get("757327596743557173");
+  memberCountChannel.setName("😈 | ᴍɪᴇᴍʙʀᴏꜱ " +memberCount)
   .then(result => console.log(result))
   .catch(error => console.log (error));
 });
@@ -75,7 +75,6 @@ client.on("message", message => {
 
   }
 });
-
 ////////////////////////////// REACION ROLE //////////////////////////////
 client.on("messageReactionAdd", async (reaction, user) => {
 
