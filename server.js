@@ -86,6 +86,7 @@ member.roles.add("757183302791725112");
 }
 });
 ////////////////////////////// AYDA //////////////////////////////
+client.on("message", (messagess) => {
 if(message.content.startsWith(prefix + 'ayuda')){
        // message.channel.send('**'+message.author.username+'**, Revisa tus mensajes privados.');
         message.channel.send('**Comandos de SN Army**\n```\n'+
@@ -273,6 +274,6 @@ if(command === '8ball'){
       }
 ////////////////////////////// TOKEN //////////////////////////////
     });
-  }
+  }}
 });
 client.login(token);
