@@ -27,6 +27,7 @@ const config = require("./config.json");
 let prefix = config.prefix;
 const token = "NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0";
 const star = require('star-labs');
+client.on("message", (message) => {
 ////////////////
 client.on("ready", () => {
   let myGuild = client.guilds.get ("738198243552526366");
@@ -43,10 +44,8 @@ client.on("ready", () => {
   client.channels.find(c => c.id === "753303568676552775").send(":crown: Iniciando sistema :crown:");
 });
 ////////////////////////////// BIENVENIDA //////////////////////////////
-
-client.on("message", (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  client.on("guildMemberAdd", member => {
+   client.on("guildMemberAdd", member => {
     const canal = member.guild.channels.find(c => c.id === "756210199622058014");
     if (!canal) return;
     const embed = new Discord.RichEmbed()
@@ -54,8 +53,8 @@ client.on("message", (message) => {
       .setDescription(`<@${member.id}> Bienvenido a SN Army`)
       .setThumbnail(member.user.displayAvatarURL)
       .setColor("RANDOM")
-      .setFooter(message.guild.name)
-      canal.send(embed)
+      .setFooter(member.guild.name)
+       canal.send(embed)
   });
 ////////////////////////////// CLEAR //////////////////////////////
 client.on("message", message => {
