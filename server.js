@@ -110,18 +110,17 @@ if(command === '8ball'){
     var rpts = ["Sí", "No", "¿Por qué?", "Por favor", "Tal vez", "No sé", "Definitivamente", " ¡Claro! "," Sí "," No "," Por supuesto! "," Por supuesto que no "];
     if (!texto) return message.reply(`Escriba una pregunta.`);
     message.channel.send(`${message.author}`+ ' mi respuesta es a su pregunta es: `'+ rpts[Math.floor(Math.random() * rpts.length)]+'`');
-//////////////////////MSG_CONSOLA//////////////////////
-  
-  client.on('ready', () => { });
-  console.log("Actualizado");
-//Estado de twitch
-  client.user.setPresence({
-    status: "STREAMING",
-    game: {
-      name: "SN Army | -Ayuda",
-      type: "STREAMING",
-      url: "https://discord.gg/3HTdCDw"}
-    });
-  }
+// Set the bot's presence (activity and status)
+client.on("ready", () => {
+    client.user.setPresence({
+        game: { 
+            name: 'my code',
+            type: 'WATCHING'
+        },
+        status: 'idle'
+    })
+})
+
+}
 });
 client.login("NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0");
