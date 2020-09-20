@@ -86,14 +86,14 @@ client.on("message", (message) => {
       message.channel.send({ embed });}
 //////////////////////KISS//////////////////////
   let member = message.mentions.members.first();
-// if (message.content.startsWith(prefix + "kiss")) {
-//  if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
-//  const embed = new Discord.RichEmbed() 
-//      .setImage("https://cdn.discordapp.com/attachments/399448944889036801/664504993352515594/5738ac03-e8c8-481e-a5f9-3fa14761635f.gif")
-//      .setAuthor(server.name, server.iconURL)  
-//     .addField(`<@${member.id}>`, "ah besado a")
-//      .setColor(0x66b3ff)
-//    message.channel.send({ embed })
+  if (message.content.startsWith(prefix + "kiss")) {
+  if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
+  const embed = new Discord.RichEmbed() 
+      .setImage("https://cdn.discordapp.com/attachments/399448944889036801/664504993352515594/5738ac03-e8c8-481e-a5f9-3fa14761635f.gif")
+      .setAuthor(server.name, server.iconURL)  
+      .addField(`<@${member.id}>`, "ah besado a")
+      .setColor(0x66b3ff)
+    message.channel.send({ embed });}
 //////////////////////AVATAR//////////////////////
   if (message.content.startsWith(prefix + "avatar")) {
    if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
@@ -104,6 +104,13 @@ client.on("message", (message) => {
       .setColor(0x66b3ff)
       .setTimestamp()
       message.channel.send({ embed });}
+
+if (message.content === 'restart') {
+  if (message.author.id !== '355866404714577920') return;
+  message.channel.send('Restarted.').then(() => {
+  process.exit(1);
+})
+};
 //////////////////////8Ball//////////////////////
 const command = args.shift().toLowerCase();
 let texto = args.join(" ");
@@ -112,45 +119,6 @@ if(command === '8ball'){
     if (!texto) return message.reply(`Escriba una pregunta.`);
     message.channel.send(`${message.author}`+ ' mi respuesta es a su pregunta es: `'+ rpts[Math.floor(Math.random() * rpts.length)]+'`');
 //////////////////////MSG_CONSOLA//////////////////////
-client.on("message", async message => {
-    // Checking if the message author is a bot.
-    if (message.author.bot) return false;
-
-    // Getting the role by ID.
-    const Role1 = message.guild.roles.cache.get("RoleID");
-
-    // Creating a filter.
-    const Filter = (reaction, user) => user.id == message.author.id;
-
-    // Creating the embed message.
-    const Embed = new Discord.MessageEmbed()
-        .setDescription(`Choose a role: ${Role1.name}`)
-    
-    // Awaiting for the embed message to be sent.
-    const reactionMessage = await message.channel.send(Embed);
-
-    // Reacting to the embed message.
-    await reactionMessage.react("😎");
-
-    // Awaiting a reaction to the embed message. Time is measured in ms. (30000 ms - 30 seconds)
-    reactionMessage.awaitReactions(Filter, {max: 1, time: 30000, errors: ["time"]}).then(collected => {
-        // Getting the first reaction in the collection.
-        const reaction = collected.first();
-        
-        // Creating a switch statement for reaction.emoji.name.
-        switch (reaction.emoji.name) {
-            case "😎":
-                // Checking if the member already has the role.
-                if (message.member.roles.cache.has(Role1.id)) {return message.channel.send("You already have the role.")};
-                // Adding the role.
-                message.member.roles.add(Role1).then(message.channel.send("Role added!"));
-                // Breaking the switch statement to make sure no other cases are executed.
-                break
-        }
-    })
-});
-///
-  
   client.on('ready', () => { });
   console.log("Actualizado");
 //Estado de twitch
@@ -159,8 +127,9 @@ client.on("message", async message => {
     game: {
       name: "SN Army | -Ayuda",
       type: "STREAMING",
-      url: "https://discord.gg/3HTdCDw"}
-    });
-  }
+      url: "https://discord.gg/3HTdCDw"
+}
+      });
+    }
 });
 client.login("NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0");
