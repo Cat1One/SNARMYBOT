@@ -33,20 +33,19 @@ const star = require('star-labs');
   client.channels.find(x => x.name === "𝘾𝙊𝙉𝙁𝙄𝙂𝙐𝙍𝘼𝘾𝙄𝙊𝙉").send(":crown: Iniciando sistema :crown:");
 });
 ////////////////////////////// BIENVENIDA //////////////////////////////
-client.on("message", (messagess) => {
-  const args = messagess.content.slice(prefix.length).trim().split(/ +/g);
+client.on("message", (message) => {
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
   client.on("guildMemberAdd", member => {
     const canal = member.guild.channels.find(c => c.id === "756210199622058014");
     if (!canal) return;
     const embed = new Discord.RichEmbed()
-      .setAuthor(messagess.author.username, messagess.author.avatarURL)
+      .setAuthor(message.author.username, message.author.avatarURL)
       .setDescription(`<@${member.id}> Bienvenido a SN Army`)
       .setThumbnail(member.user.displayAvatarURL)
       .setColor("RANDOM")
-      .setFooter(messagess.guild.name)
+      .setFooter(message.guild.name)
       canal.send(embed)
-  })
-  
+  })  
 ////////////////////////////// CLEAR //////////////////////////////
 client.on("message", message => {
   const args = message.content.trim().split(/ +/g);
@@ -59,7 +58,7 @@ client.on("message", message => {
     if(number >= 101 || number <= 0) return message.channel.send("El valor es invalido")
     if(message.content.startsWith("-clear"))
     message.channel.bulkDelete(number + 1 ).then( () => {
-    message.channel.send(`Se han borrado ${number} mensajes`)
+    //message.channel.send(`Se han borrado ${number} mensajes`)
     }).catch(error => {
     message.channel.send(`Ocurrio un error: ${error.message}`)
     })
@@ -86,7 +85,6 @@ member.roles.add("757183302791725112");
 }
 });
 ////////////////////////////// AYDA //////////////////////////////
-client.on("message", (messagess) => {
 if(message.content.startsWith(prefix + 'ayuda')){
        // message.channel.send('**'+message.author.username+'**, Revisa tus mensajes privados.');
         message.channel.send('**Comandos de SN Army**\n```\n'+
@@ -264,6 +262,11 @@ if(command === '8ball'){
 ////////////////////////////// Mensaje de conosla Actualizado //////////////////////////////
   client.on('ready', () => { });
   console.log("Actualizado");
+if(message.content.startsWith("f")){
+       // message.channel.send('**'+message.author.username+'**, Revisa tus mensajes privados.');
+        message.channel.send('F, amigo sos alto pete');
+        
+      }
 ////////////////////////////// Estado //////////////////////////////
   client.user.setPresence({
     status: "STREAMING",
@@ -274,6 +277,6 @@ if(command === '8ball'){
       }
 ////////////////////////////// TOKEN //////////////////////////////
     });
-  }}
+  }
 });
 client.login(token);
