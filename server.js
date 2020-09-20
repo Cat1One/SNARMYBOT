@@ -109,7 +109,29 @@ if (message.content.startsWith(prefix + "slap")) {
 message.channel.send(embed)}
 
 //
-
+if (message.content.startsWith(prefix + "nick")) { 
+    let perms = message.guild.me.hasPermission('MANAGE_NICKNAMES') /* Definimos los permisos del bot */
+  let permsM = message.member.hasPermission('MANAGE_NICKNAMES') /* Definimos los permisos del usuario */
+  let member = message.mentions.members.first()
+  let NewNick = args.slice(1).join('') /* Argumentos */
+  
+  if(!perms) return message.reply('Necesito permisos de **Gestionar Apodos**.') /* AquÃ­ ponemos que pasa si el bot no tiene los permisos */
+  if(!permsM) return message.reply('Necesitas el permiso **Gestionar Apodos**.') /* AquÃ­ ponemos que pasa si el usuario no tiene los permisos */
+  if(!member) return message.reply('Menciona a alguien') /* Si no mencionas al usuario */
+  if(!NewNick) return message.reply('No veo el nuevo apodo') /* Cuando no escribes el apodo a cambiar  */
+    
+    member.setNickname(NewNick) /* AquÃ­ usamos setNickname, para establecer el apodo del usuario */
+    
+  const NickEmbed = new Discord.RichEmbed() /* Abrimos un mensaje embed */
+  
+  .setAuthor(member.user.username, member.user.displayAvatarURL) /*Mostramos el avatar, y nombre del usuario */
+  .setThumbnail(member.user.displayAvatarURL) /* Avatar del usuario */
+  .setTitle('¡Apodo Cambiado!') /* El titulo */
+  .addField('**__Apodo Nuevo__**', `**${NewNick}**`) /* Usamos ${NewNick} para llamar al nuevo apodo, no es necesario que este en corchetes */
+  .setColor('RANDOM') /* El color, en este caso puse RANDOM */
+            
+  message.channel.send(NickEmbed) /* Cerramos el mensaje embed */
+  } 
 ////////////////////////////// Restart //////////////////////////////
 if (message.content.startsWith(prefix + "restart")) {
     if(message.author.bot) return; //Esto harÃ¡ que ningun bot pueda ejecutar el comando, incluyendo el nuestro.
