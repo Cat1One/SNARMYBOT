@@ -90,53 +90,18 @@ client.on("message", (message) => {
   const embed = new Discord.RichEmbed() 
       .setImage("https://cdn.discordapp.com/attachments/399448944889036801/664504993352515594/5738ac03-e8c8-481e-a5f9-3fa14761635f.gif")
       .setAuthor(server.name, server.iconURL)  
-      .addField(`<@${member.id}>`, "ah besado a")
+      .addField(`${message.author}`, "ah besado a", `<@${member.id}>`)
+      .setColor(0x66b3ff)
+    message.channel.send({ embed });};
+//////////////////////AVATAR//////////////////////
+  if (message.content.startsWith(prefix + "avatar")) {
+  if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
+    const embed = new Discord.RichEmbed() 
+      .setImage(member.user.displayAvatarURL)
+      .setAuthor(server.name, server.iconURL)
+      .addField("Aca tenes el avatar", `<@${member.id}>`)
       .setColor(0x66b3ff)
     message.channel.send({ embed });}
-//////////////////////AVATAR//////////////////////
-//  if (message.content.startsWith(prefix + "avatar")) {
-//  if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
-//    const embed = new Discord.RichEmbed() 
-//      .setImage(member.user.displayAvatarURL)
-//      .setAuthor(server.name, server.iconURL)
-//      .addField("Aca tenes el avatar", `<@${member.id}>`)
-//     .setColor(0x66b3ff)
-//    message.channel.send({ embed });}
-//
-module.exports.run = async (client,message,args) => {
-
-const uwu = message.mentions.members.first();
-
-const Neko = require("neko.js");
-
-let nekoclient = new Neko.Client(); 
-
-  let kiss = await nekoclient.kiss();
-
-	if (!uwu){
-    nekoclient.kiss().then((kiss) => {
-		let kissbd = new Discord.RichEmbed()
-		.setTitle(`awwh ... here ...kissy kissy`)
-		.setImage(kiss.url)
-	    .setColor(`${message.member.displayHexColor}`)
-		message.channel.send({embed: kissbd})
-		}); 
-	}
-	if (uwu){
-		nekoclient.kiss().then((kiss) => {
-		let kissbd = new Discord.RichEmbed()
-		.setTitle(`${message.member.displayName} is kssing ${uwu.displayName}`)
-		.setImage(kiss.url)
-	    .setColor(`${message.member.displayHexColor}`)
-		message.channel.send({embed: kissbd})
-		}); 
-	}
-	
-
-}
-module.exports.help = {
-    name: "kiss"
-}
 //////////////////////8Ball//////////////////////
 const command = args.shift().toLowerCase();
 let texto = args.join(" ");
