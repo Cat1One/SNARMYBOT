@@ -19,8 +19,6 @@ app.listen(process.env.PORT);
 setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`); 
 }, 280000);
-
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const Discord = require("discord.js");
@@ -121,6 +119,41 @@ if(command === '8ball'){
     var rpts = ["Sí", "No", "¿Por qué?", "Por favor", "Tal vez", "No sé", "Definitivamente?", " ¡Claro! "," Sí "," No "," Por supuesto! "," Por supuesto que no "];
     if (!texto) return message.reply(`Escriba una pregunta.`);
     message.channel.send(`${message.author}`+ ' mi respuesta es a su pregunta es: `'+ rpts[Math.floor(Math.random() * rpts.length)]+'`');
+
+  function doKissAction() {
+    var rand = [
+        'https://media2.giphy.com/media/G3va31oEEnIkM/giphy.gif',
+        'https://media1.tenor.com/images/f5167c56b1cca2814f9eca99c4f4fab8/tenor.gif?itemid=6155657',
+        'https://media.tenor.com/images/fbb2b4d5c673ffcf8ec35e4652084c2a/tenor.gif',
+        'https://media.giphy.com/media/ZRSGWtBJG4Tza/giphy.gif',
+        'https://media.giphy.com/media/oHZPerDaubltu/giphy.gif',
+        'https://acegif.com/wp-content/uploads/anime-kiss-m.gif',
+        'https://media.giphy.com/media/bm2O3nXTcKJeU/giphy.gif',
+        'https://media.giphy.com/media/nyGFcsP0kAobm/giphy.gif',
+        'https://media0.giphy.com/media/KH1CTZtw1iP3W/source.gif'
+    ];
+ 
+    return rand[Math.floor(Math.random() * rand.length)];
+}
+ 
+bot.on('message', message => {
+    let args = message.content.substring(PREFIX.length).split(" ");
+ 
+    switch (args[0]) {
+                   case 'kiss':
+                const personTagged = message.mentions.members.first();
+ 
+                if(!args[1]) {
+                    message.channel.send('You are missing arguments!')
+                }else{
+                    message.channel.send('`' + message.author.username + '`' + ' has kissed ' + personTagged.displayName + ' ' + doKissAction())
+                }
+ 
+            break;
+ 
+   }
+})
+ 
   
 ////////////////////////////// Mensaje de conosla Actualizado //////////////////////////////
   client.on('ready', () => { });
@@ -133,7 +166,9 @@ if(command === '8ball'){
       type: "STREAMING",
       url: "https://discord.gg/3HTdCDw"
       }
+////////////////////////////// TOKEN //////////////////////////////
     });
   }
 });
+
 client.login("NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0");
