@@ -107,6 +107,9 @@ if (message.content.startsWith(prefix + "slap")) {
     .setFooter(`👊`)
     .setTimestamp()
 message.channel.send(embed)}
+
+//
+
 ////////////////////////////// Restart //////////////////////////////
 if (message.content.startsWith(prefix + "restart")) {
     if(message.author.bot) return; //Esto harÃ¡ que ningun bot pueda ejecutar el comando, incluyendo el nuestro.
