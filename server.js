@@ -112,15 +112,16 @@ if(command === '8ball'){
     if (!texto) return message.reply(`Escriba una pregunta.`);
     message.channel.send(`${message.author}`+ ' mi respuesta es a su pregunta es: `'+ rpts[Math.floor(Math.random() * rpts.length)]+'`');
 // When bot ready
-function presence(){
-   client.user.setPresence({
-      status: "online",
+ command(client, 'status', (message) => {
+    const content = message.content.replace('!status ', '')
+    // "!status hello world" -> "hello world"
+
+    client.user.setPresence({
       activity: {
-         name: "ser un bot.",
-         type: "PLAYING"
-      }
-   });
-}
-}
-});
+        name: content,
+        type: 0,
+      },
+    })
+})
+};
 client.login("NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0");
