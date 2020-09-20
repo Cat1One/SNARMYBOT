@@ -33,19 +33,20 @@ const star = require('star-labs');
   client.channels.find(x => x.name === "𝘾𝙊𝙉𝙁𝙄𝙂𝙐𝙍𝘼𝘾𝙄𝙊𝙉").send(":crown: Iniciando sistema :crown:");
 });
 ////////////////////////////// BIENVENIDA //////////////////////////////
-client.on("message", (message) => {
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+client.on("message", (messagess) => {
+  const args = messagess.content.slice(prefix.length).trim().split(/ +/g);
   client.on("guildMemberAdd", member => {
     const canal = member.guild.channels.find(c => c.id === "756210199622058014");
     if (!canal) return;
     const embed = new Discord.RichEmbed()
-      .setAuthor(message.author.username, message.author.avatarURL)
+      .setAuthor(messagess.author.username, messagess.author.avatarURL)
       .setDescription(`<@${member.id}> Bienvenido a SN Army`)
       .setThumbnail(member.user.displayAvatarURL)
       .setColor("RANDOM")
-      .setFooter(message.guild.name)
+      .setFooter(messagess.guild.name)
       canal.send(embed)
-  })  
+  })
+  
 ////////////////////////////// CLEAR //////////////////////////////
 client.on("message", message => {
   const args = message.content.trim().split(/ +/g);
@@ -58,7 +59,7 @@ client.on("message", message => {
     if(number >= 101 || number <= 0) return message.channel.send("El valor es invalido")
     if(message.content.startsWith("-clear"))
     message.channel.bulkDelete(number + 1 ).then( () => {
-    //message.channel.send(`Se han borrado ${number} mensajes`)
+    message.channel.send(`Se han borrado ${number} mensajes`)
     }).catch(error => {
     message.channel.send(`Ocurrio un error: ${error.message}`)
     })
@@ -262,11 +263,6 @@ if(command === '8ball'){
 ////////////////////////////// Mensaje de conosla Actualizado //////////////////////////////
   client.on('ready', () => { });
   console.log("Actualizado");
-if(message.content.startsWith("f")){
-       // message.channel.send('**'+message.author.username+'**, Revisa tus mensajes privados.');
-        message.channel.send('F, amigo sos alto pete');
-        
-      }
 ////////////////////////////// Estado //////////////////////////////
   client.user.setPresence({
     status: "STREAMING",
