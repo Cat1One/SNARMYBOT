@@ -45,7 +45,8 @@ client.on("message", (message) => {
       .setColor("RANDOM")
       .setFooter(message.guild.name)
       canal.send(embed)
-  })  
+  })
+  
 ////////////////////////////// CLEAR //////////////////////////////
 client.on("message", message => {
   const args = message.content.trim().split(/ +/g);
@@ -262,11 +263,6 @@ if(command === '8ball'){
 ////////////////////////////// Mensaje de conosla Actualizado //////////////////////////////
   client.on('ready', () => { });
   console.log("Actualizado");
-/////////////
-
-  if(message.content === "f") {
-    message.channel.send("f, amigo");
-  }
 ////////////////////////////// Estado //////////////////////////////
   client.user.setPresence({
     status: "STREAMING",
@@ -279,6 +275,4 @@ if(command === '8ball'){
     });
   }
 });
-
-
 client.login(token);
