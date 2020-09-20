@@ -66,7 +66,7 @@ member.roles.add("757183302791725112");
 
 });
 ////////////////////////////// kiss //////////////////////////////
-let gifs = ['https://cdn.discordapp.com/attachments/399448944889036801/664505452792381460/c0aa038091b778c5f22f82e6245c8e43.gif', 'https://cdn.discordapp.com/attachments/399448944889036801/734823235018817536/tenor-2.gif', 'https://cdn.discordapp.com/attachments/399448944889036801/664505452792381460/c0aa038091b778c5f22f82e6245c8e43.gif'] /* Creamos un array con los GIFS que pueden salir */
+let gifs = ['https://cdn.discordapp.com/attachments/399448944889036801/664505452792381460/c0aa038091b778c5f22f82e6245c8e43.gif', 'https://cdn.discordapp.com/attachments/399448944889036801/734823235018817536/tenor-2.gif', 'https://cdn.discordapp.com/attachments/399448944889036801/664504993352515594/5738ac03-e8c8-481e-a5f9-3fa14761635f.gif'] /* Creamos un array con los GIFS que pueden salir */
 let randomIMG = gifs[Math.floor(Math.random() * gifs.length)] /* Esto harÃÂ¡ que obtengamos un elemento aleatorio del array "GIFS" */
 
 
@@ -82,6 +82,27 @@ if (message.content.startsWith(prefix + "kiss")) {
     .setFooter("💋")
     .setTimestamp()
 message.channel.send(embed)}
+  
+//
+
+////////////////////////////// kiss //////////////////////////////
+let gifsq = ['https://i.imgur.com/FZJOBUW.jpg', 'https://i.imgur.com/AXS3l0D.png', 'https://i.imgur.com/MSXa2yP.jpg', "https://i.imgur.com/M5uEAhI.png"] /* Creamos un array con los GIFS que pueden salir */
+let randomIMGE = gifsq[Math.floor(Math.random() * gifsq.length)] /* Esto harÃÂ¡ que obtengamos un elemento aleatorio del array "GIFS" */
+
+
+/* Ahora Mandaremos el link en un embed 
+VERSION 11 */
+if (message.content.startsWith(prefix + "fuck")) {
+  var user = message.mentions.members.first()
+  if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
+    const embed = new Discord.RichEmbed() 
+    .setDescription(`${message.author} le rompio la cola a **${user}**`)
+    .setImage(randomIMGE)
+    .setColor("RANDOM")
+    .setFooter("🍆")
+    .setTimestamp()
+message.channel.send(embed)}
+
 ////////////////////////////// Reglas //////////////////////////////
   if (message.content.startsWith(prefix + "Reglas")) {
     const embed = new Discord.RichEmbed()
