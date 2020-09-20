@@ -115,13 +115,12 @@ if(command === '8ball'){
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is ready for action!`);
   if (config.activity.streaming == true) {
-    bot.user.setActivity(config.activity.game, {url: 'https://twitch.tv/username'});
+    bot.user.setActivity(config.activity.game, {url: 'https://twitch.tv/Cat_One'});
   } else {
     bot.user.setActivity(config.activity.game, {type: 'WATCHING'});//PLAYING, LISTENING, WATCHING
-    bot.user.setStatus('dnd'); // dnd, idle, online, invisible
+    bot.user.setStatus('online'); // dnd, idle, online, invisible
   }
 });
-
-}
+  }
 });
 client.login("NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0");
