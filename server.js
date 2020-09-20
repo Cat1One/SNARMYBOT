@@ -96,7 +96,7 @@ client.on("message", (message) => {
 //////////////////////AVATAR//////////////////////
   if (message.content.startsWith(prefix + "avatar")) {
   if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
-    const embed = new Discord.RichEmbed() 
+      const embed = new Discord.RichEmbed() 
       .setImage(member.user.displayAvatarURL)
       .setAuthor(server.name, server.iconURL)
       .addField("Aca tenes el avatar", `<@${member.id}>`)
@@ -114,12 +114,14 @@ if(command === '8ball'){
   console.log("Actualizado");
 //Estado de twitch
   client.user.setPresence({
-    status: "STREAMING",
+    status: "Streaming",
     game: {
       name: "SN Army | -Ayuda",
       type: "STREAMING",
-      url: "https://discord.gg/3HTdCDw"}
-    });
+      url: "https://discord.gg/3HTdCDw"
+
+    }
+  });
   }
 });
 client.login("NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0");
