@@ -46,19 +46,16 @@ client.on("ready", () => {
 client.on("message", (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);  
    client.on("guildMemberAdd", memberr => {
-     
-    const canal = memberr.guild.channels.find(c => c.id === "756210199622058014");
-     
+    const canal = member.guild.channels.find(c => c.id === "756210199622058014");
     if (!canal) return;
     const embed = new Discord.RichEmbed()
       .setAuthor(message.author.username, message.author.avatarURL)
-      .setDescription(`<@${memberr.id}> Bienvenido a SN Army`)
-      .setThumbnail(memberr.user.displayAvatarURL)
+      .setDescription(`<@${member.id}> Bienvenido a SN Army`)
+      .setThumbnail(member.user.displayAvatarURL)
       .setColor("RANDOM")
-      .setFooter(memberr.guild.name)
+      .setFooter(member.guild.name)
        canal.send(embed)
   });
-});
 ////////////////////////////// CLEAR //////////////////////////////
 client.on("message", message => {
   const args = message.content.trim().split(/ +/g);
@@ -97,7 +94,6 @@ member.roles.add("757183302791725112");
 }
 });
 ////////////////////////////// AYDA //////////////////////////////
-client.on("message", (message) => {
 if(message.content.startsWith(prefix + 'ayuda')){
        // message.channel.send('**'+message.author.username+'**, Revisa tus mensajes privados.');
         message.channel.send('**Comandos de SN Army**\n```\n'+
@@ -113,7 +109,6 @@ if(message.content.startsWith(prefix + 'ayuda')){
         
       }
 ////////////////////////////// FUCK //////////////////////////////
-client.on("message", (message) => {
 let gifsq = ['https://i.imgur.com/FZJOBUW.jpg', 'https://i.imgur.com/AXS3l0D.png', 'https://i.imgur.com/MSXa2yP.jpg', "https://bootyoftheday.co/wp-content/uploads/2012/07/sfw-xxx-1.gif"] /* Creamos un array con los GIFS que pueden salir */
 let randomIMGE = gifsq[Math.floor(Math.random() * gifsq.length)] /* Esto harÃÂ¡ que obtengamos un elemento aleatorio del array "GIFS" */
 
@@ -127,7 +122,6 @@ if (message.content.startsWith(prefix + "fuck")) {
     .setFooter("🍆")
     .setTimestamp()
 message.channel.send(embed)}
-});
 ////////////////////////////// SLAP //////////////////////////////
 let gifsqd = ['https://media1.tenor.com/images/114c90ecd5ed4b3dbff76938f4143c4b/tenor.gif?itemid=17355724',
  "https://lh3.googleusercontent.com/proxy/kSt-Gh7kSoQP409rAFFvBpPqpR7MFGK7T6OKwtlVoc6iNM9HNGB16gcLIwaLHN65n0g8hxSY9OaNz1B7Zmv34GnxAgmdnUXSikbJC5Usv4Is-DSSIYg7hl8ottk",
@@ -268,14 +262,12 @@ if(!ids.some(ids => message.author.id == ids)) return message.channel.send(":x: 
     message.channel.send({ embed });
   }
 ////////////////////////////// 8BALL //////////////////////////////
-client.on("message", (message) => {
 const command = args.shift().toLowerCase();
 let texto = args.join(" ");
 if(command === '8ball'){
     var rpts = ["Sí", "No", "¿Por qué?", "Por favor", "Tal vez", "No sé", "Definitivamente", " ¡Claro! "," Sí "," No "," Por supuesto! "," Por supuesto que no "];
     if (!texto) return message.reply(`Escriba una pregunta.`);
     message.channel.send(`${message.author}`+ ' mi respuesta a su pregunta es: `'+ rpts[Math.floor(Math.random() * rpts.length)]+'`');
-});]
 ////////////////////////////// Mensaje de conosla Actualizado //////////////////////////////
   client.on('ready', () => { });
   console.log("Actualizado");
