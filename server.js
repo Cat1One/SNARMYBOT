@@ -28,6 +28,18 @@ const token = "NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0";
 const star = require('star-labs');
 const qdb = require("quick.db") //Definimos quick.db como "qdb"
 const cooldown = new Set(); //Creamos un nuevo set para cooldown
+const akaneko = require("akaneko")//requerimos el modulo
+
+client.on('message', async (message) => {
+const args = message.content.slice(prefix.length).trim().split(/ +/g);
+const command = args.shift().toLowerCase();
+if(command == "hentai") {
+if(!message.channel.nsfw) { return message.channel.send("este canal no es NSFW") }//si el canal no es NSFW retorna;
+const embed = new Discord.MessageEmbed()
+.setColor("RANDOM")
+.setImage(akaneko.nsfw.hentai()) //la funcion
+message.channel.send(embed) //enviamos el embed
+ }//y listo
 ////////////////////////////// ECONOMIA //////////////////////////////
 client.on('message', async (message) => {
   
@@ -270,5 +282,6 @@ if(message.content.startsWith("f")){
 ////////////////////////////// TOKEN //////////////////////////////
     });
   }
+});
 });
 client.login(token);

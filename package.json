@@ -16,6 +16,7 @@
     "http": "^0.0.0",
     "math-expression-evaluator": "^1.2.22",
     "megadb": "^3.4.0",
+    "memejs": "^1.2.3",
     "node-fetch": "^2.6.1",
     "opusscript": "^0.0.7",
     "quick.db": "^7.1.2",
