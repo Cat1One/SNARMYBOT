@@ -19,7 +19,7 @@ app.listen(process.env.PORT);
 setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`); 
 }, 280000);
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////// BOT REAL //////////////////////////////
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
@@ -28,57 +28,37 @@ const token = "NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0";
 const star = require('star-labs');
 const qdb = require("quick.db") //Definimos quick.db como "qdb"
 const cooldown = new Set(); //Creamos un nuevo set para cooldown
-////////////////////////////// BIENVENIDA //////////////////////////////
-client.on('message', async (message) => { //Creamos evento message (al enviar algo) 
-
-//Definimos Args
+////////////////////////////// ECONOMIA //////////////////////////////
+client.on('message', async (message) => {
+  
 const args = message.content.slice(prefix.length).trim().split(/ +/g);
-//Definimos command
 const command = args.shift().toLowerCase();
-
-
 if(command === "work"){
-
-   if (cooldown.has(message.author.id)) { //Si el cooldown tiene la id del usuario
-message.reply("Espera 1 minuto para poder trabajar denuevo.") //El bot manda mensaje
-    } else { //Si no hara todo esto de abajo
-
-
-// aca creamos un math floor para elegir una cantida entre 100-1000
+   if (cooldown.has(message.author.id)) {
+message.reply("Espera 1 minuto para poder trabajar denuevo.") 
+    } else {
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
-//definimos "cantidad" para el numero random
 var cantidad = getRandomInt(100, 1000)
-
-qdb.add(`economia_${message.author.id}`, cantidad) //Agregamos la cantidad al usuario
-
-const embed = new Discord.RichEmbed() //Creamos Embed decir que el trabajo
-.setColor("GREEN")
+qdb.add(`economia_${message.author.id}`, cantidad)
+const embed = new Discord.RichEmbed()
 .setTitle(`Has trabajado y ganaste ${cantidad} Robuxs`)
-message.channel.send(embed) //Mandamos embed
-
-
-        cooldown.add(message.author.id); //Agrega el user al cooldown
+message.channel.send(embed)
+        cooldown.add(message.author.id); 
         setTimeout(() => {
-          // Quita al usuario del cooldown despues de un minuto
           cooldown.delete(message.author.id);
-        }, 60000); //1 minuto en milisegundos
+        }, 60000);
     }
 }
-
-if(command === "balance"){ //Creamos comando para saber el dinero
-
+if(command === "balance"){
 const robuxs = qdb.fetch(`economia_${message.author.id}`)
- //Obtenemos la cantidad de dinero, en este caso Robuxs (Son cools xd)
-
-  const embed = new Discord.RichEmbed() //Creamos embed
+  const embed = new Discord.RichEmbed()
   .setColor("GREEN")
   .setTitle(`Tu balance es de ${robuxs} Robuxs`)
-  message.channel.send(embed) //Mandamos embed diciendo el balance de robuxs
+  message.channel.send(embed)
 }
 });
-
 ////////////////////////////// MEMBER COUNT //////////////////////////////
 client.on("ready", () => {
   let myGuild = client.guilds.get ("738198243552526366");
@@ -108,24 +88,6 @@ client.on("message", (message) => {
       .setFooter(member.guild.name)
        canal.send(embed)
   });
-////////////////////////////// MENSAJE AYUDA //////////////////////////////
-client.on("messageReactionAdd", async (reaction, user) => {
-
-const emoji = "😋";
-
-const channel = client.channels.cache.get("755642173801758750") // Aca pondremos la ID del canal en donde estara el mensaje a reaccionar
-const m = await channel.messages.fetch("755642214264209408"); // Y este sera el mensaje a donde se reaccionara para verificarse.
-
-// Procedemos a verificar
-
-if (reaction.emoji.name == emoji && reaction.message.id == m.id) {
-
-// Si se cumple procederemos a dar el rol
-
-const member = await reaction.message.guild.members.fetch(user.id)
-member.roles.add("757183302791725112");
-}
-});
 ////////////////////////////// AYDA //////////////////////////////
 if(message.content.startsWith(prefix + 'ayuda')){
        // message.channel.send('**'+message.author.username+'**, Revisa tus mensajes privados.');
@@ -139,7 +101,6 @@ if(message.content.startsWith(prefix + 'ayuda')){
                             ''+prefix+'avatar    :: Muestra el avatar de un usuario.\n'+
                             ''+prefix+'8ball     :: te responde que si, no, probablemente.\n```\n'+
                             '**Bot privado de SN Army**');
-        
       }
 ////////////////////////////// FUCK //////////////////////////////
 let gifsq = [
@@ -148,7 +109,6 @@ let gifsq = [
  'https://i.imgur.com/MSXa2yP.jpg',
  "https://bootyoftheday.co/wp-content/uploads/2012/07/sfw-xxx-1.gif"] /* Creamos un array con los GIFS que pueden salir */
 let randomIMGE = gifsq[Math.floor(Math.random() * gifsq.length)] /* Esto harÃÂ¡ que obtengamos un elemento aleatorio del array "GIFS" */
-
 if (message.content.startsWith(prefix + "fuck")) {
   var user = message.mentions.members.first()
   if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
@@ -167,7 +127,6 @@ let gifsqd = [
  "https://i.imgflip.com/wcluo.jpg",
  "https://i.imgflip.com/4/2tbtew.jpg"]
 let randomIMGEd = gifsqd[Math.floor(Math.random() * gifsqd.length)]
-
 if (message.content.startsWith(prefix + "slap")) {
   var user = message.mentions.members.first()
   if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
@@ -195,7 +154,6 @@ let gifs = [
  "https://media1.tenor.com/images/ba1841e4aeb5328e41530d3289616f46/tenor.gif?itemid=14240425",
  "https://media1.tenor.com/images/9fac3eab2f619789b88fdf9aa5ca7b8f/tenor.gif?itemid=12925177"]
 let randomIMAGE = gifs[Math.floor(Math.random() * gifs.length)]
-
 if (message.content.startsWith(prefix + "kiss")) {
   var user = message.mentions.members.first()
   if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
@@ -220,14 +178,14 @@ if (message.content.startsWith(prefix + "abrazo")) {//Abrimos un nuevo comando
 	message.channel.send(aC);
 	}
 ////////////////////////////// NO INVITES //////////////////////////////
-   /* const links = ["discord.gg", "discord.me", "discord.io/", "discordapp.com/invite", "https://", "https://google.com/", "https:", "https:/", "https://discord.gg/"] // Acá colocamos los posibles links de invitación
+    const links = ["discord.gg", "discord.me", "discord.io/", "discordapp.com/invite", "https://discord.gg/"]
     if (links.some(word => message.content.toLowerCase().includes(word))) { 
 
       message.delete(100)
           message.reply("No links.").then((response) => {
       response.delete(6000);
       }); 
-    }*/
+    }
 ////////////////////////////// RESTART //////////////////////////////
 if (message.content.startsWith(prefix + "restart")) {
     if(message.author.bot) return; //Esto harÃ¡ que ningun bot pueda ejecutar el comando, incluyendo el nuestro.
