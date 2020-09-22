@@ -28,10 +28,8 @@ const token = "NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0";
 const star = require('star-labs');
 const qdb = require("quick.db") //Definimos quick.db como "qdb"
 const cooldown = new Set(); //Creamos un nuevo set para cooldown
-  
+////////////////////////////// BIENVENIDA //////////////////////////////
 client.on('message', async (message) => { //Creamos evento message (al enviar algo) 
-
-
 
 //Definimos Args
 const args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -81,9 +79,7 @@ const robuxs = qdb.fetch(`economia_${message.author.id}`)
 }
 });
 
-////////////////////////////////
-
-///////////////////////////////////////////////////////////
+////////////////////////////// MEMBER COUNT //////////////////////////////
 client.on("ready", () => {
   let myGuild = client.guilds.get ("738198243552526366");
   let memberCount = myGuild.memberCount;
@@ -146,7 +142,11 @@ if(message.content.startsWith(prefix + 'ayuda')){
         
       }
 ////////////////////////////// FUCK //////////////////////////////
-let gifsq = ['https://i.imgur.com/FZJOBUW.jpg', 'https://i.imgur.com/AXS3l0D.png', 'https://i.imgur.com/MSXa2yP.jpg', "https://bootyoftheday.co/wp-content/uploads/2012/07/sfw-xxx-1.gif"] /* Creamos un array con los GIFS que pueden salir */
+let gifsq = [
+'https://i.imgur.com/FZJOBUW.jpg',
+ 'https://i.imgur.com/AXS3l0D.png',
+ 'https://i.imgur.com/MSXa2yP.jpg',
+ "https://bootyoftheday.co/wp-content/uploads/2012/07/sfw-xxx-1.gif"] /* Creamos un array con los GIFS que pueden salir */
 let randomIMGE = gifsq[Math.floor(Math.random() * gifsq.length)] /* Esto harÃÂ¡ que obtengamos un elemento aleatorio del array "GIFS" */
 
 if (message.content.startsWith(prefix + "fuck")) {
@@ -160,7 +160,8 @@ if (message.content.startsWith(prefix + "fuck")) {
     .setTimestamp()
 message.channel.send(embed)}
 ////////////////////////////// SLAP //////////////////////////////
-let gifsqd = ['https://media1.tenor.com/images/114c90ecd5ed4b3dbff76938f4143c4b/tenor.gif?itemid=17355724',
+let gifsqd = [
+'https://media1.tenor.com/images/114c90ecd5ed4b3dbff76938f4143c4b/tenor.gif?itemid=17355724',
  "https://lh3.googleusercontent.com/proxy/kSt-Gh7kSoQP409rAFFvBpPqpR7MFGK7T6OKwtlVoc6iNM9HNGB16gcLIwaLHN65n0g8hxSY9OaNz1B7Zmv34GnxAgmdnUXSikbJC5Usv4Is-DSSIYg7hl8ottk",
  "https://i.pinimg.com/originals/0a/aa/27/0aaa27c725ae162ded47b851e88d153b.jpg",
  "https://i.imgflip.com/wcluo.jpg",
@@ -178,7 +179,8 @@ if (message.content.startsWith(prefix + "slap")) {
     .setTimestamp()
 message.channel.send(embed)}
 ////////////////////////////// KISS //////////////////////////////
-let gifs = ['https://media1.tenor.com/images/ef9687b36e36605b375b4e9b0cde51db/tenor.gif?itemid=12498627',
+let gifs = [
+'https://media1.tenor.com/images/ef9687b36e36605b375b4e9b0cde51db/tenor.gif?itemid=12498627',
  "https://media1.tenor.com/images/e7036cbfd163f0925f0dc54d2b61dc61/tenor.gif?itemid=13795595",
  "https://media1.tenor.com/images/032e9030c99df76b4e191f1fce42a04d/tenor.gif?itemid=10053867",
  "https://cdn.discordapp.com/attachments/399448944889036801/591807897726353420/e3b67a7fd7a47e62f1b2cd98d3253887.gif",
@@ -297,6 +299,17 @@ if(!ids.some(ids => message.author.id == ids)) return message.channel.send(":x: 
     .setColor(0x66b3ff)
     .setTimestamp()
     message.channel.send({ embed });
+  }
+  
+  if (message.content.startsWith(prefix + "avata")) {
+  if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
+    const embed = new Discord.RichEmbed() 
+    .setImage(member.user.displayAvatarURL)
+    .setAuthor(server.name, server.iconURL)
+    .addField("Aca tenes el avatar", `<@${member.id}>`)
+    .setColor(0x66b3ff)
+    .setTimestamp()
+    member.channel.send({ embed });
   }
 ////////////////////////////// 8BALL //////////////////////////////
 const command = args.shift().toLowerCase();
