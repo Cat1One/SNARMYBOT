@@ -26,7 +26,7 @@ const config = require("./config.json");
 let prefix = config.prefix;
 const token = "NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0";
 const star = require('star-labs');
-
+var Weez = require("weez");
 const qdb = require("quick.db") //Definimos quick.db como "qdb"
 const cooldown = new Set(); //Creamos un nuevo set para cooldown
   
@@ -68,9 +68,6 @@ message.channel.send(embed) //Mandamos embed
           cooldown.delete(message.author.id);
         }, 60000); //1 minuto en milisegundos
     }
-
-
-
 }
 
 if(command === "balance"){ //Creamos comando para saber el dinero
@@ -83,34 +80,33 @@ const robuxs = qdb.fetch(`economia_${message.author.id}`)
   .setTitle(`Tu balance es de ${robuxs} Robuxs`)
   message.channel.send(embed) //Mandamos embed diciendo el balance de robuxs
 }
-
-
-/*
-Creditos a iStyLEX23
-
-Cualquier pregunta porfavor tagueame en el guild de MYBOT
-Pronto subiré mas comandos acerca de la economia, por ahora
-estos 2, pero esta es la lista de comandos que posiblemente 
-agregaré en el futuro:
-
-Profile
-Leaderboard
-Sistema de profesión
-Sistema de estados
-Sistema de Marry
-Sistema de amigos
-Sistema de items
-Compra de roles
-Mas.
-
-NO AL C&P
-*/
-
-
 });
-////////////////
 
+////////////////////////////////
+client.on('guildMemberAdd', async(member) => {
 
+    let bienvenida = new Weez.Bienvenida()
+        .avatar(member.user.displayAvatarURL)
+        .fondo("https://i.imgur.com/VC9cnvk.png")
+        .textoTitulo(`Bienvenido ${member.user.username} a ${member.guild.name}`)
+        .textoDesc("¡Eres el Habitante " + member.guild.memberCount + " de este server")
+        .textoColor('e7e7e7')
+        .acceso(Weez)
+    let hi = await Weez.bienvenidaRender(bienvenida)
+    let embed = new Discord.RichEmbed()
+        .setAuthor("| Hola " + member.user.username + "! ", "https://imgur.com/1phCTGd.gif")
+        .addField("Bienvenid@ a:", "🎌| Order 66|🎌")
+        .addField("Quieres Evitar Sanciones?", "Por favor sigue las reglas")
+    .addField("Tienes Preferencias?", "<#588823477864366080>")
+        .attachFiles([{
+            attachment: hi,
+            name: "hi.png"
+        }])
+        .setColor("36393E")
+        .setImage("attachment://hi.png")
+//no toques nada aca :v // por que me manda aca wtfu ;v es un error que tiene pero no es error :v
+    
+///////////////////////////////////////////////////////////
 client.on("ready", () => {
   let myGuild = client.guilds.get ("738198243552526366");
   let memberCount = myGuild.memberCount;
@@ -126,7 +122,7 @@ client.on("ready", () => {
   client.channels.find(c => c.id === "753303568676552775").send(":crown: Iniciando sistema :crown:");
 });
 ////////////////////////////// BIENVENIDA //////////////////////////////
-client.on("message", (message) => {
+/*client.on("message", (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);  
    client.on("guildMemberAdd", (member) => {
     const canal = member.guild.channels.find(c => c.id === "756210199622058014");
@@ -138,7 +134,7 @@ client.on("message", (message) => {
       .setColor("RANDOM")
       .setFooter(member.guild.name)
        canal.send(embed)
-  });
+  }); */
 ////////////////////////////// MENSAJE AYUDA //////////////////////////////
 client.on("messageReactionAdd", async (reaction, user) => {
 
@@ -158,6 +154,7 @@ member.roles.add("757183302791725112");
 }
 });
 ////////////////////////////// AYDA //////////////////////////////
+client.on("message", (message) => {
 if(message.content.startsWith(prefix + 'ayuda')){
        // message.channel.send('**'+message.author.username+'**, Revisa tus mensajes privados.');
         message.channel.send('**Comandos de SN Army**\n```\n'+
@@ -314,9 +311,8 @@ if(!ids.some(ids => message.author.id == ids)) return message.channel.send(":x: 
     message.channel.send({ embed });
   } 
 ////////////////////////////// Avatar //////////////////////////////
-  let member = message.mentions.members.first();
-  if (message.content.startsWith(prefix + "avatar")) {
-  if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
+if (message.content.startsWith(prefix + "avatar")) {
+if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
     const embed = new Discord.RichEmbed() 
     .setImage(member.user.displayAvatarURL)
     .setAuthor(server.name, server.iconURL)
@@ -351,6 +347,6 @@ if(message.content.startsWith("f")){
 ////////////////////////////// TOKEN //////////////////////////////
     });
   }
-//})
-});
+})
+  });
 client.login(token);
