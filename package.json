@@ -14,10 +14,14 @@
     "giphy-random": "^2.0.8",
     "http": "^0.0.0",
     "math-expression-evaluator": "^1.2.22",
+    "megadb": "^3.4.0",
     "node-fetch": "^2.6.1",
+    "opusscript": "^0.0.7",
     "quick.db": "^7.1.2",
+    "simple-youtube-api": "^5.2.1",
     "star-labs": "^1.1.2",
-    "weez": "^1.6.2"
+    "weez": "^1.6.2",
+    "ytdl-core": "^3.2.2"
   },
   "engines": {
     "node": "8.x"
