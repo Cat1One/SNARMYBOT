@@ -133,11 +133,11 @@ let gifff = [
  'https://i.imgur.com/MSXa2yP.jpg',
  "https://bootyoftheday.co/wp-content/uploads/2012/07/sfw-xxx-1.gif"] /* Creamos un array con los GIFS que pueden salir */
 let randomIMGEEE = gifff[Math.floor(Math.random() * gifff.length)] /* Esto harÃÂ¡ que obtengamos un elemento aleatorio del array "GIFS" */
-if(command === "hentai"){
+if(command === "porn"){
   var user = message.mentions.members.first()
   if(!message.channel.nsfw) { return message.channel.send(`${message.author} usa este comando en un canal nsfw`) }
     const embed = new Discord.RichEmbed() 
-    .setDescription(`${message.author} pidio hentai`)
+    .setDescription(`${message.author} pidio porn`)
     .setImage(randomIMGEEE)
     .setColor("RANDOM")
     .setFooter("🍆")
