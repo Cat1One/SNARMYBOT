@@ -28,18 +28,11 @@ const token = "NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0";
 const star = require('star-labs');
 const qdb = require("quick.db") //Definimos quick.db como "qdb"
 const cooldown = new Set(); //Creamos un nuevo set para cooldown
-const akaneko = require("akaneko")//requerimos el modulo
 
-client.on('message', async (message) => {
-const args = message.content.slice(prefix.length).trim().split(/ +/g);
-const command = args.shift().toLowerCase();
-if(command == "hentai") {
-if(!message.channel.nsfw) { return message.channel.send("este canal no es NSFW") }//si el canal no es NSFW retorna;
-const embed = new Discord.MessageEmbed()
-.setColor("RANDOM")
-.setImage(akaneko.nsfw.hentai()) //la funcion
-message.channel.send(embed) //enviamos el embed
- }//y listo
+
+
+//if(!message.channel.nsfw) { return message.channel.send("este canal no es NSFW") }
+
 ////////////////////////////// ECONOMIA //////////////////////////////
 client.on('message', async (message) => {
   
@@ -133,6 +126,41 @@ if(command === "fuck"){
     .setFooter("🍆")
     .setTimestamp()
 message.channel.send(embed)}
+////////////////////////////// SLAP //////////////////////////////
+let gifff = [
+'https://i.imgur.com/FZJOBUW.jpg',
+ 'https://i.imgur.com/AXS3l0D.png',
+ 'https://i.imgur.com/MSXa2yP.jpg',
+ "https://bootyoftheday.co/wp-content/uploads/2012/07/sfw-xxx-1.gif"] /* Creamos un array con los GIFS que pueden salir */
+let randomIMGEEE = gifff[Math.floor(Math.random() * gifff.length)] /* Esto harÃÂ¡ que obtengamos un elemento aleatorio del array "GIFS" */
+if(command === "hentai"){
+  var user = message.mentions.members.first()
+  if(!message.channel.nsfw) { return message.channel.send(`${message.author} usa este comando en un canal nsfw`) }
+    const embed = new Discord.RichEmbed() 
+    .setDescription(`${message.author} pidio hentai`)
+    .setImage(randomIMGEEE)
+    .setColor("RANDOM")
+    .setFooter("🍆")
+    .setTimestamp()
+message.channel.send(embed)}
+////////////////////////////// SLAP //////////////////////////////
+let giff = [
+'https://i.imgur.com/FZJOBUW.jpg',
+ 'https://i.imgur.com/AXS3l0D.png',
+ 'https://i.imgur.com/MSXa2yP.jpg',
+ "https://bootyoftheday.co/wp-content/uploads/2012/07/sfw-xxx-1.gif"] /* Creamos un array con los GIFS que pueden salir */
+let randomIMGEE = giff[Math.floor(Math.random() * giff.length)] /* Esto harÃÂ¡ que obtengamos un elemento aleatorio del array "GIFS" */
+if(command === "hentai"){
+  var user = message.mentions.members.first()
+  if(!message.channel.nsfw) { return message.channel.send(`${message.author} usa este comando en un canal nsfw`) }
+    const embed = new Discord.RichEmbed() 
+    .setDescription(`${message.author} pidio hentai`)
+    .setImage(randomIMGEE)
+    .setColor("RANDOM")
+    .setFooter("🍆")
+    .setTimestamp()
+message.channel.send(embed)}
+  
 ////////////////////////////// SLAP //////////////////////////////
 let gifsqd = [
 'https://media1.tenor.com/images/114c90ecd5ed4b3dbff76938f4143c4b/tenor.gif?itemid=17355724',
@@ -282,6 +310,5 @@ if(message.content.startsWith("f")){
 ////////////////////////////// TOKEN //////////////////////////////
     });
   }
-});
 });
 client.login(token);
