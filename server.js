@@ -27,6 +27,8 @@ let prefix = config.prefix;
 const token = "NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0";
 const star = require('star-labs');
 ////////////////
+
+
 client.on("ready", () => {
   let myGuild = client.guilds.get ("738198243552526366");
   let memberCount = myGuild.memberCount;
@@ -36,12 +38,43 @@ client.on("ready", () => {
   .then(result => console.log(result))
   .catch(error => console.log (error));
 });
+////
+
+client.on("message", (message) => {
+const command = args.shift().toLowerCase();
+const args = message.content.trim().split(/ +/g);
+if(command === 'votacion'){
+  message.delete(10);
+  let user = message.author;
+  let reporte = args.join(' ');
+  if(!message.member.roles.get('ID-RANGO')) return;//Podes poner permisos si lo quieres hacer privado el comando
+  if(!reporte) return message.channel.send(`:grey_exclamation: | **Envia tu votacion**`)
+
+  const embed = new Discord.RichEmbed()
+  .setTitle(':e_mail: | **Votacion Activada**')
+  .setDescription('`Votacion Activa (Elimine una ves terminada).`')
+  .setDescription(reporte)
+  .setColor(0x77AEFF)//Puedes usar ese color o puedes poner .setColor("RANDOM")
+  .setFooter('Votacion enviada por '+ message.author.tag)
+  
+  
+  message.channel.send(embed).then(m =>  m.react("✅") + m.react("❌"))
+
+  let canal = client.channels.get("ID-CANAL");
+  const e = new Discord.RichEmbed()
+  .setTitle("Sistema de logeos por votacion")
+  .setDescription("Esto se activa, por votacion activada")
+  .addField("Se ha activado el sistema y dice", reporte, false)
+  
+  canal.send(e)
+}
+
 ////////////////////////////// MENSAJE DE INICIO //////////////////////////////
-  client.on("ready", () => {
+client.on("ready", () => {
   console.log("Encendido");
   client.channels.find(c => c.id === "753303568676552775").send(":crown: Iniciando sistema :crown:");
 });
-////////////////////////////// BIENVENIDA //////////////////////////////
+////////////////////////////// BIENVENIDA //////////////////////////////}
 client.on("message", (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);  
    client.on("guildMemberAdd", memberr => {
@@ -73,7 +106,7 @@ client.on("message", message => {
     })
   }
 });
-////////////////////////////// REACION ROLE //////////////////////////////
+////////////////////////////// MENSAJE AYUDA //////////////////////////////
 client.on("messageReactionAdd", async (reaction, user) => {
 
 const emoji = "😋";
@@ -285,5 +318,6 @@ if(message.content.startsWith("f")){
 ////////////////////////////// TOKEN //////////////////////////////
     });
   }
+})
 });
 client.login(token);
