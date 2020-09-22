@@ -218,14 +218,14 @@ if (message.content.startsWith(prefix + "abrazo")) {//Abrimos un nuevo comando
 	message.channel.send(aC);
 	}
 ////////////////////////////// NO INVITES //////////////////////////////
-    const links = ["discord.gg", "discord.me", "discord.io/", "discordapp.com/invite", "https://", "https://google.com/", "https:", "https:/", "https://discord.gg/"] // Acá colocamos los posibles links de invitación
+   /* const links = ["discord.gg", "discord.me", "discord.io/", "discordapp.com/invite", "https://", "https://google.com/", "https:", "https:/", "https://discord.gg/"] // Acá colocamos los posibles links de invitación
     if (links.some(word => message.content.toLowerCase().includes(word))) { 
 
       message.delete(100)
           message.reply("No links.").then((response) => {
       response.delete(6000);
       }); 
-    }
+    }*/
 ////////////////////////////// RESTART //////////////////////////////
 if (message.content.startsWith(prefix + "restart")) {
     if(message.author.bot) return; //Esto harÃ¡ que ningun bot pueda ejecutar el comando, incluyendo el nuestro.
