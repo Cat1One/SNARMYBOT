@@ -40,9 +40,11 @@ client.on("ready", () => {
 });
 ////
 
+
+/*
 client.on("message", (message) => {
+const args = message.content.slice(prefix.length).trim().split(/ +/g);
 const command = args.shift().toLowerCase();
-const args = message.content.trim().split(/ +/g);
 if(command === 'votacion'){
   message.delete(10);
   let user = message.author;
@@ -68,16 +70,31 @@ if(command === 'votacion'){
   
   canal.send(e)
 }
-
+*/
 ////////////////////////////// MENSAJE DE INICIO //////////////////////////////
 client.on("ready", () => {
   console.log("Encendido");
   client.channels.find(c => c.id === "753303568676552775").send(":crown: Iniciando sistema :crown:");
 });
-////////////////////////////// BIENVENIDA //////////////////////////////}
+////////////////////////////// BIENVENIDA //////////////////////////////
+/*client.on("guildMemberAdd", (member) => {
+
+//luego creamos el mensaje embed
+  const welcome = new MessageEmbed()
+
+  .setTitle("Bienvenido al server ${member.guild.name}")
+  .setDescription(`Hola ${member.user}, disfruta del server`)
+  .setColor("RANDOM")
+  .setFooter("BotEjemplo | V2.0", client.user.avatarURL())
+  .setThumbnail(client.user.displayAvatarURL());
+//y hacemos que el bot mande el mensaje embed al MD del usuario
+  channel.send(welcome);
+})
+*/
+
 client.on("message", (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);  
-   client.on("guildMemberAdd", memberr => {
+   client.on("guildMemberAdd", (member) => {
     const canal = member.guild.channels.find(c => c.id === "756210199622058014");
     if (!canal) return;
     const embed = new Discord.RichEmbed()
@@ -88,6 +105,7 @@ client.on("message", (message) => {
       .setFooter(member.guild.name)
        canal.send(embed)
   });
+
 ////////////////////////////// CLEAR //////////////////////////////
 client.on("message", message => {
   const args = message.content.trim().split(/ +/g);
@@ -318,6 +336,6 @@ if(message.content.startsWith("f")){
 ////////////////////////////// TOKEN //////////////////////////////
     });
   }
-})
+//})
 });
 client.login(token);
