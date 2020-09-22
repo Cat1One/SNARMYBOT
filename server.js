@@ -26,6 +26,10 @@ const config = require("./config.json");
 let prefix = config.prefix;
 const token = "NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0";
 const star = require('star-labs');
+
+const qdb = require("quick.db") //Definimos quick.db como "qdb"
+var prefix =  "!" //Ponemos prefix
+const cooldown = new Set(); //Creamos un nuevo set para cooldown
 ////////////////
 
 
@@ -38,61 +42,12 @@ client.on("ready", () => {
   .then(result => console.log(result))
   .catch(error => console.log (error));
 });
-////
-
-
-/*
-client.on("message", (message) => {
-const args = message.content.slice(prefix.length).trim().split(/ +/g);
-const command = args.shift().toLowerCase();
-if(command === 'votacion'){
-  message.delete(10);
-  let user = message.author;
-  let reporte = args.join(' ');
-  if(!message.member.roles.get('ID-RANGO')) return;//Podes poner permisos si lo quieres hacer privado el comando
-  if(!reporte) return message.channel.send(`:grey_exclamation: | **Envia tu votacion**`)
-
-  const embed = new Discord.RichEmbed()
-  .setTitle(':e_mail: | **Votacion Activada**')
-  .setDescription('`Votacion Activa (Elimine una ves terminada).`')
-  .setDescription(reporte)
-  .setColor(0x77AEFF)//Puedes usar ese color o puedes poner .setColor("RANDOM")
-  .setFooter('Votacion enviada por '+ message.author.tag)
-  
-  
-  message.channel.send(embed).then(m =>  m.react("✅") + m.react("❌"))
-
-  let canal = client.channels.get("ID-CANAL");
-  const e = new Discord.RichEmbed()
-  .setTitle("Sistema de logeos por votacion")
-  .setDescription("Esto se activa, por votacion activada")
-  .addField("Se ha activado el sistema y dice", reporte, false)
-  
-  canal.send(e)
-}
-*/
 ////////////////////////////// MENSAJE DE INICIO //////////////////////////////
 client.on("ready", () => {
   console.log("Encendido");
   client.channels.find(c => c.id === "753303568676552775").send(":crown: Iniciando sistema :crown:");
 });
 ////////////////////////////// BIENVENIDA //////////////////////////////
-/*client.on("guildMemberAdd", (member) => {
-
-//luego creamos el mensaje embed
-  const welcome = new MessageEmbed()
-
-  .setTitle("Bienvenido al server ${member.guild.name}")
-  .setDescription(`Hola ${member.user}, disfruta del server`)
-  .setColor("RANDOM")
-  .setFooter("BotEjemplo | V2.0", client.user.avatarURL())
-  .setThumbnail(client.user.displayAvatarURL());
-//y hacemos que el bot mande el mensaje embed al MD del usuario
-  channel.send(welcome);
-})
-*/
-
-
 client.on("message", (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);  
    client.on("guildMemberAdd", (member) => {
@@ -106,47 +61,6 @@ client.on("message", (message) => {
       .setFooter(member.guild.name)
        canal.send(embed)
   });
-
-////////////////////////////// CLEAR //////////////////////////////
-/*client.on("message", message => {
-  const args = message.content.trim().split(/ +/g);
-  if(message.content.startsWith("-clear")){
-    if(!message.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send("No tenes permisos suficientes.")
-    if(!args[1]) return message.channel.send("Necesitas colocar un numero entre 1 y 99.")
-    let number = args[1]
-    if(isNaN(number)) return message.channel.send("Necesitas colocar un numero")
-    number = parseInt(number)
-    if(number >= 101 || number <= 0) return message.channel.send("El valor es invalido")
-    if(message.content.startsWith("-clear"))
-    message.channel.bulkDelete(number + 1 ).then( () => {
-    //message.channel.send(`Se han borrado ${number} mensajes`)
-    }).catch(error => {
-    message.channel.send(`Ocurrio un error: ${error.message}`)
-    })
-  }
-});*/
-
-
-client.on("guildMemberAdd'", member => {
-
-  const welcome = new Discord.MessageEmbed() 
-///consejo pueden poner .setTitle("Hola " + member.user.username) para decir el nombre
-//Resultado: Hola (El Nombre Del Usuario)
-
-// o tambien .setTitle("hola"+ member.user.username + "A Mi Servidor")
-//resultado: hola (El Nombre Del Usuario) A Mi Servidor
-
-  .setTitle("texto de bienvenida")
-///en .setColor() Dejen El 0x ejemplo: 0x39ff14, despues del ///0x ponen el hex del color
-	.setColor("0x(Y El Hex Del Color Sin El #)")
-  .setDescription("descripcion")
-  .setImage("la url de la imagen(opciona)")                                                                                         
-
-  client.channels.cache.get("id del canal").send(welcome)
-///Opcional
-  member.roles.add("id")
-});
-
 ////////////////////////////// MENSAJE AYUDA //////////////////////////////
 client.on("messageReactionAdd", async (reaction, user) => {
 
