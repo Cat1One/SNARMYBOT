@@ -324,6 +324,8 @@ client.on("message", message => {
       .setTimestamp();
     message.channel.send({ embed });
   }
+  
+
   ////////////////////////////// SERVER //////////////////////////////
   var server = message.guild;
   if (command === "server") {
