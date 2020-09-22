@@ -89,7 +89,9 @@ client.on("message", (message) => {
        canal.send(embed)
   });
 ////////////////////////////// AYDA //////////////////////////////
-if(message.content.startsWith(prefix + 'ayuda')){
+const command = args.shift().toLowerCase();
+if(command === "ayuda"){
+  
        // message.channel.send('**'+message.author.username+'**, Revisa tus mensajes privados.');
         message.channel.send('**Comandos de SN Army**\n```\n'+
                             ''+prefix+'fuck      :: Te cojes al usuario arrobado.\n'+
@@ -109,7 +111,7 @@ let gifsq = [
  'https://i.imgur.com/MSXa2yP.jpg',
  "https://bootyoftheday.co/wp-content/uploads/2012/07/sfw-xxx-1.gif"] /* Creamos un array con los GIFS que pueden salir */
 let randomIMGE = gifsq[Math.floor(Math.random() * gifsq.length)] /* Esto harÃÂ¡ que obtengamos un elemento aleatorio del array "GIFS" */
-if (message.content.startsWith(prefix + "fuck")) {
+if(command === "fuck"){
   var user = message.mentions.members.first()
   if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
     const embed = new Discord.RichEmbed() 
@@ -127,7 +129,7 @@ let gifsqd = [
  "https://i.imgflip.com/wcluo.jpg",
  "https://i.imgflip.com/4/2tbtew.jpg"]
 let randomIMGEd = gifsqd[Math.floor(Math.random() * gifsqd.length)]
-if (message.content.startsWith(prefix + "slap")) {
+if(command === "slap"){
   var user = message.mentions.members.first()
   if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
     const embed = new Discord.RichEmbed() 
@@ -154,7 +156,7 @@ let gifs = [
  "https://media1.tenor.com/images/ba1841e4aeb5328e41530d3289616f46/tenor.gif?itemid=14240425",
  "https://media1.tenor.com/images/9fac3eab2f619789b88fdf9aa5ca7b8f/tenor.gif?itemid=12925177"]
 let randomIMAGE = gifs[Math.floor(Math.random() * gifs.length)]
-if (message.content.startsWith(prefix + "kiss")) {
+if(command === "kiss"){
   var user = message.mentions.members.first()
   if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
     const embed = new Discord.RichEmbed() 
@@ -165,7 +167,7 @@ if (message.content.startsWith(prefix + "kiss")) {
     .setTimestamp()
 message.channel.send(embed)}
   ////////////////////////////// ABRAZO //////////////////////////////
-if (message.content.startsWith(prefix + "abrazo")) {//Abrimos un nuevo comando
+if(command === "abrazo"){
 	message.delete()
 	let aA = message.author
 	let aB = message.mentions.users.first()//utilizamos las menciones
@@ -187,7 +189,7 @@ if (message.content.startsWith(prefix + "abrazo")) {//Abrimos un nuevo comando
       }); 
     }
 ////////////////////////////// RESTART //////////////////////////////
-if (message.content.startsWith(prefix + "restart")) {
+if(command === "restart"){
     if(message.author.bot) return; //Esto harÃ¡ que ningun bot pueda ejecutar el comando, incluyendo el nuestro.
   
 var ids = ["355866404714577920", "732707239026098196"] //Aqui puedes poner las ids de los usuarios que quieres que puedan usar el comando, incluyendo la tuya.
@@ -201,22 +203,7 @@ if(!ids.some(ids => message.author.id == ids)) return message.channel.send(":x: 
     }); 
 }//cerramos partes del codigo
 ////////////////////////////// Reglas //////////////////////////////
-  if (message.content.startsWith(prefix + "Reglas")) {
-    const embed = new Discord.RichEmbed()
-      .setTitle("📜 | Reglas del servidor")
-      .setColor(0xc556d8)
-      .addField("•", "No insultar")
-      .addField("•","No spamear")
-      .addField("͔•","No molestar por privado")
-      .addField("•","No ser toxico")
-      .addField("•","No pasar contenido porno, hentai o gore por general")
-      .addField("•","No acosar a ninguna persona")
-      .addField("•","No difundir informacion tanto publica como privada de las personas de dentro como externas a la comunidad")
-      .setFooter("SN Army", client.user.avatarURL)
-      .setTimestamp()
-    message.channel.send({ embed });
-  }
-  if (message.content.startsWith(prefix + "reglas")) {
+if(command === "reglas"){
     const embed = new Discord.RichEmbed()
       .setTitle("📜 | Reglas del servidor")
       .setColor(0xc556d8)
@@ -233,7 +220,7 @@ if(!ids.some(ids => message.author.id == ids)) return message.channel.send(":x: 
   }
 ////////////////////////////// SERVER //////////////////////////////
   var server = message.guild;
-  if (message.content.startsWith(prefix + "Server")) {
+if(command === "server"){
     const embed = new Discord.RichEmbed()
       .setThumbnail(server.iconURL)
       .setAuthor(server.name, server.iconURL)
@@ -248,7 +235,7 @@ if(!ids.some(ids => message.author.id == ids)) return message.channel.send(":x: 
   } 
 ////////////////////////////// Avatar //////////////////////////////
   let member = message.mentions.members.first();
-  if (message.content.startsWith(prefix + "avatar")) {
+if(command === "avatar"){
   if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
     const embed = new Discord.RichEmbed() 
     .setImage(member.user.displayAvatarURL)
@@ -258,19 +245,7 @@ if(!ids.some(ids => message.author.id == ids)) return message.channel.send(":x: 
     .setTimestamp()
     message.channel.send({ embed });
   }
-  
-  if (message.content.startsWith(prefix + "avata")) {
-  if (message.mentions.users.size < 1) return message.reply('Debe mencionar a un miembro.').catch(console.error);
-    const embed = new Discord.RichEmbed() 
-    .setImage(member.user.displayAvatarURL)
-    .setAuthor(server.name, server.iconURL)
-    .addField("Aca tenes el avatar", `<@${member.id}>`)
-    .setColor(0x66b3ff)
-    .setTimestamp()
-    member.channel.send({ embed });
-  }
 ////////////////////////////// 8BALL //////////////////////////////
-const command = args.shift().toLowerCase();
 let texto = args.join(" ");
 if(command === '8ball'){
     var rpts = ["Sí", "No", "¿Por qué?", "Por favor", "Tal vez", "No sé", "Definitivamente", " ¡Claro! "," Sí "," No "," Por supuesto! "," Por supuesto que no "];
