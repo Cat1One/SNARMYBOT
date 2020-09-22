@@ -15,6 +15,7 @@
     "http": "^0.0.0",
     "math-expression-evaluator": "^1.2.22",
     "node-fetch": "^2.6.1",
+    "quick.db": "^7.1.2",
     "star-labs": "^1.1.2",
     "weez": "^1.6.2"
   },

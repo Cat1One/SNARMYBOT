@@ -28,8 +28,86 @@ const token = "NzU1NDMyNjM0NTQ4NDg2MTk2.X2DNdw.alMoI-9i_thhMPEJyHcfvtXnzr0";
 const star = require('star-labs');
 
 const qdb = require("quick.db") //Definimos quick.db como "qdb"
-var prefix =  "!" //Ponemos prefix
 const cooldown = new Set(); //Creamos un nuevo set para cooldown
+  
+client.on('message', async (message) => { //Creamos evento message (al enviar algo) 
+
+
+
+//Definimos Args
+const args = message.content.slice(prefix.length).trim().split(/ +/g);
+//Definimos command
+const command = args.shift().toLowerCase();
+
+
+if(command === "work"){
+
+   if (cooldown.has(message.author.id)) { //Si el cooldown tiene la id del usuario
+message.reply("Espera 1 minuto para poder trabajar denuevo.") //El bot manda mensaje
+    } else { //Si no hara todo esto de abajo
+
+
+// aca creamos un math floor para elegir una cantida entre 100-1000
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+//definimos "cantidad" para el numero random
+var cantidad = getRandomInt(100, 1000)
+
+qdb.add(`economia_${message.author.id}`, cantidad) //Agregamos la cantidad al usuario
+
+const embed = new Discord.RichEmbed() //Creamos Embed decir que el trabajo
+.setColor("GREEN")
+.setTitle(`Has trabajado y ganaste ${cantidad} Robuxs`)
+message.channel.send(embed) //Mandamos embed
+
+
+        cooldown.add(message.author.id); //Agrega el user al cooldown
+        setTimeout(() => {
+          // Quita al usuario del cooldown despues de un minuto
+          cooldown.delete(message.author.id);
+        }, 60000); //1 minuto en milisegundos
+    }
+
+
+
+}
+
+if(command === "balance"){ //Creamos comando para saber el dinero
+
+const robuxs = qdb.fetch(`economia_${message.author.id}`)
+ //Obtenemos la cantidad de dinero, en este caso Robuxs (Son cools xd)
+
+  const embed = new Discord.RichEmbed() //Creamos embed
+  .setColor("GREEN")
+  .setTitle(`Tu balance es de ${robuxs} Robuxs`)
+  message.channel.send(embed) //Mandamos embed diciendo el balance de robuxs
+}
+
+
+/*
+Creditos a iStyLEX23
+
+Cualquier pregunta porfavor tagueame en el guild de MYBOT
+Pronto subiré mas comandos acerca de la economia, por ahora
+estos 2, pero esta es la lista de comandos que posiblemente 
+agregaré en el futuro:
+
+Profile
+Leaderboard
+Sistema de profesión
+Sistema de estados
+Sistema de Marry
+Sistema de amigos
+Sistema de items
+Compra de roles
+Mas.
+
+NO AL C&P
+*/
+
+
+});
 ////////////////
 
 
